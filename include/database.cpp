@@ -5,12 +5,12 @@ Database::Database() {
 	connection = mysql_init(NULL);
 	
 	if (con == NULL) {
-		fprintf(stderr, "%s\n", mysql_error(connection));
+		finish_with_error();
 		exit(1);
 	}
 
 	if (!mysql_real_connection(connection, "localhost","root"," ",NULL,0,NULL,0)) {
-		fprintf(stderr, "%s\n", mysql_error(connection));
+		finish_with_error();
 		mysql_close(connection);
 		exit(1);			
 	}
@@ -23,6 +23,17 @@ Database::~Database() {
 }
 
 
+Database::finish_with_error() {
+	
+	FILE *logs = fopen("./logs","w+");
+	
+	time_t t;
+	t = time(NULL);
+	char * time = ctime(&t);
+	
+	fprintf(logs, "%s %s\n",time,mysql_error(connection));
+	// fprintf(stderr, "%s\n",mysql_error(connection));
+}
 static Database* Database::getInstance() {
 
 	if (!instance) {
@@ -31,19 +42,22 @@ static Database* Database::getInstance() {
 	return instance; 
 }
 
-bool Database::dbinsert(string field[],string value[], string & table,int num) {
+bool Database::dbInsert(unordered_map<string,string> & data,string & table) {
 
+	if (data.empty()) return true;
+	
 	string query = "INSERT INTO " + table + "(";
-	for (int i = 0;i < num - 1;++i)
-		query = query + field[i] + ",";
+	string val_str = ") VALUES (";
 	
-	query = query + field[num - 1] + ") VALUES("; 
+	for (auto & p : data) {
+		query = query + p.first() + ",";
+		val_str = val_str + p.second() + ",";
+	}
 	
-	for (int i = 0;i < num - 1;++i)
-		query = query + value[i] + ",";
+	query[query.length() - 1] = '\0';
+	val_str[val_str.length() - 1] = '\0';
+	query = query + val_str + ")";
 	
-	query = query + value[num - 1] + ")";
-
 	if (mysql_query(connection,query)) {
 		finish_with_error();
 		return false;
@@ -51,4 +65,53 @@ bool Database::dbinsert(string field[],string value[], string & table,int num) {
 		return true;
 	}
 	return true;
+}
+
+bool Database::dbCreateTable(string & query) {
+	
+	if (query.empty()) return true;
+	
+	query = "CREATE TABLE " + query;
+	if (mysql_query(con, query)) {      
+	      finish_with_error(con);
+		  return false;
+	  }
+	 return true;
+}
+
+bool Database::dbQuery(string & query) {
+	
+	if (query.empty()) return true;
+	
+	if (mysql_query(con, query)) {      
+	      finish_with_error(con);
+		  return false;
+	  }
+	 return true;
+}
+
+bool Database::dbQuery(string & query,vector<vector<string> > & result) {
+	
+	if (query.empty()) return true;
+	result.clear();
+	
+	if (mysql_query(con, query)) {      
+	      finish_with_error(con);
+		  return false;
+	  } else {
+	  	
+		  MYSQL_RES *res = mysql_store_result(con);
+		  int num_fields = mysql_num_fields(res);
+		  MYSQL_ROW row;
+		  while ((row = mysql_fetch_row(result))) {
+			  
+			  vector<string> tmp;
+			  
+		      for(int i = 0; i < num_fields; ++i) { 
+		          tmp.push_back(row[i] ? row[i] : "NULL"); 
+		      } 
+			  result.push_back(tmp);
+		  }
+	  }
+	 return true;
 }

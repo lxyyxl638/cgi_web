@@ -1,8 +1,11 @@
 #include <stdlib>
 #include <cstdio>
 #include <cstring>
+#include <string>
+#include <unordered_map>
 #include <mysql/mysql.h>
-
+#include <ctime>
+#include <vector>
 using namespace std;
 
 class Database {
@@ -11,15 +14,13 @@ class Database {
 	static Database * instance = null;
 	MYSQL *connection;
 	Database(); 
-	void finish_with_error() {
-		fprintf(stderr, "%s\n",mysql_error(connection));
-	}
+	void finish_with_error();
 
   public:
 	~Database();
 	static Database* getInstance();
-	bool dbcreateTable(string &);
-	bool dbinsert(string[],string[]);
-	bool dbdelete()
-
+	bool dbCreateTable(string &);
+	bool dbInsert(unordered_map<string,string> & data,string & table);
+	bool dbQuery(string &,vector<vector<string> > &);
+	bool dbQuery(string &);
 }
