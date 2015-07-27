@@ -14,7 +14,8 @@ class Database {
 	MYSQL *connection;
 	Database(); 
 	void finish_with_error();
-
+	FILE * log_file;
+	time_t t;
   public:
 	~Database();
 	static Database* getInstance();
@@ -22,4 +23,5 @@ class Database {
 	bool dbInsert(unordered_map<string,string> & data,string & table);
 	bool dbQuery(string &,vector<vector<string> > &);
 	bool dbQuery(string &);
+//	int  dbAggrQuery(string &);
 };
