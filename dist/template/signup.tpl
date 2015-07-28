@@ -1,8 +1,13 @@
+
+
+
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Web Chat</title>
     <!-- 新 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="./dist/css/style.css">
@@ -17,26 +22,26 @@
     <img src="./dist/img/home.jpg" width="100%" height="100%"/>
 </div>
 <div class="container">
-
     <div style="position:absolute;top: 40%;left: 40%;width: 15%;height: auto">
-        <div class="form-group">
+      <form action="http://localhost/post.cgi" method="post">
+	<div class="form-group">
             <div class="row">
                 <div class="col-md-12">
-                <input type="email" class="form-control"  placeholder="用户名">
+                <input type="text" name="username" class="form-control"  placeholder="用户名">
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="密码">
+            <input type="password" name="password" class="form-control" placeholder="密码">
         </div>
 
         <div class="form-group">
-            <input type="text" class="form-control"placeholder="昵称">
+            <input type="text" name="nickname" class="form-control"placeholder="昵称">
         </div>
         <div class="form-group">
-                <select class="form-control">
-                    <option>男性</option>
-                    <option>女性</option>
+                <select class="form-control" name="sex">
+                    <option value="male">男性</option>
+                    <option value="female">女性</option>
                 </select>
         </div>
         <div class="row">
@@ -45,8 +50,6 @@
             </div>
         </div>
     </form>
-
-
 </div>
 
 </body>

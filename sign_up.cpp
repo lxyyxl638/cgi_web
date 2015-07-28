@@ -1,36 +1,24 @@
-#include <fcgi_stdio.h>
-#include <cstdlib>
-#include <unistd.h>
-#include <cstring>
-#include <cstdio>
+#include <stdlib.h>
 #include <string>
 #include <iostream>
+#include <ctemplate/template.h>
+#include <fcgi_stdio.h>
+#include <unistd.h>
 using namespace std;
+int main(int argc, char** argv) {
+	
+while (FCGI_Accept() >= 0) {  
 
+    	ctemplate::TemplateDictionary dict("signup");
+    	std::string output;
+    	ctemplate::ExpandTemplate("./dist/template/signup.tpl", ctemplate::DO_NOT_STRIP, &dict, &output);
 
-void sign_up() {
-
-        FCGI_printf("Content-type: text/html\r\n"
-                "\r\n"
-		""
-                "<form name=\"input\" action=\"http://localhost/sign_up.cgi\" method=\"post\">"
-                "Username:"
-                "<input type=\"text\" name=\"username\"/>"
-                "<input type=\"submit\" value=\"Submit\"/>"
-                "</form>"
-               );
-	return;
+    	//output="Content-type: text/html\r\n \r\n" + output;
+	cout << output << endl;
+	FCGI_printf("Content-type: text/html\r\n \r\n \"\" %s",output.c_str());
+    }
+    return 0;
 }
 
-int main() {
 
-	string method;
-        while (FCGI_Accept() >= 0) {
-        	method = getenv("CONTENT_LENGTH");
-		sign_up();
-		FCGI_printf(method.c_str());
-	}
 
-	return 0;
-}
-              
