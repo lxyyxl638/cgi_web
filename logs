@@ -1,0 +1,144 @@
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 19:39:11 2015
+Table 'test' already exists Sun Jul 26 19:39:11 2015
+
+INSERT INTO test(name,id Sun Jul 26 19:39:11 2015
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 Sun Jul 26 19:39:11 2015
+
+INSERT INTO test(name,id Sun Jul 26 19:39:11 2015
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 Sun Jul 26 19:39:11 2015
+
+SELECT * FROM test Sun Jul 26 19:39:11 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 19:40:51 2015
+Table 'test' already exists Sun Jul 26 19:40:51 2015
+
+INSERT INTO test(name,id Sun Jul 26 19:40:51 2015
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 Sun Jul 26 19:40:51 2015
+
+INSERT INTO test(name,id Sun Jul 26 19:40:51 2015
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 Sun Jul 26 19:40:51 2015
+
+SELECT * FROM test Sun Jul 26 19:40:51 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 19:42:37 2015
+Table 'test' already exists Sun Jul 26 19:42:37 2015
+
+INSERT INTO test(name,id Sun Jul 26 19:42:37 2015
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 Sun Jul 26 19:42:37 2015
+
+INSERT INTO test(name,id Sun Jul 26 19:42:37 2015
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 Sun Jul 26 19:42:37 2015
+
+SELECT * FROM test Sun Jul 26 19:42:37 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 19:44:40 2015
+Table 'test' already exists Sun Jul 26 19:44:40 2015
+
+INSERT INTO test(name,id Sun Jul 26 19:44:40 2015
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 Sun Jul 26 19:44:40 2015
+
+INSERT INTO test(name,id Sun Jul 26 19:44:40 2015
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 Sun Jul 26 19:44:40 2015
+
+SELECT * FROM test Sun Jul 26 19:44:40 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 19:55:00 2015
+Table 'test' already exists Sun Jul 26 19:55:00 2015
+
+INSERT INTO test(name,id) VALUES (haha,1) Sun Jul 26 19:55:00 2015
+Unknown column 'haha' in 'field list' Sun Jul 26 19:55:00 2015
+
+INSERT INTO test(name,id) VALUES (hh,2) Sun Jul 26 19:55:00 2015
+Unknown column 'hh' in 'field list' Sun Jul 26 19:55:00 2015
+
+SELECT * FROM test Sun Jul 26 19:55:00 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:01:05 2015
+Table 'test' already exists Sun Jul 26 20:01:05 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:01:05 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:01:05 2015
+SELECT * FROM test Sun Jul 26 20:01:05 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:16:33 2015
+Table 'test' already exists Sun Jul 26 20:16:33 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:16:33 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:16:33 2015
+SELECT * FROM test Sun Jul 26 20:16:33 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:16:38 2015
+Table 'test' already exists Sun Jul 26 20:16:38 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:16:38 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:16:38 2015
+SELECT * FROM test Sun Jul 26 20:16:38 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:32:30 2015
+Table 'test' already exists Sun Jul 26 20:32:30 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:32:30 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:32:30 2015
+SELECT * FROM test Sun Jul 26 20:32:30 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:38:24 2015
+Table 'test' already exists Sun Jul 26 20:38:24 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:38:24 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:38:24 2015
+SELECT * FROM test Sun Jul 26 20:38:24 2015
+SELECT MAX(id)  from test GROUP BY name Sun Jul 26 20:38:24 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:39:03 2015
+Table 'test' already exists Sun Jul 26 20:39:03 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:39:03 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:39:03 2015
+SELECT * FROM test Sun Jul 26 20:39:03 2015
+SELECT MAX(id)  from test GROUP BY name Sun Jul 26 20:39:03 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:39:09 2015
+Table 'test' already exists Sun Jul 26 20:39:09 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:39:09 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:39:09 2015
+SELECT * FROM test Sun Jul 26 20:39:09 2015
+SELECT MAX(id)  from test GROUP BY name Sun Jul 26 20:39:09 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:41:43 2015
+Table 'test' already exists Sun Jul 26 20:41:43 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:41:43 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:41:43 2015
+SELECT * FROM test Sun Jul 26 20:41:43 2015
+SELECT SUM(id)  from test GROUP BY name Sun Jul 26 20:41:43 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:44:02 2015
+Table 'test' already exists Sun Jul 26 20:44:02 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:44:02 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:44:02 2015
+SELECT name FROM test Sun Jul 26 20:44:02 2015
+SELECT SUM(id)  from test GROUP BY name Sun Jul 26 20:44:02 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:44:25 2015
+Table 'test' already exists Sun Jul 26 20:44:25 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:44:25 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:44:25 2015
+SELECT name FROM test Sun Jul 26 20:44:25 2015
+SELECT SUM(id),name  from test GROUP BY name Sun Jul 26 20:44:25 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:48:20 2015
+Table 'test' already exists Sun Jul 26 20:48:20 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:48:20 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:48:20 2015
+SELECT name FROM test Sun Jul 26 20:48:20 2015
+SELECT SUM(id),name from test GROUP BY name Sun Jul 26 20:48:20 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:50:06 2015
+Table 'test' already exists Sun Jul 26 20:50:06 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:50:06 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:50:06 2015
+SELECT name FROM test Sun Jul 26 20:50:06 2015
+SELECT SUM(id),name from test GROUP BY name Sun Jul 26 20:50:06 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:53:43 2015
+Table 'test' already exists Sun Jul 26 20:53:43 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:53:43 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:53:43 2015
+SELECT name FROM test Sun Jul 26 20:53:43 2015
+SELECT SUM(id),name from test GROUP BY name Sun Jul 26 20:53:43 2015
+CREATE TABLE test(id INT,name varchar(5)) Sun Jul 26 20:55:13 2015
+Table 'test' already exists Sun Jul 26 20:55:13 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Sun Jul 26 20:55:13 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Sun Jul 26 20:55:13 2015
+SELECT name FROM test Sun Jul 26 20:55:13 2015
+SELECT SUM(id),name from test GROUP BY name Sun Jul 26 20:55:13 2015

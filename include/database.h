@@ -1,4 +1,4 @@
-#include <stdlib>
+#include <cstdlib>
 #include <cstdio>
 #include <cstring>
 #include <string>
@@ -8,14 +8,14 @@
 #include <vector>
 using namespace std;
 
-class Database {
-  
+class Database {  
   private:
-	static Database * instance = null;
+	static Database* instance;
 	MYSQL *connection;
 	Database(); 
 	void finish_with_error();
-
+	FILE * log_file;
+	time_t t;
   public:
 	~Database();
 	static Database* getInstance();
@@ -23,4 +23,5 @@ class Database {
 	bool dbInsert(unordered_map<string,string> & data,string & table);
 	bool dbQuery(string &,vector<vector<string> > &);
 	bool dbQuery(string &);
-}
+//	int  dbAggrQuery(string &);
+};
