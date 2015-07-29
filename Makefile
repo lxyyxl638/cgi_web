@@ -1,4 +1,4 @@
-all : hello sign_up post db_init
+all : sign_up post db_init
 
 #hello : hello.cpp include/database.cpp include/database.h
 #	g++ -o hello hello.cpp include/database.cpp -std=c++11 `mysql_config --cflags --libs`
@@ -13,4 +13,4 @@ post : post.cpp
 	g++ -o post post.cpp -g -lfcgi
 
 db_init : db_init.cpp include/database.cpp include/database.h
-	g++ -o db_init db_init.cpp include/database.cpp -std=c++11 `mysql_config --cflags --libs`
+	g++ -o db_init db_init.cpp include/database.cpp -std=c++11 -g `mysql_config --cflags --libs`

@@ -6,12 +6,11 @@ Database * Database::instance = 0;
 Database::Database() {
 	
 	connection = mysql_init(NULL);
-	
-		
+			
 	if (connection == NULL) {
 		finish_with_error();
 	}
-	if (!mysql_real_connect(connection, "localhost","root","123456","web_char",0,NULL,0)) {
+	if (!mysql_real_connect(connection, "localhost","root","123456","web_chat",0,NULL,0)) {
 		finish_with_error();
 		mysql_close(connection);			
 	}
