@@ -1,6 +1,6 @@
 #include "public.h"
 
-bool ParseParam(string query_string,unordered_map<string,string> & Param)
+bool ParseParam(string & query_string,unordered_map<string,string> & Param)
 {
 	Param.clear();
 	size_t x;

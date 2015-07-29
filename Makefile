@@ -1,7 +1,7 @@
-all : hello sign_up post
+all : hello sign_up post db_init
 
-hello : hello.cpp include/database.cpp include/database.h
-	g++ -o hello hello.cpp include/database.cpp -std=c++11 `mysql_config --cflags --libs`
+#hello : hello.cpp include/database.cpp include/database.h
+#	g++ -o hello hello.cpp include/database.cpp -std=c++11 `mysql_config --cflags --libs`
 
 #example : demo.cpp example.tpl
 #	g++ -o example demo.cpp -lctemplate_nothreads -lfcgi	
@@ -11,3 +11,6 @@ sign_up : sign_up.cpp dist/template/signup.tpl
 
 post : post.cpp
 	g++ -o post post.cpp -g -lfcgi
+
+db_init : db_init.cpp include/database.cpp include/database.h
+	g++ -o db_init db_init.cpp include/database.cpp -std=c++11 `mysql_config --cflags --libs`
