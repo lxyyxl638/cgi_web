@@ -6,12 +6,16 @@ using namespace std;
 
 int main() {
 	
+	//使用之前调用生成一个db类
 	Database* db = Database::getInstance();
+	//选定数据表
 	string table = "test";
-	string query_1 = "test(id INT,name varchar(5))";
 	
+	//创建表的语句
+	string query_1 = "test(id INT,name varchar(5))";
 	db->dbCreateTable(query_1);
 	
+	//插入语句，先声明一个unordered_map<string,string>存储插入数据
 	unordered_map<string,string> query_2;
 	query_2["id"] = "1";
 	query_2["name"] = "haha";
@@ -23,6 +27,7 @@ int main() {
 	
 	db->dbInsert(query_2,table);
 	
+	//查询语句，要先声明一个二维vector存储结果
 	string query_3 = "SELECT name FROM test";
 	vector<vector<string> > result;
 
