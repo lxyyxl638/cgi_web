@@ -11,7 +11,7 @@ Database::Database() {
 	if (connection == NULL) {
 		finish_with_error();
 	}
-	if (!mysql_real_connect(connection, "localhost","root","123456","test",0,NULL,0)) {
+	if (!mysql_real_connect(connection, "localhost","root","123456","web_char",0,NULL,0)) {
 		finish_with_error();
 		mysql_close(connection);			
 	}
