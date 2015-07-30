@@ -82,7 +82,7 @@ bool Database::dbCreateTable(string & query) {
 	 return true;
 }
 
-bool Database::dbQuery(string & query) {
+int Database::dbQuery(string & query) {
 	
 	if (query.empty()) return true;
 	
@@ -90,9 +90,9 @@ bool Database::dbQuery(string & query) {
 	fprintf(log_file,"%s %s",query.c_str(),ctime(&t));
 	if (mysql_query(connection, query.c_str())) {      
 	      finish_with_error();
-		  return false;
+		  return 0;
 	  }
-	 return true;
+	 return mysql_affected_rows(connection);
 }
 
 bool Database::dbQuery(string & query,vector<vector<string> > & result) {
