@@ -188,3 +188,39 @@ INSERT INTO test(name,id) VALUES ("hh","2") Wed Jul 29 17:55:25 2015
 SELECT name FROM test Wed Jul 29 17:55:25 2015
 SELECT SUM(id),name from test GROUP BY name Wed Jul 29 17:55:25 2015
 SELECT id,name from test Wed Jul 29 17:55:25 2015
+CREATE TABLE test(id INT,name varchar(5)) Wed Jul 29 20:20:41 2015
+Table 'test' already exists Wed Jul 29 20:20:41 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Wed Jul 29 20:20:41 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Wed Jul 29 20:20:41 2015
+SELECT name FROM test Wed Jul 29 20:20:41 2015
+SELECT SUM(id),name from test GROUP BY name Wed Jul 29 20:20:41 2015
+SELECT id,name from test Wed Jul 29 20:20:41 2015
+SELECT id,name from test Wed Jul 29 20:20:41 2015
+CREATE TABLE test(id INT,name varchar(5)) Wed Jul 29 20:22:45 2015
+Table 'test' already exists Wed Jul 29 20:22:45 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Wed Jul 29 20:22:45 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Wed Jul 29 20:22:45 2015
+SELECT name FROM test Wed Jul 29 20:22:45 2015
+SELECT SUM(id),name from test GROUP BY name Wed Jul 29 20:22:45 2015
+SELECT id,name from test Wed Jul 29 20:22:45 2015
+UPDATE test set id = 1 Wed Jul 29 20:22:45 2015
+CREATE TABLE test(id INT,name varchar(5)) Thu Jul 30 01:53:50 2015
+Table 'test' already exists Thu Jul 30 01:53:50 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Thu Jul 30 01:53:50 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Thu Jul 30 01:53:50 2015
+SELECT name FROM test Thu Jul 30 01:53:50 2015
+SELECT SUM(id),name from test GROUP BY name Thu Jul 30 01:53:50 2015
+SELECT id,name from test Thu Jul 30 01:53:50 2015
+UPDATE test set id = 1 Thu Jul 30 01:53:50 2015
+CREATE TABLE test(id INT,name varchar(5)) Thu Jul 30 01:54:24 2015
+Table 'test' already exists Thu Jul 30 01:54:24 2015
+
+INSERT INTO test(name,id) VALUES ("haha","1") Thu Jul 30 01:54:24 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Thu Jul 30 01:54:24 2015
+SELECT name FROM test Thu Jul 30 01:54:24 2015
+SELECT SUM(id),name from test GROUP BY name Thu Jul 30 01:54:24 2015
+SELECT id,name from test Thu Jul 30 01:54:24 2015
+select * from test Thu Jul 30 01:54:24 2015

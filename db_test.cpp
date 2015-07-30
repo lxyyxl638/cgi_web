@@ -26,7 +26,6 @@ int main() {
 	query_2["name"] = "hh";
 	
 	db->dbInsert(query_2,table);
-	
 	//查询语句，要先声明一个二维vector存储结果
 	string query_3 = "SELECT name FROM test";
 	vector<vector<string> > result;
@@ -56,5 +55,8 @@ int main() {
 	      cout << result_map[i]["name"] << " ";
 	      cout << result_map[i]["id"] << endl;
 	}
+	
+	string query_6 = "select * from test";
+	cout << "num is" << db->dbQuery(query_6) << endl;
 	return 0;
 }
