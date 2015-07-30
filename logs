@@ -206,3 +206,75 @@ SELECT name FROM test Wed Jul 29 20:22:45 2015
 SELECT SUM(id),name from test GROUP BY name Wed Jul 29 20:22:45 2015
 SELECT id,name from test Wed Jul 29 20:22:45 2015
 UPDATE test set id = 1 Wed Jul 29 20:22:45 2015
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commands out of sync; you can't run this command now Thu Jul 30 16:29:11 2015
+
+select * from users where username = 'yy' and password = '13123'  Thu Jul 30 16:29:11 2015
+Commselect * from users where username = 'yy' and password = '13123'  Thu Jul 30 17:08:24 2015

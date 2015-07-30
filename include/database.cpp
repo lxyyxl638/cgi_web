@@ -10,7 +10,7 @@ Database::Database() {
 	if (connection == NULL) {
 		finish_with_error();
 	}
-	if (!mysql_real_connect(connection, "localhost","root","123456","web_chat",0,NULL,0)) {
+	if (!mysql_real_connect(connection, "localhost","root","7553629","web_chat",0,NULL,0)) {
 		finish_with_error();
 		mysql_close(connection);			
 	}
@@ -92,6 +92,11 @@ int Database::dbQuery(string & query) {
 	      finish_with_error();
 		  return 0;
 	  }
+	 
+	
+	 MYSQL_RES *res = mysql_store_result(connection);
+	 mysql_free_result(res);
+
 	 return mysql_affected_rows(connection);
 }
 
