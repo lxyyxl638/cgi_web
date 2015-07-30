@@ -1,5 +1,6 @@
 #include "public.h"
-
+#include <sys/time.h>
+#include <sstream>
 bool ParseParam(string & query_string,unordered_map<string,string> & Param)
 {
 	Param.clear();
@@ -22,4 +23,13 @@ bool ParseParam(string & query_string,unordered_map<string,string> & Param)
 	Param.insert(make_pair(arg,key));
 	
 	return true;
+}
+
+
+string getCurrentTime() {
+	struct timeval tv;
+	gettimeofday(&tv,NULL);
+	stringstream ss;
+	ss << tv.tv_usec;
+	return ss.str();
 }
