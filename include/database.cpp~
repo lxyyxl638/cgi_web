@@ -128,6 +128,7 @@ bool Database::dbQuery(string & query,vector<vector<string> > & result) {
 
 //int Database::dbAggreQuery(string & query) {
 	
+<<<<<<< HEAD
 bool Database::dbQuery(string & query,vector<unordered_map<string,string> > & result) {
 
 
@@ -156,3 +157,7 @@ bool Database::dbQuery(string & query,vector<unordered_map<string,string> > & re
 	 return true;
 	}
 }
+=======
+
+
+>>>>>>> 36fcc11b7c3722d110611249c9bf7fe6c91b37d5
