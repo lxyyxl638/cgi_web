@@ -12,6 +12,7 @@ int main() {
 	//创建表的语句
 	string query_users = "users (\
    user_id int primary key auto_increment not null,\
+   username varchar(255) not null,\
    nickname varchar(255) not null,\
    password varchar(255) not null,\
    birthday	 varchar(255) not null,\

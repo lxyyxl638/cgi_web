@@ -22,6 +22,7 @@ class Database {
 	bool dbCreateTable(string &);
 	bool dbInsert(unordered_map<string,string> & data,string & table);
 	bool dbQuery(string &,vector<vector<string> > &);
+	bool dbQuery(string &,vector<unordered_map<string,string> > &);
 	bool dbQuery(string &);
 //	int  dbAggrQuery(string &);
 };

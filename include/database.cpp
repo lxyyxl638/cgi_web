@@ -16,7 +16,6 @@ Database::Database() {
 	}
 	log_file = fopen("/usr/local/nginx/cgibin/logs","a");
 	if (log_file == 0) fprintf(stderr,"WTF");
-	t;
 	t = time(NULL);
 	
 }
@@ -128,6 +127,34 @@ bool Database::dbQuery(string & query,vector<vector<string> > & result) {
 
 
 //int Database::dbAggreQuery(string & query) {
-	
+/*
+  Add on 2015/7/30
+*/	
+bool Database::dbQuery(string & query,vector<unordered_map<string,string> > & result) {
 
+
+	if (query.empty()) return true;
+	result.clear();
+	
+	fprintf(log_file,"%s %s",query.c_str(),ctime(&t));
+	if (mysql_query(connection, query.c_str())) {      
+	      finish_with_error();
+		return false;
+	  } else {
+	  	  unordered_map<string,string> tmp;
+		  MYSQL_RES *res = mysql_store_result(connection);
+		  int num_fields = mysql_num_fields(res);
+		  MYSQL_ROW row;
+		  MYSQL_FIELD *fields = mysql_fetch_fields(res);
+
+		  while ((row = mysql_fetch_row(res))) {
+			  
+		      for(int i = 0; i < num_fields; ++i) { 
+		          tmp[fields[i].name] = (row[i] ? row[i] : "NULL"); 
+		      } 
+		      result.push_back(tmp);
+		  }
+	  }
+	 return true;
+}
 

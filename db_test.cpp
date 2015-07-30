@@ -39,7 +39,6 @@ int main() {
 		cout << endl;
 	}
 	
-	cout << "Aggre" << endl;
 	string query_4 = "SELECT SUM(id),name from test GROUP BY name";
 	db->dbQuery(query_4,result);
 	
@@ -48,6 +47,14 @@ int main() {
 		  cout << result[i][j];
 	     cout << endl;
 	}
-
+	
+	string query_5 = "SELECT id,name from test";
+	vector<unordered_map<string,string> > result_map;
+	db->dbQuery(query_5,result_map);
+	cout << "This API is " << endl;
+	for (int i = 0;i < result_map.size();++i) {
+	      cout << result_map[i]["name"] << " ";
+	      cout << result_map[i]["id"] << endl;
+	}
 	return 0;
 }

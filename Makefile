@@ -1,7 +1,7 @@
-all : sign_up post db_init
+all : sign_up post db_init cookie db_test
 
-#hello : hello.cpp include/database.cpp include/database.h
-#	g++ -o hello hello.cpp include/database.cpp -std=c++11 `mysql_config --cflags --libs`
+db_test : db_test.cpp include/database.cpp include/database.h
+	g++ -o db_test db_test.cpp include/database.cpp -std=c++11 -g `mysql_config --cflags --libs`
 
 #example : demo.cpp example.tpl
 #	g++ -o example demo.cpp -lctemplate_nothreads -lfcgi	
@@ -14,3 +14,6 @@ post : post.cpp
 
 db_init : db_init.cpp include/database.cpp include/database.h
 	g++ -o db_init db_init.cpp include/database.cpp -std=c++11 -g `mysql_config --cflags --libs`
+
+cookie : cookie.cpp
+	g++ -o cookie cookie.cpp -g -lfcgi
