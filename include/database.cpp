@@ -92,6 +92,11 @@ int Database::dbQuery(string & query) {
 	      finish_with_error();
 		  return 0;
 	  }
+	 
+	
+	 MYSQL_RES *res = mysql_store_result(connection);
+	 mysql_free_result(res);
+
 	 return mysql_affected_rows(connection);
 }
 
@@ -121,6 +126,7 @@ bool Database::dbQuery(string & query,vector<vector<string> > & result) {
 		      } 
 			  result.push_back(tmp);
 		  }
+		mysql_free_result(res);
 	  }
 	 return true;
 }
@@ -154,6 +160,7 @@ bool Database::dbQuery(string & query,vector<unordered_map<string,string> > & re
 		      } 
 		      result.push_back(tmp);
 		  }
+		  mysql_free_result(res);
 	  }
 	 return true;
 }

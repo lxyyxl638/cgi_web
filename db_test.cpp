@@ -56,7 +56,7 @@ int main() {
 	      cout << result_map[i]["id"] << endl;
 	}
 	
-	string query_6 = "UPDATE test set id = 1";
+	string query_6 = "select * from test";
 	cout << "num is" << db->dbQuery(query_6) << endl;
 	return 0;
 }
