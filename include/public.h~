@@ -7,4 +7,12 @@ bool ParseParam(string &, unordered_map<string,string> &);
 
 string getCurrentTime();
 
-string getEnvir(string query);
+string getEnvir(string query) {
+
+    char *result = getenv(query);
+    if (0 == result) {
+	return "";
+     }	else {
+	return result;
+     }
+}

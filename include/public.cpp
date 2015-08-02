@@ -33,3 +33,13 @@ string getCurrentTime() {
 	ss << tv.tv_usec;
 	return ss.str();
 }
+
+string getEnvir(string query) {
+
+    char *result = getenv(query.c_str());
+    if (0 == result) {
+	return "";
+     }	else {
+	return result;
+     }
+}

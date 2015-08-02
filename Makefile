@@ -10,10 +10,10 @@ sign_up : sign_up.cpp dist/template/signup.tpl
 	g++ -o sign_up sign_up.cpp include/database.cpp -std=c++11 `mysql_config --cflags --libs` -lctemplate_nothreads -lfcgi
 
 post : post.cpp
-	g++ -o post post.cpp -g -lfcgi
+	g++ -o post post.cpp -g -lfcgi -std=c++11
 
 db_init : db_init.cpp include/database.cpp include/database.h
 	g++ -o db_init db_init.cpp include/database.cpp -std=c++11 -g `mysql_config --cflags --libs`
 
-cookie : cookie.cpp
-	g++ -o cookie cookie.cpp -g -lfcgi
+cookie : cookie.cpp include/session.h include/session.cpp include/public.h include/public.cpp
+	g++ -o cookie cookie.cpp include/session.cpp include/public.cpp -std=c++11 -lhiredis -lfcgi

@@ -69,19 +69,12 @@ string Session::getCookie() {
 	string cookie = getEnvir("HTTP_COOKIE");
 	cookie = (cookie.empty()? session_id : cookie); 
 	if (cookie.empty()) {
-		string http_user_agent = getEnvir("HTTP_USER_AGENT");
-		string remote_host = getEnvir("REMOTE_HOST");
-		string remote_addr = getEnvir("REMOTE_ADDR");
+		string http_user_agent = getenv("HTTP_USER_AGENT");
+		string remote_host = getenv("REMOTE_HOST");
+		string remote_addr = getenv("REMOTE_ADDR");
 		string cookie_time = getCurrentTime();
 		string prefix = "name=";
 		cookie = prefix + http_user_agent + remote_host + remote_addr + cookie_time;
-		int n;
-		while ((n=cookie.find(';')) != string::npos) {
-			cookie.erase(n,1);
-		}
-		while ((n=cookie.find(' ')) != string::npos) {
-			cookie.erase(n,1);
-		}
 	}
 	
 	//重新设置Cookie过期时间或者建立Cookie
@@ -100,9 +93,9 @@ string Session::getCookie() {
 
 bool Session::checkSession() {
 	
-	string cookie = getEnvir("HTTP_COOKIE");
+	string cookie = getenv("HTTP_COOKIE");
 	
-	if (!cookie.empty()) {
+	if (cookie.empty()) {
 		reply = (redisReply *) redisCommand(connection,"HLEN session:%s",cookie.c_str());
 		addLog();
 		if (reply->integer > 0) {
@@ -158,11 +151,11 @@ bool Session::getAllValue(unordered_map<string,string> & result) {
 	
 	reply = (redisReply *) redisCommand(connection,"HGETALL session:%s",cookie.c_str());
 	addLog();
-	//if (reply->type == REDIS_REPLY_ARRAY) {
-		for (unsigned int i = 0;i < reply->elements;i+=2) {
+	if (reply->type == REDIS_REPLY_ARRAY) {
+		for (unsigned int i = 0;i < reply->elements; i+=2) {
 			result[reply->element[i]->str] = reply->element[i+1]->str;
 		}
-	//}
+	}
 	freeReplyObject(reply);
 	return true;
 }

@@ -1,6 +1,5 @@
 #ifndef SESSION_H
 #define SESSION_H
-
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
@@ -17,7 +16,7 @@ class Session {
   private:
 	static Session* instance;
 	Session(); 
-	void finish_with_error();
+	void addLog();
 	FILE * log_file;
 	time_t t;
 	redisContext *connection;
@@ -30,12 +29,11 @@ class Session {
 	
 	void sessionInit();
 	string getCookie();
-	string checkSession();
-	string getValue(string & key);
-	bool setValue(string & key,string & value);
-	bool setValue(string & key,int value);
+	bool checkSession();
+	string getValue(string key);
+	bool setValue(string key,string value);
+	bool setValue(string key,int value);
 	bool getAllValue(unordered_map<string,string> & result);
 	void destroySession();
 };
-
 #endif
