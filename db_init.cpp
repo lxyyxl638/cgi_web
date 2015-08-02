@@ -22,7 +22,7 @@ int main() {
    state int not null,\
    ip varchar(255) not null,\
    register_time timestamp not null DEFAULT CURRENT_TIMESTAMP,\
-   last_login_time timestamp not null DEFAULT CURRENT_TIMESTAMP,\
+   last_login_time timestamp not null,\
    back_1 varchar(255) not null,\
    back_2 varchar(255) not null\
 ) default charset utf8";
@@ -94,7 +94,7 @@ type int not null default 0,\
 created_time timestamp not null DEFAULT CURRENT_TIMESTAMP,\
 additional_message varchar(255) not null,\
 state int not null default 0,\
-handling_time timestamp not null DEFAULT CURRENT_TIMESTAMP\
+handling_time timestamp not null \
 ) default charset utf8";
 		
 	db->dbCreateTable(query_notification);

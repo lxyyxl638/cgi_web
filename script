@@ -1,8 +1,0 @@
-#!/bin/bash
-
-spawn=/usr/local/nginx/sbin/spawn-fcgi
-
-$spawn -a 127.0.0.1 -p 8090 -f /usr/local/nginx/cgibin/cookie
-
-
-exit 0;
