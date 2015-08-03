@@ -32,7 +32,6 @@ Session::Session() {
 	struct timeval timeout = { 1, 500000 }; // 1.5 seconds
 	
 	log_file = fopen("/usr/local/nginx/cgibin/log/redis_logs","a");
-	if (log_file == 0) fprintf(stderr,"WTF");
 	t = time(NULL);
 	
 	connection = redisConnectWithTimeout(hostname, port, timeout);

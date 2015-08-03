@@ -1,5 +1,7 @@
-all : sign_up post db_init cookie db_test
+all : sign_in post db_init cookie db_test
 
+sign_in : sign_in.cpp include/database.h include/database.cpp include/session.h include/session.cpp include/public.h include/public.cpp json/json.h json/jsoncpp.cpp
+	g++ -o sign_in sign_in.cpp include/database.cpp include/session.cpp include/public.cpp json/jsoncpp.cpp -std=c++11 -lhiredis -lfcgi `mysql_config --cflags --libs` -lctemplate_nothreads
 db_test : db_test.cpp include/database.cpp include/database.h
 	g++ -o db_test db_test.cpp include/database.cpp -std=c++11 -g `mysql_config --cflags --libs`
 
