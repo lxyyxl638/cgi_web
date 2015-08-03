@@ -27,26 +27,27 @@
 	<div class="form-group">
             <div class="row">
                 <div class="col-md-12">
-                <input type="text" name="username" class="form-control"  placeholder="用户名">
+                <input id="username_signup" type="text" name="username" class="form-control"  placeholder="用户名">
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <input type="password" name="password" class="form-control" placeholder="密码">
+            <input id="password_signup" type="password" name="password" class="form-control" placeholder="密码">
         </div>
 
         <div class="form-group">
-            <input type="text" name="nickname" class="form-control"placeholder="昵称">
+            <input id="nickname_signup" type="text" name="nickname" class="form-control"placeholder="昵称">
         </div>
         <div class="form-group">
-                <select class="form-control" name="sex">
-                    <option value="male">男性</option>
-                    <option value="female">女性</option>
+                <select id="sex" class="form-control" name="sex">
+                    <option value="0">男性</option>
+                    <option value="1">女性</option>
                 </select>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <button type="submit" class="btn btn-danger" style="width: 100%;">注册</button>
+                <div id="result"></div>
+                <button id="signup" type="buttom" class="btn btn-danger" style="width: 100%;">注册</button>
             </div>
         </div>
     </form>
