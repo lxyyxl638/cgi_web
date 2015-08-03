@@ -10,7 +10,7 @@
     <title>Web_chat</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- <style type="text/css">
      /* body{
             background:url('../img/home.jpg');
@@ -84,7 +84,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
-    <script src="/js/jquery-2.1.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="./dist/js/jquery-2.1.1.min.js"></script>
+    <script src="./dist/js/bootstrap.min.js"></script>
   </body>
 </html>

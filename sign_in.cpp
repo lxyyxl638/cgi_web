@@ -34,7 +34,6 @@ int main() {
 		//FCGI_printf("Content-type: text/html\r\n"
                //		"\r\n");
 		
-		FCGI_printf("Content-type: text/html\n");
 		
 		string result("fail");
 		string detail("");
@@ -69,7 +68,8 @@ int main() {
 			ctemplate::TemplateDictionary dict("login");
 			std::string output;
 	                ctemplate::ExpandTemplate("./dist/template/login.tpl", ctemplate::DO_NOT_STRIP, &dict, &output);
-			FCGI_printf("\r\n"
+			
+			FCGI_printf("Content-type : text/html\r\n"
 			"\r\n"
 			"%s",output.c_str());
 			continue;
@@ -127,19 +127,17 @@ int main() {
 
 
 			}else{
-				detail = detail + " 用户名密码错误！" + "username:" + username + " password:" + password ;
+				detail = detail + " 用户名密码错误！";			
 			}
 		} 
 
 		/*
 			the boundary of header and body
 		*/
-		FCGI_printf("\r\n"
-			"\r\n");
 		
-		string value = session->getValue("username");
-		result = result + value;
-
+		
+		FCGI_printf("Content-type: application/json\r\n"
+		"\r\n");
 		Json::Value root;
 		root["result"] = Json::Value(result);
 		if(strcmp(result.c_str(),"fail") == 0){
@@ -147,7 +145,7 @@ int main() {
 		}
 		Json::FastWriter fw;
 		string str = fw.write(root);
-		FCGI_printf("%s<br/>",str.c_str());
+		FCGI_printf("%s",str.c_str());
 	
 	}
 	return 0;

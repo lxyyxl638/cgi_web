@@ -18,12 +18,12 @@
 </div>
 <div class="container">
 
-    <form style="position:absolute;top: 40%;left: 40%;width: 15%;height: auto">
+    <div style="position:absolute;top: 40%;left: 40%;width: 15%;height: auto">
         <div class="form-group">
             <div class="row">
                 <div class="col-md-12">
                     <label for="exampleInputEmail1">用户名</label>
-                    <input id="username" type="email" class="form-control" id="exampleInputEmail1" placeholder="用户名">
+                    <input id="username" type="text" class="form-control" id="exampleInputEmail1" placeholder="用户名">
                 </div>
             </div>
         </div>
@@ -33,6 +33,8 @@
         </div>
         <div class="row">
             <div class="col-md-12">
+
+	    <div id="result" style="color:red"></div>
                 <button id="login" type="buttom" class="btn btn-danger" style="width: 100%;">登录</button>
             </div>
         </div>
@@ -41,7 +43,6 @@
             <div class="col-md-12"></div>
             <div class="col-md-12"></div>
             <div class="col-md-12"></div>
-
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -49,10 +50,10 @@
             </div>
         </div>
 
-    </form>
+    </div>
 
 
 </div>
-
+<script src="./dist/js/sign.js"></script>
 </body>
 </html>

@@ -21,7 +21,6 @@ $(function(){
               			if ($.trim(data['result'])=="fail")
               			{
 					message = $.trim(data["detail"]);
-					$("#result").html(message);
               			}
                 		else
                 		{
@@ -30,7 +29,7 @@ $(function(){
           		})
 		}
 
-                if (message.length > 0) $("#result").html(message);
+                $("#result").html(message);
 	});
 
 	$("#signup").click(function(){
@@ -70,32 +69,29 @@ $(function(){
 						}
 			   		})
 				}
-		if (message.length > 0) $("#result").html(message);
 	});
 
 	$("#username_signup").blur(function(){
 
 		var username = $("#username_signup").val();
-		var message = "";
+		
 		if  (username == "" || (!isValidUsername(username))) {
 			message = "请输入6——16位仅包含字母，数字和下划线的用户名";
 		} else {
-				$.post(Base_url + "/sign_up",{
-				'type' : 1,
-				'username':username
-				},function(data) {
-					if ($.trim(data['result'])=='fail') {
+					$.post(Base_url + "/sign_up",{
+						'type' : 1,
+						'username':username
+					},function(data) {
+						if ($.trim(data['result'])=='fail') {
 
-						message = $.trim(data['detail']);
-						$("#username_result").html(message);
+							message = $.trim(data['detail']);
 							
-					} else {
-						message="可以使用的用户名";
-						$("#username_result").html(message);
-					}
-			   	})
+						} else {
+							message = "可以使用的用户名";
+						}
+			   		})
 			}
-		if (message.length > 0) $("#username_result").html(message);
+		$("#username_result").html(message);
 	});
 });
 

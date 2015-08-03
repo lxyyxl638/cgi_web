@@ -2,7 +2,6 @@
 
 
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,12 +22,13 @@
 </div>
 <div class="container">
     <div style="position:absolute;top: 40%;left: 40%;width: 15%;height: auto">
-      <form action="http://localhost/post.cgi" method="post">
 	<div class="form-group">
             <div class="row">
                 <div class="col-md-12">
                 <input id="username_signup" type="text" name="username" class="form-control"  placeholder="用户名">
-                </div>
+		</div>
+		<div id="username_result" style="color:red"class="col-md-12">
+		</div>
             </div>
         </div>
         <div class="form-group">
@@ -50,7 +50,6 @@
                 <button id="signup" type="buttom" class="btn btn-danger" style="width: 100%;">注册</button>
             </div>
         </div>
-    </form>
 </div>
 <script src="./dist/js/sign.js"></script>
 </body>

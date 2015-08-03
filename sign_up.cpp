@@ -15,11 +15,13 @@
 using namespace std;
 Database *db = Database::getInstance();
 
-bool CheckUser(string username){	
+bool CheckUser(string & username) {
+
 	char buf[1024]={0};
 	snprintf(buf,sizeof(buf),"select * from users where username = '%s' ",username.c_str());
 	string query(buf);
 	vector<vector<string> > ans;
+
 	bool flag = db->dbQuery(query,ans);
 	if(flag){
 		if(ans.size() == 0){
@@ -31,7 +33,7 @@ bool CheckUser(string username){
 		return false;
 	}
 }
-int main() {
+
 
 #define FCGI_NET_OK 0
 #define FCGI_NET_ERROR 1
@@ -48,9 +50,7 @@ int main() {
 		string detail("");
 		char * method = getenv("REQUEST_METHOD");
 
-		FCGI_printf("Content-type: text/html\r\n"
-               		"\r\n");
-
+		
 		if (strcmp(method,"POST") == 0) {
 
 			char *contentLength = getenv("CONTENT_LENGTH");
@@ -81,7 +81,7 @@ int main() {
     			ctemplate::ExpandTemplate("./dist/template/signup.tpl", ctemplate::DO_NOT_STRIP, &dict, &output);
 
 			FCGI_printf("Content-type: text/html\r\n" 
-				      "\r\n \"\" %s",output.c_str());
+				      "\r\n  %s",output.c_str());
 			continue;
  		 }
 
@@ -133,6 +133,9 @@ int main() {
 				}
 			}
 		}
+
+		FCGI_printf("Content-type: application/json\r\n"
+               		"\r\n");
 		Json::Value root;
 		root["result"] = Json::Value(result);
 		if(strcmp(result.c_str(),"fail") == 0){
@@ -140,7 +143,7 @@ int main() {
 		}
 		Json::FastWriter fw;
 		string str = fw.write(root);
-		FCGI_printf("%s<br/>",str.c_str());
+		FCGI_printf("%s",str.c_str());
 	}
 	return 0;
 }
