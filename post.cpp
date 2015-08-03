@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <fcgiapp.h>
@@ -10,11 +11,12 @@ int main() {
 	int count = 0;
 	while (FCGI_Accept() >= 0) {
 		count++;
-		char* req_uri = getenv("REQUEST_URI");
+		//char* req_uri = getenv("REQUEST_URI");
+		string req = getenv("HTTP_COOKIE");
 		FCGI_printf("Content-type: text/html\r\n"
                		"\r\n");
 		
-		FCGI_printf("Request_uri:%s<br/>",req_uri);
+		FCGI_printf("Request_uri:%s<br/>",req.c_str());
 		char* cont_type = getenv("CONTENT_TYPE");
 		FCGI_printf("Content_type:%s<br/>",cont_type);
 		char * method = getenv("REQUEST_METHOD");

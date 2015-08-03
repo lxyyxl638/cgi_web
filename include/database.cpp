@@ -10,10 +10,11 @@ Database::Database() {
 	if (connection == NULL) {
 		finish_with_error();
 	}
-	if (!mysql_real_connect(connection, "localhost","root","7553629","web_chat",0,NULL,0)) {
+	if (!mysql_real_connect(connection, "localhost","root","123456","web_chat",0,NULL,0)) {
 		finish_with_error();
 		mysql_close(connection);			
 	}
+	mysql_query(connection,"SET NAMES UTF8");
 	log_file = fopen("/usr/local/nginx/cgibin/logs","a");
 	if (log_file == 0) fprintf(stderr,"WTF");
 	t = time(NULL);
@@ -126,6 +127,7 @@ bool Database::dbQuery(string & query,vector<vector<string> > & result) {
 		      } 
 			  result.push_back(tmp);
 		  }
+		mysql_free_result(res);
 	  }
 	 return true;
 }
@@ -159,6 +161,7 @@ bool Database::dbQuery(string & query,vector<unordered_map<string,string> > & re
 		      } 
 		      result.push_back(tmp);
 		  }
+		  mysql_free_result(res);
 	  }
 	 return true;
 }

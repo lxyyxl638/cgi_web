@@ -23,17 +23,17 @@
             <div class="row">
                 <div class="col-md-12">
                     <label for="exampleInputEmail1">用户名</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="用户名">
+                    <input id="username" type="email" class="form-control" id="exampleInputEmail1" placeholder="用户名">
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">密码</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="密码">
+            <input id="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="密码">
         </div>
         <div class="row">
             <div class="col-md-12">
-                <button type="submit" class="btn btn-danger" style="width: 100%;">登录</button>
+                <button id="login" type="buttom" class="btn btn-danger" style="width: 100%;">登录</button>
             </div>
         </div>
         <div class="row">
@@ -45,7 +45,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <button type="button" class="btn btn-success" style="width: 100%">注册</button>
+                <button type="button" class="btn btn-success" style="width: 100%" onclick="location.href='http://localhost/sign_up'">注册</button>
             </div>
         </div>
 
