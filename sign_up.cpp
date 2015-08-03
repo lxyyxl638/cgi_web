@@ -7,6 +7,8 @@
 #include <time.h>
 #include <unordered_map>
 #include <fcgi_stdio.h>
+#include <ctemplate/template.h>
+#include "include/public.h"
 #include "include/database.h"
 #include "json/json.h"
 
@@ -17,15 +19,6 @@ using namespace std;
 #define FCGI_NET_PARAM_ERROR 2
 
 int main() {
-
-	    	ctemplate::TemplateDictionary dict("signup");
-    	std::string output;
-    	ctemplate::ExpandTemplate("./dist/template/signup.tpl", ctemplate::DO_NOT_STRIP, &dict, &output);
-
-    	output="Content-type: text/html\r\n \r\n" + output;
-	//cout << output << endl;
-	FCGI_printf("Content-type: text/html\r\n \r\n \"\" %s",output.c_str());
-    }
 
 	Database *db = Database::getInstance();
 
@@ -39,7 +32,7 @@ int main() {
 		FCGI_printf("Content-type: text/html\r\n"
                		"\r\n");
 
-		if ( strcmp(method,"POST") == 0) {
+		if (strcmp(method,"POST") == 0) {
 
 			char *contentLength = getenv("CONTENT_LENGTH");
 			int len;
@@ -58,31 +51,38 @@ int main() {
 			}
 			ParseParam(post_val,ans);
 		
-		} else if(strcmp(method,"GET")==0){
+		} else if(strcmp(method,"GET")==0) {
 
-			char* str = getenv("QUERY_STRING");
-	        	string Param(str);
-	        	ParseParam(Param,ans);
+			//char* str = getenv("QUERY_STRING");
+	        	//string Param(str);
+	        	//ParseParam(Param,ans);
+
+	    		ctemplate::TemplateDictionary dict("signup");
+    			std::string output;
+    			ctemplate::ExpandTemplate("./dist/template/signup.tpl", ctemplate::DO_NOT_STRIP, &dict, &output);
+
+			FCGI_printf("Content-type: text/html\r\n" 
+				      "\r\n \"\" %s",output.c_str());
+			continue;
  		 }
 
 		string type;
 		unordered_map<string,string>::iterator it;
 		it = ans.find("type");
 		
-		if(it == ans.end()){
+		if(it == ans.end()) {
 			detail = "参数错误！";
-		}else
-		{
-			int argu_count = 0;
-			 if(ans.find("username") != ans.end())
+		} else {
+			  int argu_count = 0;
+			  if(ans.find("username") != ans.end())
 	        		argu_count++;
-	        	if(ans.find("password") != ans.end())
+	        	  if(ans.find("password") != ans.end())
 	        		argu_count++;
-			if(it->second == "1"){
-				if(argu_count  < 2){
+			 
+			 if(it->second == "1"){
+				if (argu_count  < 2) {
 					detail = "参数错误！";
-				}
-				else{
+				} else {
 					string username,password;
 					it = ans.find("username");
 					username = it->second;
@@ -94,23 +94,24 @@ int main() {
 					string query(buf);
 					bool flag = db->dbQuery(query,ans);
 					if(flag){
-						if(ans.size() == 0){
-							result = "success";
-						}else{
-							detail = "用户已经存在!";
+						if(ans.size() == 0) {
+						    result = "success";
+						} else {
+						    detail = "用户已经存在!";
 						}
-					}else{
+					} else {
 						detail = "网络错误！";
 					}
 				}
-			}else if(it->second == "2"){
+			} else if(it->second == "2") {
+
 				if(ans.find("nickname")!= ans.end())
 	        			argu_count++;
 				if(ans.find("sex") != ans.end())
 					argu_count++;
 				if(argu_count < 4) {
-					FCGI_printf("%d",FCGI_NET_PARAM_ERROR );
-				}else{
+					FCGI_printf("%d",FCGI_NET_PARAM_ERROR);
+				} else {
 					string table = "users";
 					bool flag = db->dbInsert(ans,table);
 					if(flag)

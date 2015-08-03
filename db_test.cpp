@@ -18,7 +18,7 @@ int main() {
 	//插入语句，先声明一个unordered_map<string,string>存储插入数据
 	unordered_map<string,string> query_2;
 	query_2["id"] = "1";
-	query_2["name"] = "haha";
+	query_2["name"] = "插入语句";
 	
 	db->dbInsert(query_2,table);
 	

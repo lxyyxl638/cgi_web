@@ -117,3 +117,19 @@ select * from users where username = 'lxyyxl638' and password = '123456'  Sun Au
 update users set state = '1' where username = 'lxyyxl638' and password = '123456'  Sun Aug  2 19:51:32 2015
 select * from users where username = 'lxyyxl638' and password = '123456'  Sun Aug  2 19:52:37 2015
 update users set state = '1' where username = 'lxyyxl638' and password = '123456'  Sun Aug  2 19:52:37 2015
+CREATE TABLE test(id INT,name varchar(5)) Mon Aug  3 00:40:53 2015
+INSERT INTO test(name,id) VALUES ("haha","1") Mon Aug  3 00:40:53 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Mon Aug  3 00:40:53 2015
+SELECT name FROM test Mon Aug  3 00:40:53 2015
+SELECT SUM(id),name from test GROUP BY name Mon Aug  3 00:40:53 2015
+SELECT id,name from test Mon Aug  3 00:40:53 2015
+select * from test Mon Aug  3 00:40:53 2015
+CREATE TABLE test(id INT,name varchar(5)) Mon Aug  3 00:41:29 2015
+Table 'test' already exists Mon Aug  3 00:41:29 2015
+
+INSERT INTO test(name,id) VALUES ("插入语句","1") Mon Aug  3 00:41:29 2015
+INSERT INTO test(name,id) VALUES ("hh","2") Mon Aug  3 00:41:29 2015
+SELECT name FROM test Mon Aug  3 00:41:29 2015
+SELECT SUM(id),name from test GROUP BY name Mon Aug  3 00:41:29 2015
+SELECT id,name from test Mon Aug  3 00:41:29 2015
+select * from test Mon Aug  3 00:41:29 2015

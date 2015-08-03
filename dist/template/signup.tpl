@@ -52,6 +52,6 @@
         </div>
     </form>
 </div>
-
+<script src="./dist/js/sign.js"></script>
 </body>
 </html>

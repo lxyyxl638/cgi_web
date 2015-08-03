@@ -14,6 +14,7 @@ Database::Database() {
 		finish_with_error();
 		mysql_close(connection);			
 	}
+	mysql_query(connection,"SET NAMES UTF8");
 	log_file = fopen("/usr/local/nginx/cgibin/logs","a");
 	if (log_file == 0) fprintf(stderr,"WTF");
 	t = time(NULL);
