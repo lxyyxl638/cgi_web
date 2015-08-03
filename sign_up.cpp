@@ -11,10 +11,8 @@
 #include"json/json.h"
 
 using namespace std;
+Database *db = Database::getInstance();
 
-#define FCGI_NET_OK 0
-#define FCGI_NET_ERROR 1
-#define FCGI_NET_PARAM_ERROR 2
 unordered_map<string,string>  ParseParam(string query_string)
 {
 	unordered_map<string,string> Param;
@@ -38,8 +36,23 @@ unordered_map<string,string>  ParseParam(string query_string)
 	
 	return Param;
 }
+bool CheckUser(string username){	
+	char buf[1024]={0};
+	snprintf(buf,sizeof(buf),"select * from users where username = '%s' ",username.c_str());
+	string query(buf);
+	vector<vector<string> > ans;
+	bool flag = db->dbQuery(query,ans);
+	if(flag){
+		if(ans.size() == 0){
+			return false;
+		}else{
+			return true;
+		}
+	}else{
+		return false;
+	}
+}
 int main() {
-	Database *db = Database::getInstance();
 	while (FCGI_Accept() >= 0) {
 		unordered_map<string,string> ans;
 		string result("fail");
@@ -53,8 +66,8 @@ int main() {
 			if (contentLength != NULL) {
 				len = strtol(contentLength, NULL, 10);
 			} else {
-				len = 0;
-			}
+					len = 0;
+				}
 			int i, ch;
 			string post_val="";
 			for (i = 0; i < len; i++) {
@@ -67,8 +80,8 @@ int main() {
 		
 		} else if(strcmp(method,"GET")==0){
 			char* str = getenv("QUERY_STRING");
-	        	string Param(str);
-	        	ans = ParseParam(Param);
+	        string Param(str);
+	        ans = ParseParam(Param);
  		 }
 		string type;
 		unordered_map<string,string>::iterator it;
@@ -79,53 +92,48 @@ int main() {
 		}else
 		{
 			int argu_count = 0;
+			string username;
 			 if(ans.find("username") != ans.end())
 	        		argu_count++;
-	        	if(ans.find("password") != ans.end())
-	        		argu_count++;
 			if(it->second == "1"){
-				if(argu_count  < 2){
-					detail = "参数错误！";
+				if(argu_count  < 1){
+					detail = "参数错误!";
 				}
 				else{
-					string username,password;
-					it = ans.find("username");
-					username = it->second;
-					it = ans.find("password");
-					password = it->second;
-					vector<vector<string>> ans;
-					char buf[1024]={0};
-					snprintf(buf,sizeof(buf),"select * from users where username = '%s' and password = '%s' ",username.c_str(),password.c_str());
-					string query(buf);
-					bool flag = db->dbQuery(query,ans);
-					if(flag){
-						if(ans.size() == 0){
-							result = "success";
-						}else{
+					    username=ans["username"];
+						if(CheckUser(username)){
 							detail = "用户已经存在!";
+						}else{
+							result = "success";
 						}
-					}else{
-						detail = "网络错误！";
-					}
 				}
 			}else if(it->second == "2"){
+				if(ans.find("password") != ans.end())
+					argu_count++;
 				if(ans.find("nickname")!= ans.end())
 	        			argu_count++;
 				if(ans.find("sex") != ans.end())
 					argu_count++;
 				if(argu_count < 4) {
-					FCGI_printf("%d",FCGI_NET_PARAM_ERROR );
+					detail = "参数错误！";
 				}else{
-					string table = "users";
-					bool flag = db->dbInsert(ans,table);
-					if(flag)
-						result = "success";
-					else 
-						detail = "网络错误!";
+						username=ans["username"];
+						if(CheckUser(username)){
+							detail = "用户已经存在!";	
+						}else{
+
+							string table = "users";
+							ans.erase("type");
+							bool flag = db->dbInsert(ans,table);
+							if(flag)
+								result = "success";
+							else 
+								detail = "网络错误!";
+						}
+						
 				}
 			}
 		}
-		
 		Json::Value root;
 		root["result"] = Json::Value(result);
 		if(strcmp(result.c_str(),"fail") == 0){
