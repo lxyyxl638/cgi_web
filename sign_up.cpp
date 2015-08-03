@@ -13,6 +13,25 @@
 #include "json/json.h"
 
 using namespace std;
+Database *db = Database::getInstance();
+
+bool CheckUser(string username){	
+	char buf[1024]={0};
+	snprintf(buf,sizeof(buf),"select * from users where username = '%s' ",username.c_str());
+	string query(buf);
+	vector<vector<string> > ans;
+	bool flag = db->dbQuery(query,ans);
+	if(flag){
+		if(ans.size() == 0){
+			return false;
+		}else{
+			return true;
+		}
+	}else{
+		return false;
+	}
+}
+int main() {
 
 #define FCGI_NET_OK 0
 #define FCGI_NET_ERROR 1
@@ -39,8 +58,8 @@ int main() {
 			if (contentLength != NULL) {
 				len = strtol(contentLength, NULL, 10);
 			} else {
-				len = 0;
-			}
+					len = 0;
+				}
 			int i, ch;
 			string post_val="";
 			for (i = 0; i < len; i++) {
@@ -73,55 +92,47 @@ int main() {
 		if(it == ans.end()) {
 			detail = "参数错误！";
 		} else {
-			  int argu_count = 0;
-			  if(ans.find("username") != ans.end())
+			int argu_count = 0;
+			string username;
+			 if(ans.find("username") != ans.end())
 	        		argu_count++;
-	        	  if(ans.find("password") != ans.end())
-	        		argu_count++;
-			 
-			 if(it->second == "1"){
-				if (argu_count  < 2) {
-					detail = "参数错误！";
+			if(it->second == "1"){
+				if(argu_count  < 1) {
+					detail = "参数错误!";
 				} else {
-					string username,password;
-					it = ans.find("username");
-					username = it->second;
-					it = ans.find("password");
-					password = it->second;
-					vector<vector<string>> ans;
-					char buf[1024]={0};
-					snprintf(buf,sizeof(buf),"select * from users where username = '%s' and password = '%s' ",username.c_str(),password.c_str());
-					string query(buf);
-					bool flag = db->dbQuery(query,ans);
-					if(flag){
-						if(ans.size() == 0) {
-						    result = "success";
-						} else {
-						    detail = "用户已经存在!";
+					    username=ans["username"];
+						if(CheckUser(username)){
+							detail = "用户已经存在!";
+						}else{
+							result = "success";
 						}
-					} else {
-						detail = "网络错误！";
-					}
 				}
-			} else if(it->second == "2") {
-
+			}else if(it->second == "2"){
+				if(ans.find("password") != ans.end())
+					argu_count++;
 				if(ans.find("nickname")!= ans.end())
 	        			argu_count++;
 				if(ans.find("sex") != ans.end())
 					argu_count++;
 				if(argu_count < 4) {
-					FCGI_printf("%d",FCGI_NET_PARAM_ERROR);
-				} else {
-					string table = "users";
-					bool flag = db->dbInsert(ans,table);
-					if(flag)
-						result = "success";
-					else 
-						detail = "网络错误!";
+					detail = "参数错误！";
+				}else{
+						username=ans["username"];
+						if(CheckUser(username)){
+							detail = "用户已经存在!";	
+						}else{
+
+							string table = "users";
+							ans.erase("type");
+							bool flag = db->dbInsert(ans,table);
+							if(flag)
+								result = "success";
+							else 
+								detail = "网络错误!";
+						}
 				}
 			}
 		}
-		
 		Json::Value root;
 		root["result"] = Json::Value(result);
 		if(strcmp(result.c_str(),"fail") == 0){
