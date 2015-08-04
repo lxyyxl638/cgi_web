@@ -7,7 +7,7 @@
 #include <time.h>
 #include <unordered_map>
 #include <fcgi_stdio.h>
-#include <ctemplate/template.h>
+//#include <ctemplate/template.h>
 #include "include/public.h"
 #include "include/database.h"
 #include "json/json.h"
@@ -72,17 +72,17 @@ int main() {
 		
 		} else if(strcmp(method,"GET")==0) {
 
-			//char* str = getenv("QUERY_STRING");
-	        	//string Param(str);
-	        	//ParseParam(Param,ans);
+			char* str = getenv("QUERY_STRING");
+	        	string Param(str);
+	        	ParseParam(Param,ans);
 
-	    		ctemplate::TemplateDictionary dict("signup");
-    			std::string output;
-    			ctemplate::ExpandTemplate("./dist/template/signup.tpl", ctemplate::DO_NOT_STRIP, &dict, &output);
+//	    		ctemplate::TemplateDictionary dict("signup");
+//    			std::string output;
+//    			ctemplate::ExpandTemplate("./dist/template/signup.tpl", ctemplate::DO_NOT_STRIP, &dict, &output);
 
-			FCGI_printf("Content-type: text/html\r\n" 
-				      "\r\n  %s",output.c_str());
-			continue;
+//			FCGI_printf("Content-type: text/html\r\n" 
+//				      "\r\n  %s",output.c_str());
+//			continue;
  		 }
 
 		string type;

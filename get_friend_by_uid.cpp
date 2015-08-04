@@ -9,7 +9,6 @@
 #include "include/database.h"
 #include "json/json.h"
 #include "include/session.h"
-#include <unistd.h>
 
 unordered_map<string,string>  ParseParam(string query_string)
 {
@@ -36,23 +35,19 @@ unordered_map<string,string>  ParseParam(string query_string)
 }
 int main() {
 	Database *db = Database::getInstance();
-	Session *session = Session::getInstance();	
-	
+	Session *session = Session::getInstance();
+
 	while (FCGI_Accept() >= 0) {
-		
 		session->sessionInit();
-		string result("fail");
-		string detail("");
 		Json::FastWriter fw;
 		Json::Value root;
-		vector<unordered_map<string,string>  >   query_result;
-		if(session->checkSession() == false)
-		{
+		string result("fail");
+		string detail("");
+		vector<unordered_map<string,string> >   query_result;
+		if(session->checkSession() == false){
 			detail = detail + "unlogin";
-		}
-		else
-		{
 
+		}else{
 			unordered_map<string,string> ans;
 			char * method = getenv("REQUEST_METHOD");
 			if ( strcmp(method,"POST") == 0) {
@@ -79,25 +74,22 @@ int main() {
 				ans= ParseParam(Param);
 			}
 			int argu_count = 0;
-			if(ans.find("username") != ans.end())
+			
+			if(ans.find("friend_id") != ans.end())
 				argu_count++;
 			if(argu_count < 1) {
 				detail = "参数错误！";
-
 			}
 			else
 			{
 				char query_buf[1024] = {0};
-				string username;
+				string friend_id;
 				unordered_map<string,string>::iterator it;
-
-				it = ans.find("username");
-				username = it->second;
-
-				snprintf(query_buf,sizeof(query_buf),"select user_id,username,nickname from users where username like '%s%%'  ",username.c_str());
+				it = ans.find("friend_id");
+				friend_id = it->second;
+				snprintf(query_buf,sizeof(query_buf),"select username,nickname,sex,birthday from teams  where user_id  =  %d  ",atoi(friend_id.c_str()));
 				string query(query_buf);
-
-				bool flag = db->dbQuery(query, query_result);
+				int flag = db->dbQuery(query,query_result);
 				if(flag ){
 					result = "success" ;
 
@@ -105,27 +97,27 @@ int main() {
 					detail = "用户名密码错误！";
 				}
 			} 
-			
 		}
 		root["result"] = Json::Value(result);
 		if(strcmp(result.c_str(),"success") == 0){
-			Json::Value user_list;
+			Json::Value friend_list;
 			for(size_t i = 0 ; i != query_result.size(); i++ ){
-				Json::Value user;
-				user["user_id"]= Json::Value(query_result[i]["user_id"]);
-				user["username"] = Json::Value(query_result[i]["username"]);
-				user["nickname"] = Json::Value(query_result[i]["nickname"]);	
-
-				root["user_list"].append(user);
+				root["username"] = Json::Value(query_result[i]["username"]);
+				root["nickname"] = Json::Value(query_result[i]["nickname"]);
+				root["sex"] = Json::Value(query_result[i]["sex"]);
+				root["birthday"] = Json::Value(query_result[i]["birthday"]);
 			}
 
 		}else{
 			root["detail"] = Json::Value(detail);
 		}
+		
 		string str = fw.write(root);
 		FCGI_printf("Content-type: application/json\r\n"
-			"\r\n");
-		FCGI_printf("%s",str.c_str());
+			"\r\n"
+			"%s<br/>",str.c_str());
+		
+		
 	}
 	return 0;
 }

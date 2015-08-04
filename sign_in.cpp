@@ -10,7 +10,7 @@
 #include "include/public.h"
 #include "include/session.h"
 #include "json/json.h"
-#include <ctemplate/template.h>
+//#include <ctemplate/template.h>
 #include <unistd.h>
 
 using namespace std;
@@ -62,17 +62,17 @@ int main() {
 		
 		} else if(strcmp(method,"GET")==0){
 
-			//char* str = getenv("QUERY_STRING");
-	        	//string Param(str);
-	        	//ParseParam(Param,ans);
-			ctemplate::TemplateDictionary dict("login");
-			std::string output;
-	                ctemplate::ExpandTemplate("./dist/template/login.tpl", ctemplate::DO_NOT_STRIP, &dict, &output);
-			
-			FCGI_printf("Content-type : text/html\r\n"
-			"\r\n"
-			"%s",output.c_str());
-			continue;
+			char* str = getenv("QUERY_STRING");
+	        	string Param(str);
+	        	ParseParam(Param,ans);
+//			ctemplate::TemplateDictionary dict("login");
+//			std::string output;
+//	                ctemplate::ExpandTemplate("./dist/template/login.tpl", ctemplate::DO_NOT_STRIP, &dict, &output);
+//			
+//			FCGI_printf("Content-type : text/html\r\n"
+//			"\r\n"
+//			"%s",output.c_str());
+//			continue;
  		 }
 
  		 int argu_count = 0;
@@ -121,6 +121,7 @@ int main() {
 	     			 vector<unordered_map<string,string> > info;
 	     			 db->dbQuery(query,info);
 			
+				session->setValue("user_id",info[0]["user_id"]);
 				session->setValue("username",info[0]["username"]);
 				session->setValue("nickname",info[0]["nickname"]);
 				session->setValue("sex",info[0]["sex"]);
