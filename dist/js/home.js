@@ -74,15 +74,49 @@ $(function(){
 					str = "<div class=\"panel panel-default\">\
           						<div class=\"panel-heading\">\
             						<h4 class=\"panel-title\">\
-              							<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=#" + data["team_list"][x]["team_id"] + data["team_list"][x]["team_name"]+">" + data["team_list"][x]["team_name"] + "</a>\
+              							<a data-toggle=\"collapse\" data-parent=\"#myteam\" data_id = " + data["team_list"][x]["team_id"] + "data_name = " + data["team_list"][x]["team_name"] + "href=#" + data["team_list"][x]["team_id"] + data["team_list"][x]["team_name"]+">" + data["team_list"][x]["team_name"] + "</a>\
             						</h4>\
           						</div>\
           					<div id=" + data["team_list"][x]["team_id"] + data["team_list"][x]["team_name"] +" class=\"panel-collapse collapse\">\
+          					              <div class=\"panel-body\">
+          					              	<ul class=\"list-group\">
+          					              	</ul>
+          					              </div>
           					</div>";
 					$("#myteam").append(str);
 				}
 			}
 		});
 	});
+	
+
+	$("[data-parent=#myteam]").delegate("a","click",function() {
+		$.post(Base_url+"get_friends_by_team",{
+			team_id : $(this).attr("data_id");
+		},function(data){
+			if (data["result"] == "success") {
+				tmp = $(this).attr("data_id") + $(this).attr("data_name");
+				$("#" + tmp + ".panel-body .list-group").empty();
+
+				for (x in data["friend_list"]) {
+					if (data["friend_list"][x]["online"] == "1") {
+						str =  "<li class=\"list-group-item\" friend_uid=" + data["friend_list"][x]["friend_uid"] + ">
+                        		<span class=\"badge\">14</span>" + data["friend_list"][x]["nickname"] + "</li>";
+                        $("#" + tmp + ".panel-body .list-group").append(str);             
+                    }
+                 }
+
+                 for (x in data["friend_list"]) {
+					if (data["friend_list"][x]["online"] == "0") {
+						str =  "<li class=\"list-group-item\" friend_uid=" + data["friend_list"][x]["friend_uid"] + ">
+                        		<span class=\"badge\">14</span>" + data["friend_list"][x]["nickname"] + "</li>";
+                        $("#" + tmp + ".panel-body .list-group").append(str);             
+                    }
+                 }
+
+			}
+		})
+	})
+
 });
 
