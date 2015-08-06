@@ -45,9 +45,9 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">最近会话 <span class="sr-only">(current)</span></a></li>
-        <li><a href="#" id="nav_team">我的好友</a></li>
+      <ul class="nav navbar-nav nav-tabs">
+        <li class="active"><a href="#latest_chat" data-toggle="tab">最近会话 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#myteam" id="nav_team" data-toggle="tab">我的好友</a></li>
       </ul>
 
       <form class="navbar-form navbar-left" role="search">
@@ -71,7 +71,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-      <div class="row">
+
+    <div id="latest_chat" class="row"> 
         <div class="col-md-6"> 
           <button id="active">Buttom</button>
           <ul class="list-group" id="table">
@@ -81,42 +82,23 @@
 
         <div id="chat_window" class="col-md-6">
         </div>
-
-      </div>
-
-      <div id="myteam" class="panel-group col-md-6" >
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                  第一小组
-              </a>
-            </h4>
-          </div>
-          <div id="collapseOne" class="panel-collapse collapse">
-              <div class="panel-body">
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                        <span class="badge">14</span>
-                            小明
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">14</span>
-                            小红
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge">14</span>
-                            Cras justo odio
-                    </li>
-
-                  </ul>
-              </div>
-          </div>
-        </div>
-      </div>
-
-
     </div>
+
+    <div id="myteam" class="panel-group col-md-6" >
+        
+    </div>
+    
+
+    <div id="search_friend" class="row">
+      <div class="list-group col-md-6">
+         <button type="button" class="list-group-item">Cras justo odio</button>
+        <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
+  <button type="button" class="list-group-item">Morbi leo risus</button>
+  <button type="button" class="list-group-item">Porta ac consectetur ac</button>
+  <button type="button" class="list-group-item">Vestibulum at eros</button>
+</div>
+    </div>
+  </div>
     <footer class="footer">
       <div class="row footer-bottom">
         <ul class="list-inline text-center">
