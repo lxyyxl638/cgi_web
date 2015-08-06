@@ -9,5 +9,8 @@ $spawn -a 127.0.0.1 -p 8090 -f /usr/local/nginx/cgibin/home
 $spawn -a 127.0.0.1 -p 8091 -f /usr/local/nginx/cgibin/get_all_friend_team
 
 $spawn -a 127.0.0.1 -p 8092 -f /usr/local/nginx/cgibin/get_friends_by_team
+
+$spawn -a 127.0.0.1 -p 8093 -f /usr/local/nginx/cgibin/query_users
+
 exit 0;
 
