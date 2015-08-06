@@ -278,8 +278,8 @@ function addmsg(euid, name, content, is) {
 		$("#" + msgs[content]).removeClass("sent");
 	}
 
-	$("div[name="+ uid +"] [name=chat]").append(html);
-	$("div[name="+ uid +"] [name=recv_chat_window]").scrollTop($("div[name="+ uid +"] [name=recv_chat_window]")[0].scrollHeight);
+	$("div[name="+ current_chat_uid +"] [name=chat]").append(html);
+	$("div[name="+ current_chat_uid +"] [name=recv_chat_window]").scrollTop($("div[name="+ current_chat_uid +"] [name=recv_chat_window]")[0].scrollHeight);
 }
 
 function join() {
@@ -362,9 +362,9 @@ $(function () {
 	/*
 		设置channel和用户uid
 	*/
-	nickname = 1;
-	channel = 1;
-	uid = 1;
+	nickname = 2;
+	channel = 2;
+	uid = 2;
 	current_chat_uid = uid;
 
 	comet = new iComet({

@@ -113,14 +113,14 @@ int main() {
 				*/
 				
 				string cookie = session->getCookie();
-				FCGI_printf("Set-Cookie:%s;PATH=/",cookie.c_str());
+				FCGI_printf("Set-Cookie:%s;PATH=/\n",cookie.c_str());
 	      
 	     			 /*
 	     			 	set session
 	     			 */
 	     			 vector<unordered_map<string,string> > info;
 	     			 db->dbQuery(query,info);
-			
+				session->setValue("user_id",info[0]["user_id"]);
 				session->setValue("username",info[0]["username"]);
 				session->setValue("nickname",info[0]["nickname"]);
 				session->setValue("sex",info[0]["sex"]);
