@@ -64,35 +64,24 @@ $(function(){
 			$("#table").append("<li class=\"list-group-item\" id="+ friend[i]['uid'] + ">" + friend[i]['name'] + "</li>");
 		}
 	});
-	// 	var username = $("#username").val();
-	// 	var password = $("#password").val();
-		
-	// 	if  (username == "" || (!isValidUsername(username))) {
+	
 
-	// 		message = "请输入6——16位仅包含字母，数字和下划线的用户名";
-
-	// 	} else if (password == "" || (!isValidPassword(password))) {
-
-	// 		message = "请输入6——16位密码";
-	// 	} else {
-	// 			$.post(Base_url + "sign_in",{
- //                		'username':$("#username").val(),
- //                		'password':$("#password").val()
- //              			},function(data){
- //              			if ($.trim(data['result'])=="fail")
- //              			{
-	// 				message = $.trim(data["detail"]);
-	// 				$("#result").html(message);
- //              			}
- //                		else
- //                		{
- //                			location.href = Base_url + "home";
- //                		}
- //          		})
-	// 	}
-
- //                if (message.length > 0) $("#result").html(message);
-	// });
-
+	$("#nav_team").click(function(){
+		$.get(Base_url + "get_all_friend_team",function(data,status){
+			if (data["result"] == "success" && data["team_list"]) {
+				for (x in data["team_list"]) {
+					str = "<div class=\"panel panel-default\">\
+          						<div class=\"panel-heading\">\
+            						<h4 class=\"panel-title\">\
+              							<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=#" + x["team_id"] + x["team_name"]+">" + x["team_id"] + x["team_name"] + "</a>\
+            						</h4>\
+          						</div>\
+          					<div id=" + x["team_id"] + x["team_name"] +" class=\"panel-collapse collapse\">\
+          					</div>";
+					$("#myteam").append(str);
+				}
+			}
+		});
+	});
 });
 

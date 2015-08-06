@@ -47,7 +47,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">最近会话 <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">我的好友</a></li>
+        <li><a href="#" id="nav_team">我的好友</a></li>
       </ul>
 
       <form class="navbar-form navbar-left" role="search">
@@ -80,15 +80,40 @@
         
 
         <div id="chat_window" class="col-md-6">
-
-         
-
         </div>
 
       </div>
 
+      <div id="myteam" class="panel-group col-md-6" >
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  第一小组
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse">
+              <div class="panel-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">14</span>
+                            小明
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">14</span>
+                            小红
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">14</span>
+                            Cras justo odio
+                    </li>
 
-
+                  </ul>
+              </div>
+          </div>
+        </div>
+      </div>
 
 
     </div>
