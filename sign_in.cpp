@@ -120,6 +120,7 @@ int main() {
 	     			 */
 	     			 vector<unordered_map<string,string> > info;
 	     			 db->dbQuery(query,info);
+				session->setOnline(atoi(info[0]["user_id"].c_str()));
 				session->setValue("user_id",info[0]["user_id"]);
 				session->setValue("username",info[0]["username"]);
 				session->setValue("nickname",info[0]["nickname"]);

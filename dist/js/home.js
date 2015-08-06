@@ -69,14 +69,15 @@ $(function(){
 	$("#nav_team").click(function(){
 		$.get(Base_url + "get_all_friend_team",function(data,status){
 			if (data["result"] == "success" && data["team_list"]) {
+				$("#myteam").empty();
 				for (x in data["team_list"]) {
 					str = "<div class=\"panel panel-default\">\
           						<div class=\"panel-heading\">\
             						<h4 class=\"panel-title\">\
-              							<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=#" + x["team_id"] + x["team_name"]+">" + x["team_id"] + x["team_name"] + "</a>\
+              							<a data-toggle=\"collapse\" data-parent=\"#accordion\" href=#" + data["team_list"][x]["team_id"] + data["team_list"][x]["team_name"]+">" + data["team_list"][x]["team_name"] + "</a>\
             						</h4>\
           						</div>\
-          					<div id=" + x["team_id"] + x["team_name"] +" class=\"panel-collapse collapse\">\
+          					<div id=" + data["team_list"][x]["team_id"] + data["team_list"][x]["team_name"] +" class=\"panel-collapse collapse\">\
           					</div>";
 					$("#myteam").append(str);
 				}

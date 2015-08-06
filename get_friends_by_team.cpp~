@@ -67,7 +67,8 @@ int main() {
 				team_id = it->second;
 
 				user_id = session->getValue("user_id");
-				snprintf(query_buf,sizeof(query_buf),"select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = %d and team_id = %d",atoi(user_id.c_str()),atoi(team_id.c_str()));
+
+				snprintf(query_buf,sizeof(query_buf),"select friend_id,friend_name,friend_nickname from friendship  where user_id  =  %d  and team_id = %d ",atoi(user_id.c_str()),atoi(team_id.c_str()));
 				string query(query_buf);
 				int flag = db->dbQuery(query,query_result);
 				if(flag ){
@@ -84,10 +85,8 @@ int main() {
 			for(size_t i = 0 ; i != query_result.size(); i++ ){
 				Json::Value friend_info;
 				friend_info["friend_id"] = Json::Value(query_result[i]["friend_id"]);
-				friend_info["friend_name"] = Json::Value(query_result[i]["username"]);
-				friend_info["friend_nickname"] = Json::Value(query_result[i]["nickname"]);
-				friend_info["friend_sex"] = Json::Value(query_result[i]["sex"]);
-				friend_info["online"] = Json::Value(session->getOnline(atoi(query_result[i]["friend_id"].c_str()))?"1":"0");
+				friend_info["friend_name"] = Json::Value(query_result[i]["friend_name"]);
+				friend_info["friend_nickname"] = Json::Value(query_result[i]["friend_nickname"]);
 				root["friend_list"].append(friend_info);
 			}
 
@@ -97,7 +96,7 @@ int main() {
 		string str = fw.write(root);
 		FCGI_printf("Content-type: application/json\r\n"
 			"\r\n"
-			"%s",str.c_str());
+			"%s<br/>",str.c_str());
 		
 		
 	}

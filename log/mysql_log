@@ -1,0 +1,46 @@
+select * from users where username = 'lxyyxl638' and password = '123456'  Thu Aug  6 01:58:29 2015
+
+update users set state = '1' where username = 'lxyyxl638' and password = '123456'  Thu Aug  6 01:58:29 2015
+
+select * from users where username = 'lxyyxl638' and password = '123456'  Thu Aug  6 01:58:29 2015
+
+select team_id,team_name from teams  where user_id  =  1  Thu Aug  6 01:58:29 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where user_id = 1 and team_id = 1 Thu Aug  6 01:58:52 2015
+
+Column 'user_id' in where clause is ambiguous Thu Aug  6 01:58:52 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:00:47 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:01:43 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:01:43 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:01:43 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:01:43 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:01:43 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Thu Aug  6 02:06:02 2015
+

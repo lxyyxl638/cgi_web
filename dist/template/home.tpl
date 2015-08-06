@@ -7,10 +7,12 @@
     <meta name="description" content="光彪楼健身房">
     <meta name="author" content="Carson">
 
-    <title>Web_chat</title>
+    <title>WebChat</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='../dist/css/chat.css' type='text/css' media='all' />
+
     <!-- <style type="text/css">
      /* body{
             background:url('../img/home.jpg');
@@ -25,54 +27,96 @@
   <body>
     <!-- Carousel
     ================================================== -->
-    <div class="container">
-      <div class="row clearfix">
-        <div class="col-md-12 column">
-          <nav class="navbar navbar-default navbar-inverse" role="navigation">
-            <div class="navbar-header">
-               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> 
-               <a class="navbar-brand" href="#">Web_chat</a>
-            </div>          
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav">
-                <li>
-                   <a id="nav_scheme" href="nav_scheme">最近聊天</a>
-                </li>
-                <li>
-                   <a id="nav_view" href="nav_view">好友分组</a>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">我的通知<strong class="caret"></strong></a>
-                    <ul class="dropdown-menu">
-                      <li>
-                         <a href="nav_directory">通讯录</a>
-                      </li>
-                      <li>
-                         <a href="#">工资表</a>
-                      </li>
-                    </ul>
-                 </li>
-              </ul>
+    <div class="container-fluid">
+      
 
-              <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人中心<strong class="caret"></strong></a>
-                   <ul class="dropdown-menu">
-                     <li>
-                        <a href="profile">修改资料</a>
-                     </li>
-                     <li>
-                        <a href="logout">注销登陆</a>
-                     </li>
-                   </ul>
-                </li>
-              </ul>         
-            </div>     
-          </nav>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">WebChat</a>
+       </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">最近会话 <span class="sr-only">(current)</span></a></li>
+        <li><a href="#" id="nav_team">我的好友</a></li>
+      </ul>
+
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="添加好友">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">修改资料</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">退出</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+      <div class="row">
+        <div class="col-md-6"> 
+          <button id="active">Buttom</button>
+          <ul class="list-group" id="table">
+          </ul>
+        </div>
+        
+
+        <div id="chat_window" class="col-md-6">
+        </div>
+
+      </div>
+
+      <div id="myteam" class="panel-group col-md-6" >
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  第一小组
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse">
+              <div class="panel-body">
+                  <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="badge">14</span>
+                            小明
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">14</span>
+                            小红
+                    </li>
+                    <li class="list-group-item">
+                        <span class="badge">14</span>
+                            Cras justo odio
+                    </li>
+
+                  </ul>
+              </div>
+          </div>
         </div>
       </div>
 
 
+    </div>
     <footer class="footer">
       <div class="row footer-bottom">
         <ul class="list-inline text-center">
@@ -84,8 +128,11 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
-    <script src="./dist/js/jquery-2.1.1.min.js"></script>
-    <script src="./dist/js/bootstrap.min.js"></script>
-    <script src="./dist/js/home.js"></script>
+    <script src="../dist/js/jquery-2.1.1.min.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/home.js"></script>
+    <script src="../dist/js/json2.js"></script>
+    <script src="../dist/js/icomet.js"></script>
+    <script src="../dist/js/chat.js"></script>
   </body>
 </html>

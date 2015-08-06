@@ -5,8 +5,15 @@ Database * Database::instance = 0;
 
 Database::Database() {
 	
+
+	fd = open("/usr/local/nginx/cgibin/log/mysql_log", O_WRONLY|O_CREAT|O_APPEND,0666);  
+	
+	if (fd == -1) {  
+	}  
+
 	connection = mysql_init(NULL);
-			
+	
+
 	if (connection == NULL) {
 		finish_with_error();
 	}
@@ -15,8 +22,6 @@ Database::Database() {
 		mysql_close(connection);			
 	}
 	mysql_query(connection,"SET NAMES UTF8");
-	log_file = fopen("/usr/local/nginx/cgibin/logs","a");
-	if (log_file == 0) fprintf(stderr,"WTF");
 	t = time(NULL);
 	
 }
@@ -24,14 +29,24 @@ Database::Database() {
 Database::~Database() {
 
 	mysql_close(connection);
-	fclose(log_file);	
+	close(fd);	
 }	
 
 
 void Database::finish_with_error() {
 		
-	//fprintf(log_file,"%s %s\n",time,mysql_error(connection));	
-	fprintf(log_file,"%s %s\n",mysql_error(connection),ctime(&t));	
+	char buf[512];
+	memset(buf,0,sizeof(buf));
+	snprintf(buf,sizeof(buf),"%s %s\n",mysql_error(connection),ctime(&t));
+	write(fd,buf,strlen(buf));
+}
+
+void Database::addLog(string str) {
+
+	char buf[512];
+	memset(buf,0,sizeof(buf));
+	snprintf(buf,sizeof(buf),"%s %s\n",str.c_str(),ctime(&t));
+	write(fd,buf,strlen(buf));
 }
 
 Database* Database::getInstance() {
@@ -59,7 +74,7 @@ bool Database::dbInsert(unordered_map<string,string> & data,string & table) {
 
 	query = query + val_str + ")";
 
-	fprintf(log_file,"%s %s",query.c_str(),ctime(&t));
+	addLog(query);
 
 	if (mysql_query(connection,query.c_str())) {
 		finish_with_error();
@@ -75,7 +90,8 @@ bool Database::dbCreateTable(string & query) {
 	if (query.empty()) return true;
 	
 	query = "CREATE TABLE " + query;
-	fprintf(log_file,"%s %s",query.c_str(),ctime(&t));
+	
+	addLog(query);
 	if (mysql_query(connection, query.c_str())) {      
 	      finish_with_error();
 		  return false;
@@ -87,8 +103,7 @@ int Database::dbQuery(string & query) {
 	
 	if (query.empty()) return true;
 	
-
-	fprintf(log_file,"%s %s",query.c_str(),ctime(&t));
+	addLog(query);
 	if (mysql_query(connection, query.c_str())) {      
 	      finish_with_error();
 		  return 0;
@@ -106,8 +121,7 @@ bool Database::dbQuery(string & query,vector<vector<string> > & result) {
 	if (query.empty()) return true;
 	result.clear();
 	
-
-	fprintf(log_file,"%s %s",query.c_str(),ctime(&t));
+	addLog(query);
 	if (mysql_query(connection, query.c_str())) {      
 	      finish_with_error();
 		  return false;
@@ -143,7 +157,7 @@ bool Database::dbQuery(string & query,vector<unordered_map<string,string> > & re
 	if (query.empty()) return true;
 	result.clear();
 	
-	fprintf(log_file,"%s %s",query.c_str(),ctime(&t));
+	addLog(query);
 	if (mysql_query(connection, query.c_str())) {      
 	      finish_with_error();
 		return false;
