@@ -78,10 +78,10 @@ $(function(){
             						</h4>\
           						</div>\
           					<div id=" + data["team_list"][x]["team_id"] + data["team_list"][x]["team_name"] + "class=\"panel-collapse collapse\">\
-          					              <div class=\"panel-body\">
-          					              	<ul class=\"list-group\">
-          					              	</ul>
-          					              </div>
+          					              <div class=\"panel-body\">\
+          					              	<ul class=\"list-group\">\
+          					              	</ul>\
+          					              </div>\
           					</div>";
 					$("#myteam").append(str);
 				}
@@ -96,21 +96,21 @@ $(function(){
 		},function(data){
 			if (data["result"] == "success") {
 				tmp = $(this).attr("data_id") + $(this).attr("data_name");
-				$("#" + tmp + ".panel-body .list-group").empty();
+				$("#" + tmp + " .panel-body .list-group").empty();
 
 				for (x in data["friend_list"]) {
 					if (data["friend_list"][x]["online"] == "1") {
-						str =  "<button class=\"list-group-item list-group-item-success\" friend_uid=" + data["friend_list"][x]["friend_uid"] + " >
+						str =  "<button class=\"list-group-item list-group-item-success\" friend_uid=" + data["friend_list"][x]["friend_uid"] + " >\
                         		<span class=\"badge\">14</span>" + data["friend_list"][x]["nickname"] + "</button>";
-                        $("#" + tmp + ".panel-body .list-group").append(str);             
+                        $("#" + tmp + " .panel-body .list-group").append(str);             
                     }
                  }
 
                  for (x in data["friend_list"]) {
 					if (data["friend_list"][x]["online"] == "0") {
-						str =  "<button class=\"list-group-item\" friend_uid=" + data["friend_list"][x]["friend_uid"] + ">
+						str =  "<button class=\"list-group-item\" friend_uid=" + data["friend_list"][x]["friend_uid"] + ">\
                         		<span class=\"badge\">14</span>" + data["friend_list"][x]["nickname"] + "</button>";
-                        $("#" + tmp + ".panel-body .list-group").append(str);             
+                        $("#" + tmp + " .panel-body .list-group").append(str);             
                     }
                  }
 
