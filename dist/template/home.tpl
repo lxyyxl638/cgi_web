@@ -10,8 +10,8 @@
     <title>WebChat</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link rel='stylesheet' href='../css/chat.css' type='text/css' media='all' />
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='../dist/css/chat.css' type='text/css' media='all' />
 
     <!-- <style type="text/css">
      /* body{
@@ -150,11 +150,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
 
 
-    <script src="../js/jquery-2.1.1.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/home.js"></script>
-    <script src="../js/json2.js"></script>
-    <script src="../js/icomet.js"></script>
-    <script src="../js/chat.js"></script>
+    <script src="../dist/js/jquery-2.1.1.min.js"></script>
+    <script src="../dist/js/bootstrap.min.js"></script>
+    <script src="../dist/js/home.js"></script>
+    <script src="../dist/js/json2.js"></script>
+    <script src="../dist/js/icomet.js"></script>
+    <script src="../dist/js/chat.js"></script>
   </body>
 </html>
