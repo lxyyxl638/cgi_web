@@ -33,6 +33,7 @@ unordered_map<string,string>  ParseParam(string query_string)
 	
 	return Param;
 }
+
 string GetCurrentTime()
 {
 	time_t now_time;
@@ -82,68 +83,25 @@ int main() {
 				string Param(str);
 				ans= ParseParam(Param);
 			}
-			int argu_count = 0;
-			if(ans.find("request_uid") != ans.end())
-				argu_count++;
-			if(ans.find("operation_type") != ans.end())
-				argu_count++;
-			if(argu_count < 2) {
-				detail = "参数错误！";
+			
+			string send_id,rece_id,message,send_time,state;
+			send_id = session->getValue("user_id");
+			rece_id = ans["rece_id"];
+			message = ans["message"];
+			state = ans["state"];
+			//send_time =  ans["send_time"];
+			int flag; 
+			char query_buf[1024]={0};
+			snprintf(query_buf,sizeof(query_buf),"insert  p2p_messages ( send_id,rece_id,message,state ) values ( %d,%d,'%s',%d)",atoi(send_id.c_str()),atoi(rece_id.c_str()),message.c_str(),atoi(state.c_str()));
+			string query(query_buf);
+			flag = db->dbQuery(query);
+			if(flag > 0){
+				result = "success";
+			}else{
+				detail = "数据库操作失败";
 			}
-			else
-			{
-				char update_buf[1024] = {0};
-				char insert_buf[1024] = {0};
-				string request_uid,response_uid,team_id,operation_type;
-				unordered_map<string,string>::iterator it;
-				it = ans.find("request_uid");
-				request_uid = it->second;
-				it = ans.find("operation_type");
-				operation_type = it->second;
 
-				response_uid = session->getValue("user_id");
-
-				if(strcmp(operation_type.c_str(),"refused")==0){
-					snprintf(update_buf,sizeof(update_buf),"update notification set handling_time = '%s' where send_id = %d and rece_id = %d ",GetCurrentTime().c_str(),atoi(request_uid.c_str()),atoi(response_uid.c_str()));
-					string update(update_buf);
-					int rows = db->dbQuery(update);
-					if(rows){
-						result = "success" ;
-
-					}else{
-						detail = "数据库操作错误！";
-					}
-				}else if(strcmp(operation_type.c_str(),"accept")==0){
-					if(ans.find("team_id") == ans.end()){
-						detail = "参数错误！";
-					}else{
-						char buffer[1024]={0};
-						snprintf(buffer,sizeof(buffer),"select * from friendship where user_id = %d and friend_id = %d ", atoi(response_uid.c_str()),atoi(request_uid.c_str()) );
-						string query_rows(buffer);
-						int num = db->dbQuery(query_rows);
-						if(num > 0){
-							detail = "已经是好友关系!";
-						}
-						else{
-
-							it = ans.find("team_id");
-							team_id = it->second;
-							snprintf(update_buf,sizeof(update_buf),"update notification set handling_time = '%s', state = 1  where send_id = %d and rece_id = %d ",GetCurrentTime().c_str(),atoi(request_uid.c_str()),atoi(response_uid.c_str())); 
-							snprintf(insert_buf,sizeof(insert_buf),"insert friendship (user_id,friend_id,team_id) values( %d , %d, %d)",atoi(response_uid.c_str()),atoi(request_uid.c_str()),atoi(team_id.c_str()));
-							string update(update_buf);
-							string insert(insert_buf);
-							if(db->dbQuery(update) && db->dbQuery(insert)){
-								result = "success";
-							}else{
-								detail = "数据库操作错误！！";
-							}
-						}
-						
-					}	
-				}
-			} 
 		}
-
 		root["result"] = Json::Value(result);
 		if(strcmp(result.c_str(),"fail") == 0){
 			root["detail"] = Json::Value(detail);

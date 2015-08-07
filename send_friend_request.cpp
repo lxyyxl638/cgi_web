@@ -9,30 +9,7 @@
 #include "include/database.h"
 #include "json/json.h"
 #include "include/session.h"
-
-unordered_map<string,string>  ParseParam(string query_string)
-{
-	unordered_map<string,string> Param;
-	size_t x;
-	for( x = 0; query_string.find('&',x) != query_string.npos;)
-	{
-		size_t end =  query_string.find('&',x);
-		size_t start  = query_string.find('=',x);
-		string argu =  query_string.substr(x,start - x);
-		string key = query_string.substr(start+1,end-start-1);
-		pair<string,string>p = make_pair(argu,key);
-		
-		Param.insert(p);
-		x = end+1;
-	}
-	size_t len = query_string.length();
-	size_t s = query_string.find('=',x);
-	string arg = query_string.substr(x,s-x);
-	string key = query_string.substr(s+1,len-s-1);
-	Param.insert(make_pair(arg,key));
-	
-	return Param;
-}
+#include "include/public.h"
 int main() {
 	Database *db = Database::getInstance();
 	Session *session = Session::getInstance();	
@@ -67,12 +44,12 @@ int main() {
 					}
 					post_val = post_val + (char) ch ;
 				}
-				ans= ParseParam(post_val);
+				ParseParam(post_val,ans);
 
 			} else if(strcmp(method,"GET")==0){
 				char* str = getenv("QUERY_STRING");
 				string Param(str);
-				ans= ParseParam(Param);
+				ParseParam(Param,ans);
 			}
 			int argu_count = 0;
 			if(ans.find("response_uid") != ans.end()){
@@ -87,6 +64,7 @@ int main() {
 			else
 			{
 				char query_buf[1024] = {0};
+				char check_buf[1024] = {0};
 				string user_id,response_uid,message;
 				unordered_map<string,string>::iterator it;
 				it = ans.find("response_uid");
@@ -95,15 +73,21 @@ int main() {
 				message = it->second;
 
 				user_id = session->getValue("user_id");
+				snprintf(check_buf,sizeof(check_buf),"select * from notification where send_id = %d and rece_id = %d",atoi(user_id.c_str()),atoi(response_uid.c_str()));
+				string check(check_buf);
+				int num = db->dbQuery(check);
+				if(num == 0){
+					snprintf(query_buf,sizeof(query_buf),"insert  notification ( send_id,rece_id,additional_message ) values ( %d,%d,'%s')",atoi(user_id.c_str()),atoi(response_uid.c_str()),message.c_str());
+					string query(query_buf);
+					int rows = db->dbQuery(query);
+					if(rows){
+						result = "success" ;
 
-				snprintf(query_buf,sizeof(query_buf),"insert  notification ( send_id,rece_id,additional_message ) values ( %d,%d,'%s')",atoi(user_id.c_str()),atoi(response_uid.c_str()),message.c_str());
-				string query(query_buf);
-				int rows = db->dbQuery(query);
-				if(rows){
-					result = "success" ;
-
+					}else{
+						detail = "数据库操作错误!";
+					}
 				}else{
-					detail = "数据库操作错误!";
+					result = "success";
 				}
 			}
 			
