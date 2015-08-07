@@ -9,30 +9,8 @@
 #include "include/database.h"
 #include "json/json.h"
 #include "include/session.h"
+#include "include/public.h"
 
-unordered_map<string,string>  ParseParam(string query_string)
-{
-	unordered_map<string,string> Param;
-	size_t x;
-	for( x = 0; query_string.find('&',x) != query_string.npos;)
-	{
-		size_t end =  query_string.find('&',x);
-		size_t start  = query_string.find('=',x);
-		string argu =  query_string.substr(x,start - x);
-		string key = query_string.substr(start+1,end-start-1);
-		pair<string,string>p = make_pair(argu,key);
-		
-		Param.insert(p);
-		x = end+1;
-	}
-	size_t len = query_string.length();
-	size_t s = query_string.find('=',x);
-	string arg = query_string.substr(x,s-x);
-	string key = query_string.substr(s+1,len-s-1);
-	Param.insert(make_pair(arg,key));
-	
-	return Param;
-}
 int main() {
 	Database *db = Database::getInstance();
 	Session *session = Session::getInstance();
@@ -66,12 +44,12 @@ int main() {
 					}
 					post_val = post_val + (char) ch ;
 				}
-				ans= ParseParam(post_val);
+				ParseParam(post_val,ans);
 
 			} else if(strcmp(method,"GET")==0){
 				char* str = getenv("QUERY_STRING");
 				string Param(str);
-				ans= ParseParam(Param);
+				ParseParam(Param,ans);
 			}
 			int argu_count = 0;
 
@@ -89,8 +67,7 @@ int main() {
 				team_id = it->second;
 
 				user_id = session->getValue("user_id");
-
-				snprintf(query_buf,sizeof(query_buf),"select friend_id,friend_name,friend_nickname from friendship  where user_id  =  %d  and team_id = %d ",atoi(user_id.c_str()),atoi(team_id.c_str()));
+				snprintf(query_buf,sizeof(query_buf),"select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = %d and team_id = %d",atoi(user_id.c_str()),atoi(team_id.c_str()));
 				string query(query_buf);
 				int flag = db->dbQuery(query,query_result);
 				if(flag ){
@@ -107,8 +84,10 @@ int main() {
 			for(size_t i = 0 ; i != query_result.size(); i++ ){
 				Json::Value friend_info;
 				friend_info["friend_id"] = Json::Value(query_result[i]["friend_id"]);
-				friend_info["friend_name"] = Json::Value(query_result[i]["friend_name"]);
-				friend_info["friend_nickname"] = Json::Value(query_result[i]["friend_nickname"]);
+				friend_info["friend_name"] = Json::Value(query_result[i]["username"]);
+				friend_info["friend_nickname"] = Json::Value(query_result[i]["nickname"]);
+				friend_info["friend_sex"] = Json::Value(query_result[i]["sex"]);
+				friend_info["online"] = Json::Value(session->getOnline(atoi(query_result[i]["friend_id"].c_str()))?"1":"0");
 				root["friend_list"].append(friend_info);
 			}
 
@@ -116,9 +95,9 @@ int main() {
 			root["detail"] = Json::Value(detail);
 		}
 		string str = fw.write(root);
-		FCGI_printf("Content-type: text/html\r\n"
+		FCGI_printf("Content-type: application/json\r\n"
 			"\r\n"
-			"%s<br/>",str.c_str());
+			"%s",str.c_str());
 		
 		
 	}

@@ -6,6 +6,11 @@
 #include <mysql/mysql.h>
 #include <ctime>
 #include <vector>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+
 using namespace std;
 
 class Database {  
@@ -14,7 +19,8 @@ class Database {
 	MYSQL *connection;
 	Database(); 
 	void finish_with_error();
-	FILE * log_file;
+	void addLog(string str);
+	int fd;
 	time_t t;
   public:
 	~Database();

@@ -165,6 +165,28 @@ bool Session::getAllValue(unordered_map<string,string> & result) {
 	freeReplyObject(reply);
 	return true;
 }
+
+
+bool Session::setOnline(int user_id) {
+
+
+	reply = (redisReply *) redisCommand(connection,"SET online:%d 1",user_id);
+	addLog();
+	freeReplyObject(reply);
+	return true;
+}
+
+bool Session::getOnline(int user_id) {
+
+	bool result;
+	reply = (redisReply *) redisCommand(connection,"EXISTS online:%d",user_id);
+	addLog();
+	if (reply->integer == 0) result = false;
+	else result = true;
+
+	freeReplyObject(reply);
+	return result;
+}
 void Session::destroySession() {
 	
 	string cookie = getCookie();

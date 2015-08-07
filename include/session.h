@@ -34,6 +34,8 @@ class Session {
 	bool setValue(string key,string value);
 	bool setValue(string key,int value);
 	bool getAllValue(unordered_map<string,string> & result);
+	bool setOnline(int user_id);
+	bool getOnline(int user_id);
 	void destroySession();
 };
 #endif

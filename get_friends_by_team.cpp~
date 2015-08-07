@@ -14,21 +14,18 @@
 int main() {
 	Database *db = Database::getInstance();
 	Session *session = Session::getInstance();
+
 	while (FCGI_Accept() >= 0) {
-		session->sessionInit();
-
-
-		Json::FastWriter fw;
+		Json::FastWriter fw; 
 		Json::Value root;
 		string result("fail");
 		string detail("");
+		session->sessionInit();
 		vector<unordered_map<string,string> >   query_result;
-		
 		if(session->checkSession() == false){
 			detail = detail + "unlogin";
 
 		}else{
-
 			unordered_map<string,string> ans;
 			char * method = getenv("REQUEST_METHOD");
 			if ( strcmp(method,"POST") == 0) {
@@ -55,44 +52,53 @@ int main() {
 				ParseParam(Param,ans);
 			}
 			int argu_count = 0;
-			
-			
-			char query_buf[1024] = {0};
-			string user_id;
-			
-			user_id = session->getValue("user_id");
 
-			snprintf(query_buf,sizeof(query_buf),"select team_id,team_name from teams  where user_id  =  %d ",atoi(user_id.c_str()));
-			string query(query_buf);
-			int flag = db->dbQuery(query,query_result);
-				
-			if(flag ){
-				result = "success" ;
+			if(ans.find("team_id") != ans.end())
+				argu_count++;
+			if(argu_count < 1) {
+				detail = "参数错误！";
+			}
+			else
+			{
+				char query_buf[1024] = {0};
+				string user_id,team_id;
+				unordered_map<string,string>::iterator it;
+				it = ans.find("team_id");
+				team_id = it->second;
 
-			}else{
-				detail = "数据库操作错误!!";
+				user_id = session->getValue("user_id");
+
+				snprintf(query_buf,sizeof(query_buf),"select friend_id,friend_name,friend_nickname from friendship  where user_id  =  %d  and team_id = %d ",atoi(user_id.c_str()),atoi(team_id.c_str()));
+				string query(query_buf);
+				int flag = db->dbQuery(query,query_result);
+				if(flag ){
+					result = "success" ;
+
+				}else{
+					detail = "用户名密码错误！";
+				}
 			}
 		}
-	
 		root["result"] = Json::Value(result);
 		if(strcmp(result.c_str(),"success") == 0){
-			Json::Value user_list;
+			Json::Value friend_list;
 			for(size_t i = 0 ; i != query_result.size(); i++ ){
-				Json::Value team;
-				team["team_id"] = Json::Value(query_result[i]["team_id"]);
-				team["team_name"] = Json::Value(query_result[i]["team_name"]);
-				
-				root["team_list"].append(team);
+				Json::Value friend_info;
+				friend_info["friend_id"] = Json::Value(query_result[i]["friend_id"]);
+				friend_info["friend_name"] = Json::Value(query_result[i]["friend_name"]);
+				friend_info["friend_nickname"] = Json::Value(query_result[i]["friend_nickname"]);
+				root["friend_list"].append(friend_info);
 			}
-			
+
 		}else{
 			root["detail"] = Json::Value(detail);
 		}
-		
 		string str = fw.write(root);
 		FCGI_printf("Content-type: application/json\r\n"
 			"\r\n"
-			"%s",str.c_str());
+			"%s<br/>",str.c_str());
+		
+		
 	}
 	return 0;
 }

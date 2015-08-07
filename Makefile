@@ -1,4 +1,13 @@
-all : sign_in sign_up home db_test
+all : sign_in sign_up home db_test get_all_friend_team get_friends_by_team query_users
+
+query_users : query_users.cpp include/database.h include/database.cpp include/session.h include/session.cpp include/public.h include/public.cpp json/json.h json/jsoncpp.cpp
+	g++ -o query_users query_users.cpp include/database.cpp include/session.cpp include/public.cpp json/jsoncpp.cpp -std=c++11 -lhiredis -lfcgi `mysql_config --cflags --libs`
+
+get_all_friend_team : get_all_friend_team.cpp include/database.h include/database.cpp include/session.h include/session.cpp include/public.h include/public.cpp json/json.h json/jsoncpp.cpp
+	g++ -o get_all_friend_team get_all_friend_team.cpp include/database.cpp include/session.cpp include/public.cpp json/jsoncpp.cpp -std=c++11 -lhiredis -lfcgi `mysql_config --cflags --libs`
+
+get_friends_by_team : get_friends_by_team.cpp include/database.h include/database.cpp include/session.h include/session.cpp include/public.h include/public.cpp json/json.h json/jsoncpp.cpp
+	g++ -o get_friends_by_team get_friends_by_team.cpp include/database.cpp include/session.cpp include/public.cpp json/jsoncpp.cpp -std=c++11 -lhiredis -lfcgi `mysql_config --cflags --libs`
 
 home : home.cpp dist/template/home.tpl
 	g++ -o home home.cpp -lctemplate_nothreads -lfcgi
