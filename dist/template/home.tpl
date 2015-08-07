@@ -71,34 +71,33 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-    <div id="latest_chat" class="row"> 
-        <div class="col-md-6"> 
+  <div class="row">
+    <div class="col-md-6">
+      <div id="latest_chat"> 
           <button id="active">Buttom</button>
           <ul class="list-group" id="table">
           </ul>
-        </div>
-        
+      </div>
 
-        <div id="chat_window" class="col-md-6">
-        </div>
-    </div>
-
-    <div id="myteam" class="panel-group col-md-6" >
+      <div id="myteam" class="panel-group col-md-6" >
         
-    </div>
+      </div>
     
 
-    <div id="search_friend" class="row">
-      <div class="list-group col-md-6">
-         <button type="button" class="list-group-item">Cras justo odio</button>
-        <button type="button" class="list-group-item">Dapibus ac facilisis in</button>
-  <button type="button" class="list-group-item">Morbi leo risus</button>
-  <button type="button" class="list-group-item">Porta ac consectetur ac</button>
-  <button type="button" class="list-group-item">Vestibulum at eros</button>
-</div>
+      <div id="search_friend" class="row">
+        <div class="list-group col-md-6">
+           <button type="button" class="list-group-item">Cras justo odio</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div id="chat_window">
+      </div>
     </div>
   </div>
+</div>
+
     <footer class="footer">
       <div class="row footer-bottom">
         <ul class="list-inline text-center">
