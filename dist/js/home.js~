@@ -163,13 +163,14 @@ $(function(){
 			} else {
 				alert("您已经发送过请求");
 			}
+			$('#gridSystemModal').modal('hide')
 		})
 	});
 
 
 	$('#gridSystemModal').on('show.bs.modal', function (e) {
 	        obj = e.relatedTarget;
-		$("#modal_friend_username").text(obj.attributes.search_username);
+		$("#modal_friend_username").text(obj.attributes.search_username.value);
 		$("#modal_friend_nickname").text(obj.textContent);
 		$("[request-uid]").attr("request-uid",obj.attributes.search_id);
 	  })

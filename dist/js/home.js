@@ -139,9 +139,9 @@ $(function(){
 
 				for (x in data["user_list"]) {
 					if (data["user_list"][x]["is_friend"]) {
-						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " >" + data["user_list"][x]["nickname"] + "&nbsp;&nbsp;&nbsp;&nbsp;(点击聊天)</button>";
+						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " >" + data["user_list"][x]["nickname"] + "</button>";
 					} else {
-						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " data-toggle=\"modal\" data-target=\"#gridSystemModal\" operation=\"friend_request\" >" + data["user_list"][x]["nickname"] + "&nbsp;&nbsp;&nbsp;&nbsp;(添加好友)</button>";
+						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " data-toggle=\"modal\" data-target=\"#gridSystemModal\" operation=\"friend_request\" >" + data["user_list"][x]["nickname"] + "</button>";
 					}
 					$("#search_friend .list-group").append(tmp);
 				}

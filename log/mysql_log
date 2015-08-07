@@ -366,3 +366,23 @@ select user_id,username,nickname from users where username like 'lxy%' and user_
 
 insert  notification ( send_id,rece_id,additional_message ) values ( 1,0,'') Thu Aug  6 20:22:23 2015
 
+select team_id,team_name from teams  where user_id  =  1  Thu Aug  6 01:58:29 2015
+
+select team_id,team_name from teams  where user_id  =  1  Thu Aug  6 01:58:29 2015
+
+select team_id,team_name from teams  where user_id  =  1  Thu Aug  6 01:58:29 2015
+
+select team_id,team_name from teams  where user_id  =  1  Thu Aug  6 01:58:29 2015
+
+select user_id,username,nickname from users where username like 'lxy%' and user_id != 1  Fri Aug  7 00:25:33 2015
+
+select * from friendship where user_id = 1 and friend_id = 2  Fri Aug  7 00:25:33 2015
+
+select * from friendship where user_id = 1 and friend_id = 3  Fri Aug  7 00:25:33 2015
+
+select user_id,username,nickname from users where username like 'lxy%' and user_id != 1  Fri Aug  7 00:25:33 2015
+
+select * from friendship where user_id = 1 and friend_id = 2  Fri Aug  7 00:25:33 2015
+
+select * from friendship where user_id = 1 and friend_id = 3  Fri Aug  7 00:25:33 2015
+

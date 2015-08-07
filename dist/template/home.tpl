@@ -107,7 +107,6 @@
     </footer>
 
 
-    <button data-toggle="modal" data-target="#gridSystemModal">测试</button>
 
     <!--好友请求模态框-->
 
