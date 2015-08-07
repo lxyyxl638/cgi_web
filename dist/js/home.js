@@ -67,6 +67,8 @@ $(function(){
 	
 
 	$("#nav_team").click(function(){
+		$("#latest_chat").hide();
+		$("#search_friend").hide();
 		$.get(Base_url + "get_all_friend_team",function(data,status){
 			if (data["result"] == "success" && data["team_list"]) {
 				$("#myteam").empty();
@@ -85,8 +87,12 @@ $(function(){
           					</div>";
 					$("#myteam").append(str);
 				}
+			} else if (data["detail"]== "unlogin") {
+			     location.href=Base_url + "sign_in";
 			}
 		});
+		
+		$("#myteam").show();
 	});
 	
 
@@ -116,11 +122,13 @@ $(function(){
                     }
                  }
 
+			} else if (data["detail"] == "unlogin"){
+				location.href=Base_url + "sign_in";
 			}
 		})
 	});
 	
-	$("[type=submit]").on("click",function(){
+	$("[type=search_button]").on("click",function(){
 		$.post(Base_url + "query_users",{
 			username : $("#search_box").val()
 		},function(data){

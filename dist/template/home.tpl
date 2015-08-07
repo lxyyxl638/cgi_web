@@ -50,12 +50,12 @@
         <li><a href="#myteam" id="nav_team" data-toggle="tab">我的好友</a></li>
       </ul>
 
-      <form class="navbar-form navbar-left" role="search">
+      <div class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="添加好友">
+          <input id="search_box" type="text" class="form-control" placeholder="添加好友">
         </div>
-        <button type="submit" class="btn btn-default">搜索</button>
-      </form>
+        <button type="search_button" class="btn btn-default">搜索</button>
+      </div>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
