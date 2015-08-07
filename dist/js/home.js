@@ -138,13 +138,41 @@ $(function(){
 				$("#search_friend .list-group").empty();
 
 				for (x in data["user_list"]) {
-					tmp = "<button type=\"button\" class=\"list-group-item\" search_id=" + data["user_list"][x]["user_id"] +  " >" + data["user_list"][x]["nickname"] + "</button>";
+					if (data["user_list"][x]["is_friend"]) {
+						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " >" + data["user_list"][x]["nickname"] + "    (点击聊天)</button>";
+					} else {
+						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " data-toggle=\"modal\" data-target=\"#gridSystemModal\" opearation=\"friend_requst\" >" + data["user_list"][x]["nickname"] + "    (添加好友)</button>";
+					}
 					$("#search_friend .list-group").append(tmp);
 				}
-
 				$("#search_friend").show();
 			}
 		})
 	});
+
+
+	$("[operation=friend_requst]").on("click",function(){
+		$("#modal_friend_username").text($(this).attr("search_username"));
+		$("#modal_friend_nickname").text($(this).text());
+		$("[request-uid]").attr("request-uid") = $(this).attr("search_id");
+	})
+
+	$("[button-operation=add_friend]").on("click",function() {
+
+		$.post(Base_url + "send_friend_request", {
+			request_uid : $("[request-uid]").attr("request-uid"),
+			message : $("[request-uid]").text()
+		},function(data) {
+			if (data["result"] == "success") {
+				alert("已发送请求");
+			} else {
+				alert("您已经发送过请求");
+			}
+		})
+	});
+
 });
+
+
+
 

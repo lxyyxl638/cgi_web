@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="光彪楼健身房">
+    <meta name="description" content="WebChat">
     <meta name="author" content="Carson">
 
     <title>WebChat</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel='stylesheet' href='../dist/css/chat.css' type='text/css' media='all' />
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='../css/chat.css' type='text/css' media='all' />
 
     <!-- <style type="text/css">
      /* body{
@@ -86,7 +86,7 @@
 
       <div id="search_friend" class="row">
         <div class="list-group col-md-6">
-           <button type="button" class="list-group-item">Cras justo odio</button>
+          
         </div>
       </div>
     </div>
@@ -105,15 +105,56 @@
         </ul>
       </div>
     </footer>
+
+
+    <button data-toggle="modal" data-target="#gridSystemModal">测试</button>
+
+    <!--好友请求模态框-->
+
+    <div id="gridSystemModal" class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel">
+       <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalLabel">添加好友</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="input-group col-md-8 col-md-offset-2">
+                  <span class="input-group-addon">用户名</span>
+                      <text type="text" class="form-control" id="modal_friend_username">lxyyxl638</text>
+                </div>
+                </br>
+                 <div class="input-group col-md-8 col-md-offset-2">
+                  <span class="input-group-addon">昵称</span>
+                      <text type="text" class="form-control" id="modal_friend_nickname">lxyyxl638</text>
+                </div>
+                </br>
+                <div class="input-group col-md-8 col-md-offset-2">
+                  <span class="input-group-addon">验证请求</span>
+                      <input type="text" class="form-control" request-uid="0" />
+                </div>                           
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" button-operation="add_friend">发送请求</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
 
-    <script src="../dist/js/jquery-2.1.1.min.js"></script>
-    <script src="../dist/js/bootstrap.min.js"></script>
-    <script src="../dist/js/home.js"></script>
-    <script src="../dist/js/json2.js"></script>
-    <script src="../dist/js/icomet.js"></script>
-    <script src="../dist/js/chat.js"></script>
+
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/json2.js"></script>
+    <script src="../js/icomet.js"></script>
+    <script src="../js/chat.js"></script>
   </body>
 </html>
