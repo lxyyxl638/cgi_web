@@ -12,5 +12,7 @@ $spawn -a 127.0.0.1 -p 8092 -f /usr/local/nginx/cgibin/get_friends_by_team
 
 $spawn -a 127.0.0.1 -p 8093 -f /usr/local/nginx/cgibin/query_users
 
+$spawn -a 127.0.0.1 -p 8094 -f /usr/local/nginx/cgibin/send_friend_request
+
 exit 0;
 
