@@ -117,17 +117,28 @@ int main() {
 					if(ans.find("team_id") == ans.end()){
 						detail = "参数错误！";
 					}else{
-						it = ans.find("team_id");
-						team_id = it->second;
-						snprintf(update_buf,sizeof(update_buf),"update notification set handling_time = '%s', state = 1  where send_id = %d and rece_id = %d ",GetCurrentTime().c_str(),atoi(request_uid.c_str()),atoi(response_uid.c_str())); 
-						snprintf(insert_buf,sizeof(insert_buf),"insert friendship (user_id,friend_id,team_id) values( %d , %d, %d)",atoi(response_uid.c_str()),atoi(request_uid.c_str()),atoi(team_id.c_str()));
-						string update(update_buf);
-						string insert(insert_buf);
-						if(db->dbQuery(update) && db->dbQuery(insert)){
-							result = "success";
-						}else{
-							detail = "数据库操作错误！！";
+						char buffer[1024]={0};
+						snprintf(buffer,sizeof(buffer),"select * from friendship where user_id = %d and friend_id = %d ", atoi(response_uid.c_str()),atoi(request_uid.c_str()) );
+						string query_rows(buffer);
+						int num = db->dbQuery(query_rows);
+						if(num > 0){
+							detail = "已经是好友关系!";
 						}
+						else{
+
+							it = ans.find("team_id");
+							team_id = it->second;
+							snprintf(update_buf,sizeof(update_buf),"update notification set handling_time = '%s', state = 1  where send_id = %d and rece_id = %d ",GetCurrentTime().c_str(),atoi(request_uid.c_str()),atoi(response_uid.c_str())); 
+							snprintf(insert_buf,sizeof(insert_buf),"insert friendship (user_id,friend_id,team_id) values( %d , %d, %d)",atoi(response_uid.c_str()),atoi(request_uid.c_str()),atoi(team_id.c_str()));
+							string update(update_buf);
+							string insert(insert_buf);
+							if(db->dbQuery(update) && db->dbQuery(insert)){
+								result = "success";
+							}else{
+								detail = "数据库操作错误！！";
+							}
+						}
+						
 					}	
 				}
 			} 

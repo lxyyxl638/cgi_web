@@ -88,16 +88,28 @@ int main() {
 			else
 			{
 				char query_buf[1024] = {0};
-				string username;
+				string username,user_id;
 				unordered_map<string,string>::iterator it;
 
 				it = ans.find("username");
 				username = it->second;
-
-				snprintf(query_buf,sizeof(query_buf),"select user_id,username,nickname from users where username like '%s%%'  ",username.c_str());
+				
+				user_id = session->getValue("user_id");
+				snprintf(query_buf,sizeof(query_buf),"select user_id,username,nickname from users where username like '%s%%' and user_id != %d ",username.c_str(),atoi(user_id.c_str()));
 				string query(query_buf);
 
 				bool flag = db->dbQuery(query, query_result);
+				
+				for (size_t i = 0 ; i != query_result.size(); i++)
+				{
+					string uid = query_result[i]["user_id"];
+					char buffer[1024]={0};
+					snprintf(buffer,sizeof(buffer),"select * from friendship where user_id = %d and friend_id = %d ", atoi(user_id.c_str()),atoi(uid.c_str()) );
+					string query_rows(buffer);
+					int num = db->dbQuery(query_rows);
+					string is_friend = num>0? "1": "0" ;
+					query_result[i].insert(make_pair("is_friend",is_friend ));
+				}
 				if(flag ){
 					result = "success" ;
 
@@ -115,7 +127,7 @@ int main() {
 				user["user_id"]= Json::Value(query_result[i]["user_id"]);
 				user["username"] = Json::Value(query_result[i]["username"]);
 				user["nickname"] = Json::Value(query_result[i]["nickname"]);	
-
+				user["is_friend"] = Json::Value(query_result[i]["is_friend"]);
 				root["user_list"].append(user);
 			}
 
