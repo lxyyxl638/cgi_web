@@ -135,14 +135,19 @@ $(function(){
 			if (data["result"] == "success") {
 				$("#latest_chat").hide();
 				$("#myteam").hide();
+				$("#notification_list").hide();
 				$("#search_friend .list-group").empty();
-
+				tmp = "<button type=\"button\" class=\"list-group-item disabled\" >快加他们为好友吧~</button>";
+				$("#search_friend .list-group").append(tmp);
 				for (x in data["user_list"]) {
 					if (data["user_list"][x]["is_friend"] == "0") {
 						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " data-toggle=\"modal\" data-target=\"#gridSystemModal\" operation=\"friend_request\" >" + data["user_list"][x]["nickname"] + "</button>";
 						$("#search_friend .list-group").append(tmp);
 					}
 				}
+				tmp = "<button type=\"button\" class=\"list-group-item disabled\" >他们已经是你的好友~</button>";
+				$("#search_friend .list-group").append(tmp);
+
 				for (x in data["user_list"]) {
 					if (data["user_list"][x]["is_friend"] == "1") {
 						tmp = "<button type=\"button\" class=\"list-group-item list-group-item-success\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " >" + data["user_list"][x]["nickname"] + "</button>";
@@ -179,9 +184,43 @@ $(function(){
 		$("#modal_friend_username").text(obj.attributes.search_username.value);
 		$("#modal_friend_nickname").text(obj.textContent);
 		$("[request-uid]").attr("request-uid",obj.attributes.search_id.value);
-	  })
+	  });
+
+	/*获取通知*/
+	$("#nav_personal_center").on("click",function() {
+		$.get(Base_url+"get_notification",function(data) {
+			 if (data["result"] == "success") {
+			 	 for (x in data["notification_list"]) {
+			 	 	$("#latest_chat").hide();
+					$("#myteam").hide();
+					$("#search_friend").hide();
+					$("#notification_list .list-group").empty();
+			 	 	if (data["notification_list"][x]["state"] == "0") {
+			 	 		//有人要添加我为好友
+			 	 		tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + " ><span class=\"badge\">处理请求</span>"+ data["notification_list"][x]["send_nickname"] +"想添加你为好友:" +  data["notification_list"][x]["additional_message"] +"</li>"
+			 	 	} else if (data["notification_list"][x]["state"] == "1") {
+			 	 		tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + "response=" + data["notification_list"][x]["additional_message"] + " ><span class=\"badge\">处理请求</span>" + data["notification_list"][x]["send_nickname"] + data["notification_list"][x]["additional_message"] + "了你的请求</li>"
+			 	 	}
+			 	 	$("notification_list .list-group").append(tmp);
+
+			 	 }
+			 	  $("#notification_list").show();
+			 }
+		})
+	});
+
+	/*轮询通知数目*/
+	setInterval(ask_notification_num,10000);
 
 });
+
+function ask_notification_num() {
+	$.get(Base_url+"get_notification_num",function(data) {
+			 if (data["result"] == "success") {
+			 	$("#nav_personal_center .badge").val(data["num"]);
+			 }
+	});
+}
 
 
 

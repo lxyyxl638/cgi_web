@@ -33,32 +33,15 @@ int main() {
 			snprintf(query_buf,sizeof(query_buf),"(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=%d and notification.state=0) union
 (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=%d and notification.state=1)",atoi(user_id.c_str()),atoi(user_id.c_str()));
 			string query(query_buf);
-			int flag = db->dbQuery(query,query_result);
-			if(flag ){
-				result = "success" ;
-
-			}else{
-				detail = "数据库擦操作错误！";
-			}
+			int num = db->dbQuery(query);
+			result = "success";
 		}
 		root["result"] = Json::Value(result);
 		if(strcmp(result.c_str(),"success") == 0){
-			Json::Value notification_list;
-			for(size_t i = 0 ; i != query_result.size(); i++ ){
-				Json::Value notification;
-				notification["no_id"] = Json::Value(query_result[i]["no_id"]);
-				notification["type"] = Json::Value(query_result[i]["type"]);
-				notification["send_id"] = Json::Value(query_result[i]["send_id"]);
-				notification["send_username"] = Json::Value(query_result[i]["username"]);
-				notification["send_nickname"] = Json::Value(query_result[i]["nickname"]);
-				notification["message"] = Json::Value(query_result[i]["additional_message"]);
-				notification["created_time"] = Json::Value(query_result[i]["created_time"]);
-				root["notification_list"].append(notification);
-			}
-
-		}else{
-			root["detail"] = Json::Value(detail);
+			root["num"] = Json::Value(num);
+		} else {
 		}
+
 		string str = fw.write(root);
 		FCGI_printf("Content-type: application/json\r\n"
 			"\r\n"
