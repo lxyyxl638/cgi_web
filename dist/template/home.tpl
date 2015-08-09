@@ -144,6 +144,46 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+
+    <!--好友确认模态框-->
+    <div id="gridSystemModalConfirm" class="modal fade" role="dialog" aria-labelledby="gridSystemModalConfirm">
+       <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalConfirm">添加好友</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="input-group col-md-8 col-md-offset-2">
+                  <span class="input-group-addon">用户名</span>
+                      <text type="text" class="form-control" id="modal_friend_username">lxyyxl638</text>
+                </div>
+                </br>
+                 <div class="input-group col-md-8 col-md-offset-2">
+                  <span class="input-group-addon">昵称</span>
+                      <text type="text" class="form-control" id="modal_friend_nickname">lxyyxl638</text>
+                </div>
+                </br>
+                <div class="input-group col-md-8 col-md-offset-2">
+                  <span class="input-group-addon">分组</span>
+                      <select class="form-control">
+                          
+                      </select>                
+                </div>                           
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <button type="button" class="btn btn-primary" button-operation="add_friend">发送请求</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

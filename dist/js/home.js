@@ -138,18 +138,17 @@ $(function(){
 				$("#search_friend .list-group").empty();
 
 				for (x in data["user_list"]) {
-					if (data["user_list"][x]["is_friend"] == "1") {
-						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " >" + data["user_list"][x]["nickname"] + "</button>";
-						$("#search_friend .list-group").append(tmp);
-					} 					
-				}
-
-				for (x in data["user_list"]) {
 					if (data["user_list"][x]["is_friend"] == "0") {
-						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " data-toggle=\"modal\" data-target=\"#gridSystemModal\" operation=\"friend_request\" >" + data["user_list"][x]["nickname"] + "</button>";
+						tmp = "<button type=\"button\" class=\"list-group-item btn-primary\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " data-toggle=\"modal\" data-target=\"#gridSystemModal\" operation=\"friend_request\" >" + data["user_list"][x]["nickname"] + "</button>";
 						$("#search_friend .list-group").append(tmp);
 					}
-					
+
+				for (x in data["user_list"]) {
+					if (data["user_list"][x]["is_friend"] == "1") {
+						tmp = "<button type=\"button\" class=\"list-group-item btn-default\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " >" + data["user_list"][x]["nickname"] + "</button>";
+						$("#search_friend .list-group").append(tmp);
+					} 					
+				}				
 				}
 
 				$("#search_friend").show();
