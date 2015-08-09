@@ -1,4 +1,7 @@
-all : sign_in sign_up home db_test get_all_friend_team get_friends_by_team query_users send_friend_request
+all : sign_in sign_up home db_test get_all_friend_team get_friends_by_team query_users get_notification send_friend_request
+
+get_notification : get_notification.cpp include/database.h include/database.cpp include/session.h include/session.cpp include/public.h include/public.cpp json/json.h json/jsoncpp.cpp
+	g++ -o get_notification get_notification.cpp include/database.cpp include/session.cpp include/public.cpp json/jsoncpp.cpp -std=c++11 -lhiredis -lfcgi `mysql_config --cflags --libs`
 
 send_friend_request : send_friend_request.cpp include/database.h include/database.cpp include/session.h include/session.cpp include/public.h include/public.cpp json/json.h json/jsoncpp.cpp
 	g++ -o send_friend_request send_friend_request.cpp include/database.cpp include/session.cpp include/public.cpp json/jsoncpp.cpp -std=c++11 -lhiredis -lfcgi `mysql_config --cflags --libs`

@@ -14,5 +14,7 @@ $spawn -a 127.0.0.1 -p 8093 -f /usr/local/nginx/cgibin/query_users
 
 $spawn -a 127.0.0.1 -p 8094 -f /usr/local/nginx/cgibin/send_friend_request
 
+$spawn -a 127.0.0.1 -p 8095 -f /usr/local/nginx/cgibin/get_notification
+
 exit 0;
 
