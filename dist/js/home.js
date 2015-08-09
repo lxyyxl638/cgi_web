@@ -140,15 +140,16 @@ $(function(){
 				for (x in data["user_list"]) {
 					if (data["user_list"][x]["is_friend"] == "1") {
 						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " >" + data["user_list"][x]["nickname"] + "</button>";
+						$("#search_friend .list-group").append(tmp);
 					} 					
-					$("#search_friend .list-group").append(tmp);
 				}
 
 				for (x in data["user_list"]) {
 					if (data["user_list"][x]["is_friend"] == "0") {
 						tmp = "<button type=\"button\" class=\"list-group-item\" search_username=" + data["user_list"][x]["username"] +" search_id=" + data["user_list"][x]["user_id"] +  " data-toggle=\"modal\" data-target=\"#gridSystemModal\" operation=\"friend_request\" >" + data["user_list"][x]["nickname"] + "</button>";
+						$("#search_friend .list-group").append(tmp);
 					}
-					$("#search_friend .list-group").append(tmp);
+					
 				}
 
 				$("#search_friend").show();
@@ -162,7 +163,7 @@ $(function(){
 
 		$.post(Base_url + "send_friend_request", {
 			request_uid : $("[request-uid]").attr("request-uid"),
-			message : $("[request-uid]").text()
+			message : $("[request-uid]").val()
 		},function(data) {
 			if (data["result"] == "success") {
 				alert("已发送请求");
@@ -178,7 +179,7 @@ $(function(){
 	        obj = e.relatedTarget;
 		$("#modal_friend_username").text(obj.attributes.search_username.value);
 		$("#modal_friend_nickname").text(obj.textContent);
-		$("[request-uid]").attr("request-uid",obj.attributes.search_id);
+		$("[request-uid]").attr("request-uid",obj.attributes.search_id.value);
 	  })
 
 });

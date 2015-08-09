@@ -52,7 +52,7 @@
 
       <div class="navbar-form navbar-left" role="search">
         <div class="form-group">
-          <input id="search_box" type="text" class="form-control" placeholder="添加好友">
+          <input id="search_box" type="text" class="form-control" placeholder="添加好友"/>
         </div>
         <button type="search_button" class="btn btn-default">搜索</button>
       </div>
@@ -132,7 +132,7 @@
                 </br>
                 <div class="input-group col-md-8 col-md-offset-2">
                   <span class="input-group-addon">验证请求</span>
-                      <input type="text" class="form-control" request-uid="0" />
+                      <input type="text" class="form-control" request-uid="0"/>
                 </div>                           
               </div>
             </div>
