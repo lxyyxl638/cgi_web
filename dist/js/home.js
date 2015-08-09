@@ -260,10 +260,10 @@ $(function(){
 	});
 
 	$("#button_add_new_team").on("click",function() {
-		if ($("#add_new_team")).is(":hidden") {
+		if ($("#add_new_team").is(":hidden")) {
 			$("#add_new_team").show();
 		} else {
-			if (("#input_team_name").val().length > 0) {
+			if ($("#input_team_name").val().length > 0) {
 			$.post(Base_url + "add_new_team",{
 				team_name : $("#input_team_name").val()
 			},function(data){

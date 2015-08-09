@@ -18,5 +18,6 @@ $spawn -a 127.0.0.1 -p 8095 -f /usr/local/nginx/cgibin/get_notification
 
 $spawn -a 127.0.0.1 -p 8096 -f /usr/local/nginx/cgibin/get_notification_num
 
+$spawn -a 127.0.0.1 -p 8097 -f /usr/local/nginx/cgibin/add_new_team
 exit 0;
 

@@ -186,7 +186,7 @@
                     <span class="input-group-addon">组名</span>
                     <input type="text" class="form-control" id="input_team_name"> 
                   </div>
-		 <br>
+
                   <button class="btn btn-primary col-md-offset-2" id="button_add_new_team">创建分组</button>
                   </div>
               </div>
