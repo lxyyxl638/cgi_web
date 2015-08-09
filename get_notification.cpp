@@ -50,7 +50,7 @@ int main() {
 				notification["send_id"] = Json::Value(query_result[i]["send_id"]);
 				notification["send_username"] = Json::Value(query_result[i]["username"]);
 				notification["send_nickname"] = Json::Value(query_result[i]["nickname"]);
-				notification["message"] = Json::Value(query_result[i]["additional_message"]);
+				notification["additional_message"] = Json::Value(query_result[i]["additional_message"]);
 				notification["created_time"] = Json::Value(query_result[i]["created_time"]);
 				root["notification_list"].append(notification);
 			}

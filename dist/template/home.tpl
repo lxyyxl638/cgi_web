@@ -56,9 +56,13 @@
         </div>
         <button type="search_button" class="btn btn-default">搜索</button>
       </div>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" id="nav_personal_center">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret">12</span></a>
+
+
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心<span class="badge"></span></a>
+
           <ul class="dropdown-menu">
             <li><a href="#">修改资料</a></li>
             <li><a href="#">Another action</a></li>
@@ -79,8 +83,7 @@
           </ul>
       </div>
 
-      <div id="myteam" class="panel-group col-md-6" >
-        
+      <div id="myteam" class="panel-group col-md-6" >      
       </div>
     
 
@@ -89,6 +92,13 @@
           
         </div>
       </div>
+
+      <div id="notification_list" class="row">
+        <ul class="list-group col-md-6">
+          
+        </ul>
+      </div>
+
     </div>
     
     <div class="col-md-6">
