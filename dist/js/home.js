@@ -220,7 +220,7 @@ $(function(){
 	        obj = e.relatedTarget;
 	        $("#gridSystemModalConfirm").attr("notification_id",e.relatedTarget.attributes.notification_id.value);
 	       	$("#gridSystemModalConfirm").attr("request_uid",e.relatedTarget.attributes.friend_id.value);
-	        if (obj.attributes.response.length > 0) {
+	        if (obj.attributes.response!=undefined) {
 	        	//是接受请求
 	        	$("#handle_request").hide();
 	        } else {
@@ -231,8 +231,8 @@ $(function(){
 		// $("[request-uid]").attr("request-uid",obj.attributes.search_id.value);
 	  });
 
-	$("#handle_request").on("click",function() {
-		if ($("[checked='checked']").val() == "拒绝") {
+	$("#handle_request").change(function() {
+		if ($(this).val() == "拒绝") {
 			$("#select_team").hide();
 		} else {
 			$("#select_team").show();
@@ -246,7 +246,7 @@ $(function(){
 		$.post(Base_url + "confirm_friend_request", {
 			no_id : $("#gridSystemModalConfirm").attr("notification_id"),
 			request_uid : $("#gridSystemModalConfirm").attr("friend_id"),
-			message : $("[checked='checked']").val(),
+			message : $("#handle_request").val(),
 			team_id : $("#ask_teams").val()
 		},function(data) {
 			if (data["result"] == "success") {

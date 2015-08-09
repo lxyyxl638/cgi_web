@@ -167,13 +167,14 @@
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
-                <div class="input-group col-md-8 col-md-offset-2" id="handle_request">
-                  <span class="input-group-addon">接受</span>
-                      <input type="radio" checked="checked" name="acceptOrNot" value="接受" />
-                  <span class="input-group-addon">拒绝</span>
-                      <input type="radio" name="acceptOrNot" value="拒绝" />
-                </div>
                 <div class="input-group col-md-8 col-md-offset-2">
+                  <span class="input-group-addon">处理</span>
+                  <select class="form-control" id="handle_request">
+		  	<option value="接受">接受</option>
+		  	<option value="拒绝">拒绝</option>
+                  </select>
+                </div>
+                <div class="input-group col-md-8 col-md-offset-2" id="select_team">
                   <span class="input-group-addon">分组</span>
                       <select class="form-control" id="ask_teams">
                       </select>                
