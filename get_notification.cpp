@@ -52,6 +52,7 @@ int main() {
 				notification["send_nickname"] = Json::Value(query_result[i]["nickname"]);
 				notification["additional_message"] = Json::Value(query_result[i]["additional_message"]);
 				notification["created_time"] = Json::Value(query_result[i]["created_time"]);
+				notification["state"] = Json::Value(query_result[i]["state"]);
 				root["notification_list"].append(notification);
 			}
 

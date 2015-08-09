@@ -94,7 +94,7 @@
       </div>
 
       <div id="notification_list" class="row">
-        <ul class="list-group col-md-6">
+        <ul class="list-group col-md-12">
           
         </ul>
       </div>

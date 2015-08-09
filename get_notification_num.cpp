@@ -21,6 +21,7 @@ int main() {
 		string detail("");
 		session->sessionInit();
 		vector<unordered_map<string,string> >   query_result;
+		int num=0;
 		if(session->checkSession() == false){
 			detail = detail + "unlogin";
 
@@ -30,10 +31,9 @@ int main() {
 			string user_id;
 			user_id = session->getValue("user_id");
 
-			snprintf(query_buf,sizeof(query_buf),"(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=%d and notification.state=0) union
-(SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=%d and notification.state=1)",atoi(user_id.c_str()),atoi(user_id.c_str()));
+			snprintf(query_buf,sizeof(query_buf),"(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=%d and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=%d and notification.state=1)",atoi(user_id.c_str()),atoi(user_id.c_str()));
 			string query(query_buf);
-			int num = db->dbQuery(query);
+		         num = db->dbQuery(query);
 			result = "success";
 		}
 		root["result"] = Json::Value(result);
