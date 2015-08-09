@@ -73,15 +73,22 @@ int main() {
 				message = it->second;
 
 				user_id = session->getValue("user_id");
+				snprintf(query_buf,sizeof(query_buf),"select no_id from notification where send_id=%d and rece_id=%d and state<2",atoi(user_id.c_str()),atoi(request_uid.c_str()));
+				string query_exist(query_buf);
+				int num = db->dbQuery(query_exist);
+				if (num > 0) {
+					memset(query_buf,0,sizeof(query_buf));
+					snprintf(query_buf,sizeof(query_buf),"insert  notification ( send_id,rece_id,additional_message ) values ( %d,%d,'%s')",atoi(user_id.c_str()),atoi(request_uid.c_str()),message.c_str());
+					string query(query_buf);
+					int rows = db->dbQuery(query);
+					if(rows){
+						result = "success" ;
 
-				snprintf(query_buf,sizeof(query_buf),"insert  notification ( send_id,rece_id,additional_message ) values ( %d,%d,'%s')",atoi(user_id.c_str()),atoi(request_uid.c_str()),message.c_str());
-				string query(query_buf);
-				int rows = db->dbQuery(query);
-				if(rows){
-					result = "success" ;
-
-				}else{
-					detail = "数据库操作错误!";
+					}else{
+						detail = "请不要重复发送请求!";
+					}
+				} else {
+					detail = "请不要重复发送请求";
 				}
 			}
 			
