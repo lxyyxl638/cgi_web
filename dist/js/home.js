@@ -226,6 +226,7 @@ $(function(){
 	        } else {
 	        	$("#handle_request").show();
 	        }
+	        ask_team();
 		// $("#modal_friend_username").text(obj.attributes.search_username.value);
 		// $("#modal_friend_nickname").text(obj.textContent);
 		// $("[request-uid]").attr("request-uid",obj.attributes.search_id.value);
@@ -254,21 +255,38 @@ $(function(){
 			} else {
 				alert("您已经发送过请求");
 			}
-			$('#gridSystemModalConfirm').modal('hide')
+			$('#gridSystemModalConfirm').modal('hide');
 		})
 	});
 
-	$("#ask_teams").on("click",function(){
-		$("#ask_teams").empty();
-		$.get(Base_url+"get_all_friend_team",function(data) {
-			if (data["result"] == "success" && data["team_list"]) {
-				for (x in data["team_list"]) {
-					tmp="<option value="+ data["team_list"][x]["team_id"]+" >" + data["team_list"][x]["team_name"] + "</option>";
-					$("#ask_teams").append(tmp);
+	$("#button_add_new_team").on("click",function() {
+		if ($("#add_new_team")).is(":hidden") {
+			$("#add_new_team").show();
+		} else {
+			$.post(Base_url + "add_new_team",{
+				team_name : $("#input_team_name").val()
+			},function(data){
+				if (data["result"] == "success") {
+					alert("添加成功");
+					$("#add_new_team").hide();
+					ask_team();
+				} else {
+					alert("添加失败");
 				}
-			}
-		})
-	});
+			})
+		}
+	})
+	// $("#ask_teams").on("click",function(){
+	// 	$("#ask_teams").empty();
+	// 	$.get(Base_url+"get_all_friend_team",function(data) {
+	// 		if (data["result"] == "success" && data["team_list"]) {
+	// 			for (x in data["team_list"]) {
+	// 				tmp="<option value="+ data["team_list"][x]["team_id"]+" >" + data["team_list"][x]["team_name"] + "</option>";
+	// 				$("#ask_teams").append(tmp);
+	// 			}
+	// 		}
+	// 	})
+	// });
 	/*轮询通知数目*/
 	setInterval(ask_notification_num,10000);
 
@@ -280,6 +298,18 @@ function ask_notification_num() {
 			 	$("#nav_personal_center .badge").text(data["num"]);
 			 }
 	});
+}
+
+function ask_team() {
+	$("#ask_teams").empty();
+		$.get(Base_url+"get_all_friend_team",function(data) {
+			if (data["result"] == "success" && data["team_list"]) {
+				for (x in data["team_list"]) {
+					tmp="<option value="+ data["team_list"][x]["team_id"]+" >" + data["team_list"][x]["team_name"] + "</option>";
+					$("#ask_teams").append(tmp);
+				}
+			}
+		})
 }
 
 

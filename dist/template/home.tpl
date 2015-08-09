@@ -174,10 +174,18 @@
 		  	<option value="拒绝">拒绝</option>
                   </select>
                 </div>
+                <br>
                 <div class="input-group col-md-8 col-md-offset-2" id="select_team">
                   <span class="input-group-addon">分组</span>
                       <select class="form-control" id="ask_teams">
-                      </select>                
+                      </select>
+
+                  <div id="add_new_team">   
+                    <span class="input-group-addon">组名</span>
+                    <input type="text" class="form-control" id="input_team_name"> 
+                  </div>
+                  
+                  <button class="btn btn-primary">创建分组</button>
                 </div>                           
               </div>
             </div>
