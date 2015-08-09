@@ -263,6 +263,7 @@ $(function(){
 		if ($("#add_new_team")).is(":hidden") {
 			$("#add_new_team").show();
 		} else {
+			if (("#input_team_name").val().length > 0) {
 			$.post(Base_url + "add_new_team",{
 				team_name : $("#input_team_name").val()
 			},function(data){
@@ -271,9 +272,12 @@ $(function(){
 					$("#add_new_team").hide();
 					ask_team();
 				} else {
-					alert("添加失败");
+					alert($data["detail"]);
 				}
 			})
+		   } else {
+		   	  alert("请输入组名");
+		   }
 		}
 	})
 	// $("#ask_teams").on("click",function(){
