@@ -198,9 +198,14 @@ $(function(){
 			 	 for (x in data["notification_list"]) {
 			 	 	if (data["notification_list"][x]["state"] == "0") {
 			 	 		//有人要添加我为好友
-			 	 		tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + " ><span class=\"badge\" style=\"cursor:pointer\" >处理请求</span>"+ data["notification_list"][x]["send_nickname"] +"想添加你为好友:" +  data["notification_list"][x]["additional_message"] +"</li>"
+			 	 		tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + " data-toggle=\"modal\" data-target=\"#gridSystemModalConfirm\" ><span class=\"badge\" style=\"cursor:pointer\" >处理请求</span>"+ data["notification_list"][x]["send_nickname"] +"想添加你为好友:" +  data["notification_list"][x]["additional_message"] +"</li>"
 			 	 	} else if (data["notification_list"][x]["state"] == "1") {
-			 	 		tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + "response=" + data["notification_list"][x]["additional_message"] + " ><span class=\"badge\" style=\"cursor:pointer\" >处理请求</span>" + data["notification_list"][x]["send_nickname"] + data["notification_list"][x]["additional_message"] + "了你的请求</li>"
+			 	 		//收到了别人的消息
+			 	 		if (data["notification_list"][x]["additional_message"] == "接受") {
+			 	 			tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + "response=" + data["notification_list"][x]["additional_message"] + " data-toggle=\"modal\" data-target=\"#gridSystemModalConfirm\" ><span class=\"badge\" style=\"cursor:pointer\" >处理请求</span>" + data["notification_list"][x]["send_nickname"] + "接受了你的请求</li>"
+			 	 		} else {
+			 	 			tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + "response=" + data["notification_list"][x]["additional_message"] + " ><span class=\"badge\" style=\"cursor:pointer\" >知道了</span>" + data["notification_list"][x]["send_nickname"] + "拒绝了你的请求</li>"
+			 	 		}
 			 	 	}
 			 	 	$("#notification_list .list-group").append(tmp);
 
@@ -209,7 +214,61 @@ $(function(){
 			 }
 		})
 	});
+	
 
+	$('#gridSystemModalConfirm').on('show.bs.modal', function (e) {
+	        obj = e.relatedTarget;
+	        $("#gridSystemModalConfirm").attr("notification_id",e.relatedTarget.attributes.notification_id.value);
+	       	$("#gridSystemModalConfirm").attr("request_uid",e.relatedTarget.attributes.friend_id.value);
+	        if (obj.attributes.response.length > 0) {
+	        	//是接受请求
+	        	$("#handle_request").hide();
+	        } else {
+	        	$("#handle_request").show();
+	        }
+		// $("#modal_friend_username").text(obj.attributes.search_username.value);
+		// $("#modal_friend_nickname").text(obj.textContent);
+		// $("[request-uid]").attr("request-uid",obj.attributes.search_id.value);
+	  });
+
+	$("#handle_request").on("click",function() {
+		if ($("[checked='checked']").val() == "拒绝") {
+			$("#select_team").hide();
+		} else {
+			$("#select_team").show();
+		}
+	});
+
+
+
+	$("[button-operation=confirm_friend]").on("click",function() {
+
+		$.post(Base_url + "confirm_friend_request", {
+			no_id : $("#gridSystemModalConfirm").attr("notification_id"),
+			request_uid : $("#gridSystemModalConfirm").attr("friend_id"),
+			message : $("[checked='checked']").val(),
+			team_id : $("#ask_teams").val()
+		},function(data) {
+			if (data["result"] == "success") {
+				alert("已发送请求");
+			} else {
+				alert("您已经发送过请求");
+			}
+			$('#gridSystemModalConfirm').modal('hide')
+		})
+	});
+
+	$("#ask_teams").on("click",function(){
+		$("#ask_teams").empty();
+		$.get(Base_url+"get_all_friend_team",function(data) {
+			if (data["result"] == "success" && data["team_list"]) {
+				for (x in data["team_list"]) {
+					tmp="<option value="+ data["team_list"][x]["team_id"]+" >" + data["team_list"][x]["team_name"] + "</option>";
+					$("#ask_teams").append(tmp);
+				}
+			}
+		})
+	});
 	/*轮询通知数目*/
 	setInterval(ask_notification_num,10000);
 

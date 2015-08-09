@@ -167,20 +167,15 @@
           <div class="modal-body">
             <div class="container-fluid">
               <div class="row">
-                <div class="input-group col-md-8 col-md-offset-2">
-                  <span class="input-group-addon">用户名</span>
-                      <text type="text" class="form-control" id="modal_friend_username">lxyyxl638</text>
+                <div class="input-group col-md-8 col-md-offset-2" id="handle_request">
+                  <span class="input-group-addon">接受</span>
+                      <input type="radio" checked="checked" name="acceptOrNot" value="接受" />
+                  <span class="input-group-addon">拒绝</span>
+                      <input type="radio" name="acceptOrNot" value="拒绝" />
                 </div>
-                </br>
-                 <div class="input-group col-md-8 col-md-offset-2">
-                  <span class="input-group-addon">昵称</span>
-                      <text type="text" class="form-control" id="modal_friend_nickname">lxyyxl638</text>
-                </div>
-                </br>
                 <div class="input-group col-md-8 col-md-offset-2">
                   <span class="input-group-addon">分组</span>
-                      <select class="form-control">
-                          
+                      <select class="form-control" id="ask_teams">
                       </select>                
                 </div>                           
               </div>
