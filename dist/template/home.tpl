@@ -58,7 +58,7 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">个人中心 <span class="caret">12</span></a>
           <ul class="dropdown-menu">
             <li><a href="#">修改资料</a></li>
             <li><a href="#">Another action</a></li>
