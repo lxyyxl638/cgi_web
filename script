@@ -24,5 +24,9 @@ $spawn -a 127.0.0.1 -p 8096 -f /usr/local/nginx/cgibin/get_notification_num
 $spawn -a 127.0.0.1 -p 8097 -f /usr/local/nginx/cgibin/add_new_team
 
 $spawn -a 127.0.0.1 -p 8098 -f /usr/local/nginx/cgibin/confirm_friend_request
+
+$spawn -a 127.0.0.1 -p 8099 -f /usr/local/nginx/cgibin/get_latest_chat
+
+$spawn -a 127.0.0.1 -p 8100 -f /usr/local/nginx/cgibin/get_unread_message
 exit 0;
 

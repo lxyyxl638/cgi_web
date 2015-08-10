@@ -76,9 +76,9 @@ int main() {
 	
 		root["result"] = Json::Value(result);
 		if(strcmp(result.c_str(),"success") == 0){
-			Json::Value user_list;
+			Json::Value team;
 			for(size_t i = 0 ; i != query_result.size(); i++ ){
-				team["is_online"] = Json::Value(session->getOnline(atoi(query_result[i]["send_id"].c_str())));
+				team["is_online"] = Json::Value((session->getOnline(atoi(query_result[i]["send_id"].c_str()))? "1":"0"));
 				team["friend_id"] = Json::Value(query_result[i]["send_id"]);
 				team["friend_username"] = Json::Value(query_result[i]["username"]);
 				team["friend_nickname"] = Json::Value(query_result[i]["nickname"]);

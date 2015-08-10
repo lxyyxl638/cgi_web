@@ -2,10 +2,10 @@ var Base_url = "http://localhost/";
 var current_dialog;
 var current_chat_uid;
 $(function(){
-
 	$("#table").delegate("li","click",function(){
+		  var friend_username = $(this).attr("friend_username");
+		  var friend_name = $(this).attr("friend_nickname");
 		  var friend_uid = $(this).attr("id");
-		  
 		  current_chat_uid = friend_uid;
 
 		  var tmp = "*[name=" + friend_uid + "]";
@@ -19,7 +19,7 @@ $(function(){
 		  	var newDialog = "<div name=" + friend_uid + ">" + "<div>\
             <div name=\"share\">\
             </div>\
-            <span name=\"msgs\">Messages:" + friend_uid + "</span>\
+            <span name=\"msgs\">正在和" + friend_name + "(" + friend_username +")" + "对话</span>\
             <div name=\"recv_chat_window\" class=\"chat_window\">\
               <table name=\"chat\">\
               </table>\
@@ -48,22 +48,23 @@ $(function(){
 		  	if ($(current_dialog).length > 0) current_dialog.hide();
 		  	$(tmp).show();
 		  	current_dialog = $(tmp);
+		  	get_unread_message(this);
 		  }
 	});
 
-	$("#active").click(function(){
+	// $("#active").click(function(){
 		
-		var friend = new Array();
-		for (var i = 0;i < 5;++i) {
-			friend[i] = new Array();
-			friend[i]['uid'] = i;
-			friend[i]['name'] = "朋友" + i;
-		}
+	// 	var friend = new Array();
+	// 	for (var i = 0;i < 5;++i) {
+	// 		friend[i] = new Array();
+	// 		friend[i]['uid'] = i;
+	// 		friend[i]['name'] = "朋友" + i;
+	// 	}
 
-		for (var i = 0;i < 5;++i) {
-			$("#table").append("<li class=\"list-group-item\" id="+ friend[i]['uid'] + ">" + friend[i]['name'] + "</li>");
-		}
-	});
+	// 	for (var i = 0;i < 5;++i) {
+	// 		$("#table").append("<li class=\"list-group-item\" id="+ friend[i]['uid'] + ">" + friend[i]['name'] + "</li>");
+	// 	}
+	// });
 	
 
 	$("#nav_team").click(function(){
@@ -188,7 +189,7 @@ $(function(){
 
 	/*获取通知*/
 	$("#nav_personal_center").on("click",function() {
-		
+		get_notification();
 	});
 	
 
@@ -268,6 +269,20 @@ $(function(){
 	// 		}
 	// 	})
 	// });
+
+	$('[response="reject"]').on("click",function(){
+		$.post(Base_url + "confirm_friend_request", {
+			no_id : $(this).attr("notification_id"),
+			request_uid : $(this).attr("friend_id"),
+			message : "",
+			team_id : "0"
+		},function(data) {
+				
+			get_notification();
+		})
+	})
+
+	get_latest_chat();
 	/*轮询通知数目*/
 	setInterval(ask_notification_num,10000);
 
@@ -308,10 +323,10 @@ $.get(Base_url+"get_notification",function(data) {
 			 	 		tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + " data-toggle=\"modal\" data-target=\"#gridSystemModalConfirm\" ><span class=\"badge\" style=\"cursor:pointer\" >处理请求</span>"+ data["notification_list"][x]["send_nickname"] +"想添加你为好友:" +  data["notification_list"][x]["additional_message"] +"</li>"
 			 	 	} else if (data["notification_list"][x]["state"] == "1") {
 			 	 		//收到了别人的消息
-			 	 		if (data["notification_list"][x]["additional_message"] == "接受") {
-			 	 			tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + "response=" + data["notification_list"][x]["additional_message"] + " data-toggle=\"modal\" data-target=\"#gridSystemModalConfirm\" ><span class=\"badge\" style=\"cursor:pointer\" >处理请求</span>" + data["notification_list"][x]["send_nickname"] + "接受了你的请求</li>"
+			 	 		if (data["notification_list"][x]["additional_message"] == "accept") {
+			 	 			tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + " response=" + data["notification_list"][x]["additional_message"] + " data-toggle=\"modal\" data-target=\"#gridSystemModalConfirm\" ><span class=\"badge\" style=\"cursor:pointer\" >处理请求</span>" + data["notification_list"][x]["send_nickname"] + "接受了你的请求</li>"
 			 	 		} else {
-			 	 			tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + "response=" + data["notification_list"][x]["additional_message"] + " ><span class=\"badge\" style=\"cursor:pointer\" >知道了</span>" + data["notification_list"][x]["send_nickname"] + "拒绝了你的请求</li>"
+			 	 			tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + " response=" + data["notification_list"][x]["additional_message"] + " ><span class=\"badge\" style=\"cursor:pointer\" >知道了</span>" + data["notification_list"][x]["send_nickname"] + "拒绝了你的请求</li>"
 			 	 		}
 			 	 	}
 			 	 	$("#notification_list .list-group").append(tmp);
@@ -320,5 +335,37 @@ $.get(Base_url+"get_notification",function(data) {
 			 	  $("#notification_list").show();
 			 }
 		})
+}
+
+
+//获取最近未读消息
+function get_latest_chat() {
+	$.get(Base_url+"get_latest_chat",function(data){
+		if (data['result'] == "success") {
+			obj = data["friend_list"];
+			for (x in data["friend_list"]) {
+				if (obj[x]["is_online"] == "1") {
+					$("#table").append("<li style=\"cursor:pointer\" class=\"list-group-item list-group-item-success\" id="+ obj[x]["friend_id"] + " username=" + obj[x]['friend_username'] + " nickname=" +obj[x]['friend_nickname']+ ">" + obj[x]['friend_nickname'] + "(" + obj[x]['friend_username']+ ")" + "<span class=\"badge\">" + obj[x]['num']+"</span></li>");
+				}
+			}
+
+			for (x in data["friend_list"]) {
+				if (obj[x]["is_online"] == "0") {
+					$("#table").append("<li style=\"cursor:pointer\" class=\"list-group-item\" id="+ obj[x]["friend_id"] + " username=" + obj[x]['friend_username'] + " nickname=" +obj[x]['friend_nickname']+ ">" + obj[x]['friend_nickname'] + "(" + obj[x]['friend_username']+ ")" + "<span class=\"badge\">" + obj[x]['num']+"</span></li>");
+				}
+			}
+
+		}
+	})
+}
+
+function get_unread_message(obj) {
+	$.post(Base_url+"get_unread_message",{
+		"request_uid" : $(obj).attr("id")
+	},function(data){
+		if (result["data"] == "success") {
+
+		}
+	})
 }
 
