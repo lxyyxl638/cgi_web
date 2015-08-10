@@ -4,8 +4,9 @@ var current_chat_uid;
 $(function(){
 
 	$("#table").delegate("li","click",function(){
+		  var friend_username = $(this).attr("friend_username");
+		  var friend_name = $(this).attr("friend_nickname");
 		  var friend_uid = $(this).attr("id");
-		  
 		  current_chat_uid = friend_uid;
 
 		  var tmp = "*[name=" + friend_uid + "]";
@@ -48,22 +49,23 @@ $(function(){
 		  	if ($(current_dialog).length > 0) current_dialog.hide();
 		  	$(tmp).show();
 		  	current_dialog = $(tmp);
+		  	get_unread_message(this);
 		  }
 	});
 
-	$("#active").click(function(){
+	// $("#active").click(function(){
 		
-		var friend = new Array();
-		for (var i = 0;i < 5;++i) {
-			friend[i] = new Array();
-			friend[i]['uid'] = i;
-			friend[i]['name'] = "朋友" + i;
-		}
+	// 	var friend = new Array();
+	// 	for (var i = 0;i < 5;++i) {
+	// 		friend[i] = new Array();
+	// 		friend[i]['uid'] = i;
+	// 		friend[i]['name'] = "朋友" + i;
+	// 	}
 
-		for (var i = 0;i < 5;++i) {
-			$("#table").append("<li class=\"list-group-item\" id="+ friend[i]['uid'] + ">" + friend[i]['name'] + "</li>");
-		}
-	});
+	// 	for (var i = 0;i < 5;++i) {
+	// 		$("#table").append("<li class=\"list-group-item\" id="+ friend[i]['uid'] + ">" + friend[i]['name'] + "</li>");
+	// 	}
+	// });
 	
 
 	$("#nav_team").click(function(){
@@ -332,5 +334,37 @@ $.get(Base_url+"get_notification",function(data) {
 			 	  $("#notification_list").show();
 			 }
 		})
+}
+
+
+//获取最近未读消息
+function get_latest_chat() {
+	$.get(Base_url+"get_latest_chat",function(data){
+		if (data['result'] == "success") {
+			obj = data["friend_list"];
+			for (x in data["friend_list"]) {
+				if (obj[x]["is_online"] == "1") {
+					$("#table").append("<li class=\"list-group-item list-group-item-success\" id="+ obj[x]["friend_id"] + ">" + obj[x]['friend_nickname'] + "(" + obj[x]['friend_username']+ ")" + "<span class=\"badge\">" + obj[x]['num']+"</span></li>");
+				}
+			}
+
+			for (x in data["friend_list"]) {
+				if (obj[x][is_online] == "0") {
+					$("#table").append("<li class=\"list-group-item\" id="+ obj[x]["friend_id"] + ">" + obj[x]['friend_nickname'] + "(" + obj[x]['friend_username']+ ")" + "<span class=\"badge\">" + obj[x]['num']+"</span></li>");
+				}
+			}
+
+		}
+	})
+}
+
+function get_unread_message(obj) {
+	$.post(Base_url+"get_unread_message",{
+		"request_uid" : $(obj).attr("id")
+	},function(data){
+		if (result["data"] == "success") {
+
+		}
+	})
 }
 
