@@ -60,22 +60,23 @@ int main() {
 			else
 			{
 				char query_buf[1024] = {0};
-				request_uid = ans["request_uid"];
-				my_uid = atoi(session->getValue("user_id").c_str());
+				int request_uid = atoi(ans["request_uid"].c_str());
+				int my_uid = atoi(session->getValue("user_id").c_str());
 				snprintf(query_buf,sizeof(query_buf),"select * from p2p_messages where send_id=%d and rece_id=%d and state=0 ",request_uid,my_uid);
 				string query(query_buf);
 				int flag = db->dbQuery(query,query_result);
-
+				
 				memset(query_buf,0,sizeof(query_buf));
 				snprintf(query_buf,sizeof(query_buf),"update p2p_messages set state = 1 where send_id=%d and rece_id=%d and state=0 ",request_uid,my_uid);
 				string query_update(query_buf);
-				flag = flag && db->dbQuery(query_update);
+				flag = db->dbQuery(query_update);
 				if(flag){
 					result = "success" ;
 
 				}else{
 					detail = "服务器错误";
 				}
+				
 			} 
 		}
 		root["result"] = Json::Value(result);
@@ -94,7 +95,7 @@ int main() {
 		string str = fw.write(root);
 		FCGI_printf("Content-type: application/json\r\n"
 			"\r\n"
-			"%s<br/>",str.c_str());
+			"%s",str.c_str());
 		
 		
 	}

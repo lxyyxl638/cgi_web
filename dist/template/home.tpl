@@ -78,7 +78,6 @@
   <div class="row">
     <div class="col-md-6">
       <div id="latest_chat"> 
-          <button id="active">Buttom</button>
           <ul class="list-group" id="table">
           </ul>
       </div>

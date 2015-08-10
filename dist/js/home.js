@@ -2,7 +2,6 @@ var Base_url = "http://localhost/";
 var current_dialog;
 var current_chat_uid;
 $(function(){
-
 	$("#table").delegate("li","click",function(){
 		  var friend_username = $(this).attr("friend_username");
 		  var friend_name = $(this).attr("friend_nickname");
@@ -20,7 +19,7 @@ $(function(){
 		  	var newDialog = "<div name=" + friend_uid + ">" + "<div>\
             <div name=\"share\">\
             </div>\
-            <span name=\"msgs\">Messages:" + friend_uid + "</span>\
+            <span name=\"msgs\">正在和" + friend_name + "(" + friend_username +")" + "对话</span>\
             <div name=\"recv_chat_window\" class=\"chat_window\">\
               <table name=\"chat\">\
               </table>\
@@ -282,6 +281,8 @@ $(function(){
 			get_notification();
 		})
 	})
+
+	get_latest_chat();
 	/*轮询通知数目*/
 	setInterval(ask_notification_num,10000);
 
@@ -344,13 +345,13 @@ function get_latest_chat() {
 			obj = data["friend_list"];
 			for (x in data["friend_list"]) {
 				if (obj[x]["is_online"] == "1") {
-					$("#table").append("<li class=\"list-group-item list-group-item-success\" id="+ obj[x]["friend_id"] + ">" + obj[x]['friend_nickname'] + "(" + obj[x]['friend_username']+ ")" + "<span class=\"badge\">" + obj[x]['num']+"</span></li>");
+					$("#table").append("<li style=\"cursor:pointer\" class=\"list-group-item list-group-item-success\" id="+ obj[x]["friend_id"] + " friend_username=" + obj[x]['friend_username'] + " friend_nickname=" +obj[x]['friend_nickname']+ ">" + obj[x]['friend_nickname'] + "(" + obj[x]['friend_username']+ ")" + "<span class=\"badge\">" + obj[x]['num']+"</span></li>");
 				}
 			}
 
 			for (x in data["friend_list"]) {
-				if (obj[x][is_online] == "0") {
-					$("#table").append("<li class=\"list-group-item\" id="+ obj[x]["friend_id"] + ">" + obj[x]['friend_nickname'] + "(" + obj[x]['friend_username']+ ")" + "<span class=\"badge\">" + obj[x]['num']+"</span></li>");
+				if (obj[x]["is_online"] == "0") {
+					$("#table").append("<li style=\"cursor:pointer\" class=\"list-group-item\" id="+ obj[x]["friend_id"] + " friend_username=" + obj[x]['friend_username'] + " friend_nickname=" +obj[x]['friend_nickname']+ ">" + obj[x]['friend_nickname'] + "(" + obj[x]['friend_username']+ ")" + "<span class=\"badge\">" + obj[x]['num']+"</span></li>");
 				}
 			}
 
