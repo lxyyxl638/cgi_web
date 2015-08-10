@@ -1,17 +1,3 @@
-Skip to content
-This repository  
-Pull requests
-Issues
-Gist
- @Kallima03
- Watch 1
-  Star 0
-  Fork 1
-lxyyxl638/cgi_web
-Branch: master  cgi_web/get_unread_message.cpp
-@MInternetMInternet 38 minutes ago 接入即时聊天
-1 contributor
-RawBlameHistory     103 lines (92 sloc)  2.71 kB
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -24,21 +10,25 @@ RawBlameHistory     103 lines (92 sloc)  2.71 kB
 #include "json/json.h"
 #include "include/session.h"
 #include "include/public.h"
+
 int main() {
 	Database *db = Database::getInstance();
 	Session *session = Session::getInstance();
-
 	while (FCGI_Accept() >= 0) {
 		session->sessionInit();
+
+
 		Json::FastWriter fw;
 		Json::Value root;
 		string result("fail");
 		string detail("");
 		vector<unordered_map<string,string> >   query_result;
+		
 		if(session->checkSession() == false){
 			detail = detail + "unlogin";
 
 		}else{
+
 			unordered_map<string,string> ans;
 			char * method = getenv("REQUEST_METHOD");
 			if ( strcmp(method,"POST") == 0) {
@@ -66,41 +56,36 @@ int main() {
 			}
 			int argu_count = 0;
 			
-			if(ans.find("request_uid") != ans.end())
-				argu_count++;
-			if(argu_count < 1) {
-				detail = "参数错误！";
+			
+			char query_buf[1024] = {0};
+			int user_id;
+			
+			user_id = atoi(session->getValue("user_id").c_str());
+
+			snprintf(query_buf,sizeof(query_buf),"select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=%d group by send_id",user_id);
+			string query(query_buf);
+			int flag = db->dbQuery(query,query_result);
+				
+			if(flag ){
+				result = "success" ;
+
+			}else{
+				detail = "数据库操作错误!!";
 			}
-			else
-			{
-				char query_buf[1024] = {0};
-				request_uid = ans["request_uid"];
-				my_uid = atoi(session->getValue("user_id").c_str());
-				snprintf(query_buf,sizeof(query_buf),"select * from p2p_messages where send_id=%d and rece_id=%d and state=0 ",request_uid,my_uid);
-				string query(query_buf);
-				int flag = db->dbQuery(query,query_result);
-
-				memset(query_buf,0,sizeof(query_buf));
-				snprintf(query_buf,sizeof(query_buf),"update p2p_messages set state = 1 where send_id=%d and rece_id=%d and state=0 ",request_uid,my_uid);
-				string query_update(query_buf);
-				flag = flag && db->dbQuery(query_update);
-				if(flag){
-					result = "success" ;
-
-				}else{
-					detail = "服务器错误";
-				}
-			} 
 		}
+	
 		root["result"] = Json::Value(result);
 		if(strcmp(result.c_str(),"success") == 0){
+			Json::Value user_list;
 			for(size_t i = 0 ; i != query_result.size(); i++ ){
-				Json::Value message;
-				 message["message"] = Json::Value(query_result[i]["message"]);
-				 message["send_time"] = Json::Value(query_result[i]["send_time"]);
-				 root["message_list"].append(message);
+				team["is_online"] = Json::Value(session->getOnline(atoi(query_result[i]["send_id"].c_str())));
+				team["friend_id"] = Json::Value(query_result[i]["send_id"]);
+				team["friend_username"] = Json::Value(query_result[i]["username"]);
+				team["friend_nickname"] = Json::Value(query_result[i]["nickname"]);
+				team["num"] = Json::Value(query_result[i]["num"]);
+				root["friend_list"].append(team);
 			}
-
+			
 		}else{
 			root["detail"] = Json::Value(detail);
 		}
@@ -108,11 +93,7 @@ int main() {
 		string str = fw.write(root);
 		FCGI_printf("Content-type: application/json\r\n"
 			"\r\n"
-			"%s<br/>",str.c_str());
-		
-		
+			"%s",str.c_str());
 	}
 	return 0;
 }
-Status API Training Shop Blog About Help
-© 2015 GitHub, Inc. Terms Privacy Security Contact
