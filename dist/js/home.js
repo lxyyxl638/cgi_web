@@ -308,7 +308,7 @@ $.get(Base_url+"get_notification",function(data) {
 			 	 		tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + " data-toggle=\"modal\" data-target=\"#gridSystemModalConfirm\" ><span class=\"badge\" style=\"cursor:pointer\" >处理请求</span>"+ data["notification_list"][x]["send_nickname"] +"想添加你为好友:" +  data["notification_list"][x]["additional_message"] +"</li>"
 			 	 	} else if (data["notification_list"][x]["state"] == "1") {
 			 	 		//收到了别人的消息
-			 	 		if (data["notification_list"][x]["additional_message"] == "接受") {
+			 	 		if (data["notification_list"][x]["additional_message"] == "accept") {
 			 	 			tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + "response=" + data["notification_list"][x]["additional_message"] + " data-toggle=\"modal\" data-target=\"#gridSystemModalConfirm\" ><span class=\"badge\" style=\"cursor:pointer\" >处理请求</span>" + data["notification_list"][x]["send_nickname"] + "接受了你的请求</li>"
 			 	 		} else {
 			 	 			tmp="<li class=\"list-group-item\" notification_id=" + data["notification_list"][x]["no_id"] + " friend_id=" + data["notification_list"][x]["send_id"] + "response=" + data["notification_list"][x]["additional_message"] + " ><span class=\"badge\" style=\"cursor:pointer\" >知道了</span>" + data["notification_list"][x]["send_nickname"] + "拒绝了你的请求</li>"
