@@ -362,21 +362,28 @@ $(function () {
 	/*
 		设置channel和用户uid
 	*/
-	nickname = 2;
-	channel = 2;
-	uid = 2;
-	current_chat_uid = uid;
 
-	comet = new iComet({
-		channel : channel,
-		signUrl : sign_url,
-		subUrl : sub_url,
-		pubUrl : pub_url,
-		callback : function (content) {
-			var msg = JSON.parse(content);
-			addmsg(msg.uid, msg.nickname, msg.content, false);
-		}
-	});
+	$.get(Base_url+"get_my_info",function(data) {
+		if (data['result'] == "success") {
+				channel = data['user_id'];
+				nickname = data['nickname'];
+				uid = data['user_id'];
+
+				comet = new iComet({
+				channel : channel,
+				signUrl : sign_url,
+				subUrl : sub_url,
+				pubUrl : pub_url,
+				callback : function (content) {
+					var msg = JSON.parse(content);
+					addmsg(msg.uid, msg.nickname, msg.content, false);
+				}
+			});
+		} else {
+			location.href=Base_url + "sign_in";
+		} 
+	})
+	
 	
 
 	/*

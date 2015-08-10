@@ -363,9 +363,15 @@ function get_unread_message(obj) {
 	$.post(Base_url+"get_unread_message",{
 		"request_uid" : $(obj).attr("id")
 	},function(data){
-		if (result["data"] == "success") {
-
+		if (data["result"] == "success") {
+			for (x int data["message_list"]) {
+				addmsg($(obj).attr("friend_id"),$(obj).attr("friend_nickname"),data['message_list'][x]['message'],true);
+			}
 		}
 	})
+}
+
+function addChat() {
+
 }
 
