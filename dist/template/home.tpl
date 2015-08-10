@@ -46,7 +46,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav nav-tabs">
-        <li class="active"><a href="#latest_chat" data-toggle="tab">最近会话 <span class="sr-only">(current)</span></a></li>
+        <li class="active" id="nav_latest_chat"><a href="#latest_chat" data-toggle="tab">最近会话 <span class="sr-only">(current)</span></a></li>
         <li><a href="#myteam" id="nav_team" data-toggle="tab">我的好友</a></li>
       </ul>
 
@@ -82,12 +82,12 @@
           </ul>
       </div>
 
-      <div id="myteam" class="panel-group col-md-6" >      
+      <div id="myteam" class="panel-group col-md-12" >      
       </div>
     
 
       <div id="search_friend" class="row">
-        <div class="list-group col-md-6">
+        <div class="list-group col-md-12">
           
         </div>
       </div>

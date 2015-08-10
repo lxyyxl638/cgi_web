@@ -69,13 +69,9 @@ int main() {
 				memset(query_buf,0,sizeof(query_buf));
 				snprintf(query_buf,sizeof(query_buf),"update p2p_messages set state = 1 where send_id=%d and rece_id=%d and state=0 ",request_uid,my_uid);
 				string query_update(query_buf);
-				flag = db->dbQuery(query_update);
-				if(flag){
+				db->dbQuery(query_update);
 					result = "success" ;
 
-				}else{
-					detail = "服务器错误";
-				}
 				
 			} 
 		}
