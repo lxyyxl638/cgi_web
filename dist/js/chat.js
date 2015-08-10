@@ -263,11 +263,11 @@ function addmsg(euid, name, content, is) {
 		switch ($.trim(content).split(" ")[0]) {
 		case "/me":
 			html += '<td class="chat_names">*</td>';
-			html += '<td class="chat_content"><span class="chat_names">' + name + '</span> ' + content.substr(4, content.length) + '</td>';
+			html += '<td class="chat_content"><span class="chat_names">' + name + '</span>' + content.substr(4, content.length) + '</td>';
 			break;
 
 		default:
-			html += '<td class="chat_names">' + name + '</td>';
+			html += '<td class="chat_names">' + name + '</td>&nbsp;&nbsp;';
 			html += '<td class="chat_content">' + content + '</td>';
 			break;
 		}

@@ -2,6 +2,12 @@ var Base_url = "http://localhost/";
 var current_dialog;
 var current_chat_uid;
 $(function(){
+	$("#nav_latest_chat").on("click",function(){
+		$("#myteam").hide();
+		$("#search_friend").hide();
+		$("#notification_list").hide();
+		$("#latest_chat").show();
+	})
 	$("#table").delegate("li","click",function(){
 		  var friend_username = $(this).attr("friend_username");
 		  var friend_name = $(this).attr("friend_nickname");
@@ -364,7 +370,7 @@ function get_unread_message(obj) {
 		"request_uid" : $(obj).attr("id")
 	},function(data){
 		if (data["result"] == "success") {
-			for (x int data["message_list"]) {
+			for (x in data["message_list"]) {
 				addmsg($(obj).attr("friend_id"),$(obj).attr("friend_nickname"),data['message_list'][x]['message'],true);
 			}
 		}

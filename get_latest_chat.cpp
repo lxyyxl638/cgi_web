@@ -62,7 +62,7 @@ int main() {
 			
 			user_id = atoi(session->getValue("user_id").c_str());
 
-			snprintf(query_buf,sizeof(query_buf),"select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=%d group by send_id",user_id);
+			snprintf(query_buf,sizeof(query_buf),"select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=%d and p2p_messages.state=0 group by send_id",user_id);
 			string query(query_buf);
 			int flag = db->dbQuery(query,query_result);
 				

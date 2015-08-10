@@ -27,7 +27,7 @@ int main() {
 
 		}else{
 
-			char query_buf[1024] = {0};
+			char query_buf[2048] = {0};
 			string user_id;
 			user_id = session->getValue("user_id");
 
