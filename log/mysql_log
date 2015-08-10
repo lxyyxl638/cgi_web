@@ -298,3 +298,9 @@ select user_id,username,nickname from users where username like 'lxy%' and user_
 
 Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2) Thu Jan  1 08:00:00 1970
 
+Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2) Thu Jan  1 08:00:00 1970
+
+Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2) Thu Jan  1 08:00:00 1970
+
+Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2) Thu Jan  1 08:00:00 1970
+
