@@ -50,6 +50,7 @@
                 <button id="signup" type="buttom" class="btn btn-danger" style="width: 100%;">注册</button>
             </div>
         </div>
+
 </div>
 <script src="./dist/js/sign.js"></script>
 </body>

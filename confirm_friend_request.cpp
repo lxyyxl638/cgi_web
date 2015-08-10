@@ -9,7 +9,7 @@
 #include "include/database.h"
 #include "json/json.h"
 #include "include/session.h"
-#include "public.h"
+#include "include/public.h"
 
 string GetCurrentTime()
 {
@@ -74,49 +74,51 @@ int main() {
 				detail = "参数错误！";
 			} else {
 				//更新通知，state + 1
-				int no_id = atoi(ans["no_id"].str());
-				int request_uid = atoi(ans["request_uid"].str());
+				int no_id = atoi(ans["no_id"].c_str());
+				int request_uid = atoi(ans["request_uid"].c_str());
 				string message = ans["message"];
 				string team_id = ans["team_id"];
-				int my_uid = session->getValue();
+				int my_uid = atoi(session->getValue("user_id").c_str());
 
 				char buffer[1024];
 				memset(buffer,0,sizeof(buffer));
-				snprintf(buffer,"select send_id,state from notification where no_id=%d",no_id);
+				snprintf(buffer,sizeof(buffer),"select send_id,state from notification where no_id=%d",no_id);
 				string query_state(buffer);
 				vector<unordered_map<string,string> > res;
 				db->dbQuery(query_state,res);
 				if (res.size() > 0) {
-					int send_id = res[0]["send_id"];
-					int state = res[0]["state"];
+					int send_id = atoi(res[0]["send_id"].c_str());
+					int state = atoi(res[0]["state"].c_str());
 					if ((send_id != my_uid && state == 0) || (send_id == my_uid && state == 1)) {
 						result = "success";
 					}
 				} else {
+					result = "fail";
 					detail = "服务器出错";
 				}
 
 				if (result == "success") {
 					memset(buffer,0,sizeof(buffer));
-					snprintf(buffer,"update notification set state = state + 1,additional_message = %s where no_id=%d",atoi(no_id.c_str()),message.c_str());
+					snprintf(buffer,sizeof(buffer),"update notification set state = state + 1,additional_message='拒绝' where no_id=%d",no_id);
 					string query(buffer);
 					if (db->dbQuery(query)) {
 						result = "success";
 					} else {
-						detail = "服务器出错，请重新尝试";
+						result = "fail";
+						detail = message.c_str();
 					}
 
 
 					//添加好友
-					if (team_id.length() > 0) {
+					if (message == "accept") {
 						memset(buffer,0,sizeof(buffer));
-						snprintf(buffer,"select id where (user_id=%d and friend_id=%d)or(user_id=%d and friend_id=%d)",my_uid,request_uid,request_uid,my_uid);
+						snprintf(buffer,sizeof(buffer),"select id where (user_id=%d and friend_id=%d)or(user_id=%d and friend_id=%d)",my_uid,request_uid,request_uid,my_uid);
 						string query_friend_exist(buffer);
-						if (0 == dbQuery(query_friend_exist)) {
+						if (0 == db->dbQuery(query_friend_exist)) {
 							memset(buffer,0,sizeof(buffer));
-							snprintf(buffer,"insert friendship(user_id,friend_id) value(%d,%d)",my_uid,request_uid);
+							snprintf(buffer,sizeof(buffer),"insert friendship(user_id,friend_id,team_id) value(%d,%d,%d)",my_uid,request_uid,atoi(team_id.c_str()));
 							string query_insert(buffer);
-							dbQuery(buffer);
+							db->dbQuery(query_insert);
 						}
 					}
 				}

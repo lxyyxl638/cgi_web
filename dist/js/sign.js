@@ -2,7 +2,7 @@ var Base_url = "http://localhost/";
 $(function(){
 
 	$("#login").click(function(){
-		
+		var message = '';
 		var username = $("#username").val();
 		var password = $("#password").val();
 		
@@ -34,7 +34,7 @@ $(function(){
 	});
 
 	$("#signup").click(function(){
-
+		var message = '';
 		var username = $("#username_signup").val();
 		var password = $("#password_signup").val();
 		var nickname = $("#nickname_signup").val();
@@ -123,7 +123,7 @@ function isValidPassword(password) {
 
 function isValidNickname(nickname) {
 
-	if (nickname.length < 6 || nickname.length >16) {
+	if  (nickname.length >10) {
 		return false;
 	} else {
 		return true;
