@@ -1,3 +1,17 @@
+Skip to content
+This repository  
+Pull requests
+Issues
+Gist
+ @Kallima03
+ Watch 1
+  Star 0
+  Fork 1
+lxyyxl638/cgi_web
+Branch: master  cgi_web/query_users.cpp
+@lxyyxl638lxyyxl638 3 days ago correct some bug
+2 contributors @lxyyxl638 @MInternet
+RawBlameHistory     117 lines (103 sloc)  3.21 kB
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -65,14 +79,10 @@ int main() {
 
 				it = ans.find("username");
 				username = it->second;
-<<<<<<< HEAD
 				
 				user_id = session->getValue("user_id");
 				snprintf(query_buf,sizeof(query_buf),"select user_id,username,nickname from users where username like '%s%%' and user_id != %d ",username.c_str(),atoi(user_id.c_str()));
-=======
 
-				snprintf(query_buf,sizeof(query_buf),"select user_id,username,nickname from users where username like '%s%%' and user_id != %d",username.c_str(),atoi(session->getValue("user_id").c_str()));
->>>>>>> 0d378a417d64e64e4510b1a217d9e0e69b519d7b
 				string query(query_buf);
 
 				bool flag = db->dbQuery(query, query_result);
@@ -118,3 +128,5 @@ int main() {
 	}
 	return 0;
 }
+Status API Training Shop Blog About Help
+© 2015 GitHub, Inc. Terms Privacy Security Contact

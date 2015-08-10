@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -170,8 +170,8 @@
                 <div class="input-group col-md-8 col-md-offset-2">
                   <span class="input-group-addon">处理</span>
                   <select class="form-control" id="handle_request">
-		  	<option value="accept">接受</option>
-		  	<option value="reject">拒绝</option>
+		  	<option value="接受">接受</option>
+		  	<option value="拒绝">拒绝</option>
                   </select>
                 </div>
                 <br>
@@ -186,7 +186,7 @@
                     <span class="input-group-addon">组名</span>
                     <input type="text" class="form-control" id="input_team_name"> 
                   </div>
-		 <br>
+
                   <button class="btn btn-primary col-md-offset-2" id="button_add_new_team">创建分组</button>
                   </div>
               </div>
