@@ -9,53 +9,7 @@ $(function(){
 		$("#latest_chat").show();
 	})
 	$("#table").delegate("li","click",function(){
-		  var friend_username = $(this).attr("friend_username");
-		  var friend_name = $(this).attr("friend_nickname");
-		  var friend_uid = $(this).attr("id");
-		  current_chat_uid = friend_uid;
-
-		  var tmp = "*[name=" + friend_uid + "]";
-		  if ($(tmp).length > 0) {
-		  	//已经存在的对话框
-		  	current_dialog.hide();
-		  	$(tmp).show();
-		  	current_dialog = $(tmp);
-		  } else {
-		  	//另外开启一个
-		  	var newDialog = "<div name=" + friend_uid + ">" + "<div>\
-            <div name=\"share\">\
-            </div>\
-            <span name=\"msgs\">正在和" + friend_name + "(" + friend_username +")" + "对话</span>\
-            <div name=\"recv_chat_window\" class=\"chat_window\">\
-              <table name=\"chat\">\
-              </table>\
-            </div>\
-          </div>\
-          <div>\
-              <div style=\"float: right; text-align: left\">\
-                <span name=\"errors\">\
-                </span>\
-              </div>\
-              <div style=\"float: left; text-align: right\">\
-                  <a onclick=\"EmoticonAdv.showDropDown('btnlol', 'text')\" name=\"btnlol\" class=\"emoticon\"></a>\
-                  <div name='emoticonDropDown' style='display: none;'>\
-                      <ul name=\"connies\">\
-                      </ul>\
-                  </div>\
-                  <span name=\"nickname\"></span>\
-                  <button name=\"post\" class=\"send\" onclick=\"send()\">Post</button>\
-              </div>\
-          </div>\
-          <div class=\"row\">\
-              <textarea class=\"text\" name=\"content\" style=\"width:100%\">\
-              </textarea>\
-          </div></div>";
-		  	$("#chat_window").append(newDialog);
-		  	if ($(current_dialog).length > 0) current_dialog.hide();
-		  	$(tmp).show();
-		  	current_dialog = $(tmp);
-		  	get_unread_message(this);
-		  }
+		add_chat(this);
 	});
 
 	// $("#active").click(function(){
@@ -115,16 +69,16 @@ $(function(){
 
 				for (x in data["friend_list"]) {
 					if (data["friend_list"][x]["online"] == "1") {
-						str =  "<button class=\"list-group-item list-group-item-success\" friend_uid=" + data["friend_list"][x]["friend_id"] + " >\
-                        		<span class=\"badge\">14</span>" + data["friend_list"][x]["friend_nickname"] + "</button>";
+						str =  "<button class=\"list-group-item list-group-item-success\" friend_uid=" + data["friend_list"][x]["friend_id"] + " friend_username=" + data['friend_list'][x]['friend_username'] + " >\
+                        		<span class=\"badge\"></span>" + data["friend_list"][x]["friend_nickname"] + "</button>";
                         $("#" + tmp + " .panel-body .list-group").append(str);             
                     }
                  }
 
                  for (x in data["friend_list"]) {
 					if (data["friend_list"][x]["online"] == "0") {
-						str =  "<button class=\"list-group-item\" friend_uid=" + data["friend_list"][x]["friend_id"] + " >\
-                        		<span class=\"badge\">14</span>" + data["friend_list"][x]["friend_nickname"] + "</button>";
+						str =  "<button class=\"list-group-item\" friend_uid=" + data["friend_list"][x]["friend_id"] +  " friend_username=" + data['friend_list'][x]['friend_username'] + " >\
+                        		<span class=\"badge\"></span>" + data["friend_list"][x]["friend_nickname"] + "</button>";
                         $("#" + tmp + " .panel-body .list-group").append(str);             
                     }
                  }
@@ -288,6 +242,12 @@ $(function(){
 		})
 	})
 
+	$("#myteam [friend_id]").on("click",function() {
+		obj = add_latest_chat(this);
+		add_chat(obj.attr('friend_uid'),obj.text());
+	})
+
+
 	get_latest_chat();
 	/*轮询通知数目*/
 	setInterval(ask_notification_num,10000);
@@ -377,7 +337,66 @@ function get_unread_message(obj) {
 	})
 }
 
-function addChat() {
+function add_chat(obj) {
+	var friend_username = $(obj).attr("friend_username");
+	var friend_name = $(obj).attr("friend_nickname");
+	var friend_uid = $(obj).attr("id");
+		  current_chat_uid = friend_uid;
 
+		  var tmp = "*[name=" + friend_uid + "]";
+		  if ($(tmp).length > 0) {
+		  	//已经存在的对话框
+		  	current_dialog.hide();
+		  	$(tmp).show();
+		  	current_dialog = $(tmp);
+		  } else {
+		  	//另外开启一个
+		  	var newDialog = "<div name=" + friend_uid + ">" + "<div>\
+            <div name=\"share\">\
+            </div>\
+            <span name=\"msgs\">正在和" + friend_name + "(" + friend_username +")" + "对话</span>\
+            <div name=\"recv_chat_window\" class=\"chat_window\">\
+              <table name=\"chat\">\
+              </table>\
+            </div>\
+          </div>\
+          <div>\
+              <div style=\"float: right; text-align: left\">\
+                <span name=\"errors\">\
+                </span>\
+              </div>\
+              <div style=\"float: left; text-align: right\">\
+                  <a onclick=\"EmoticonAdv.showDropDown('btnlol', 'text')\" name=\"btnlol\" class=\"emoticon\"></a>\
+                  <div name='emoticonDropDown' style='display: none;'>\
+                      <ul name=\"connies\">\
+                      </ul>\
+                  </div>\
+                  <span name=\"nickname\"></span>\
+                  <button name=\"post\" class=\"send\" onclick=\"send()\">Post</button>\
+              </div>\
+          </div>\
+          <div class=\"row\">\
+              <textarea class=\"text\" name=\"content\" style=\"width:100%\">\
+              </textarea>\
+          </div></div>";
+		  	$("#chat_window").append(newDialog);
+		  	if ($(current_dialog).length > 0) current_dialog.hide();
+		  	$(tmp).show();
+		  	current_dialog = $(tmp);
+		  	get_unread_message(this);
+		  }
+}
+
+function add_latest_chat(friend_uid,friend_nickname) {
+	
+	//先删除自己，然后再置顶
+	if ($("#latest_chat li [id=" + friend_uid +"]").length > 0) {
+		($("#latest_chat li [id=" + friend_uid +"]").remove();
+	}
+	$("#table").prepend("<li style=\"cursor:pointer\" class=\"list-group-item\" id="+ friend_uid + " friend_username=" + friend_nickname + " friend_nickname=" + friend_nickname+ ">" + friend_nickname + "(" + friend_nickname + ")" + "<span class=\"badge\">" + "</span></li>");
+	if (obj.hasClass('list-group-item-success')) {
+		$("#latest_chat li [id=" + friend_uid + "]").addClass('list-group-item-success');
+	}
+	return "#latest_chat li [id=" + friend_uid + "]";
 }
 
