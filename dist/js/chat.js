@@ -238,8 +238,11 @@ if (testing) {
 	if(n && n.length == 2){
 		path = '/' + n[1];
 	}
-	var sign_url = 'http://' + app_host + path + '/sign.php';
-	var pub_url = 'http://' + app_host + path + '/push.php?cb=?';
+
+	var sign_url = 'http://' + admin_host + '/sign';
+	var pub_url = 'http://' + admin_host + '/push?cb=?';
+	//var sign_url = 'http://' + app_host + path + '/sign.php';
+	//var pub_url = 'http://' + app_host + path + '/push.php?cb=?';
 }
 var sub_url = 'http://' + icomet_host + '/sub';
 
