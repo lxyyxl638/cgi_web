@@ -334,7 +334,7 @@ function send() {
 	}
 	$(tmp + " [name=errors]").html('');
 
-	addmsg(uid, nickname, content, true);
+	addmsg(current_chat_uid, nickname, content, true);
 	
 	var msg = {
 		'uid' : uid,
@@ -381,7 +381,7 @@ $(function () {
 				pubUrl : pub_url,
 				callback : function (content) {
 					var msg = JSON.parse(content);
-					add_latest_chat(msg.uid,msg.nickname);
+					add_latest_chat(msg.uid,msg.nickname,true);
 					addmsg(msg.uid, msg.nickname, msg.content, false);
 				}
 			});
