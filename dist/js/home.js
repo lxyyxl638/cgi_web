@@ -402,7 +402,7 @@ function add_latest_chat(friend_uid,friend_nickname,is_online) {
 	if ($("#latest_chat [id=" + friend_uid +"]").length > 0) {
 		$("#latest_chat [id=" + friend_uid +"]").remove();
 	}
-	$("#table").prepend("<li style=\"cursor:pointer\" class=\"list-group-item\" id="+ friend_uid + " friend_username=" + friend_nickname + " friend_nickname=" + friend_nickname+ ">" + friend_nickname + "(" + friend_nickname + ")" + "<span class=\"badge\">" + "</span></li>");
+	$("#table").prepend("<li style=\"cursor:pointer\" class=\"list-group-item\" id="+ friend_uid + " friend_username=" + friend_nickname + " friend_nickname=" + friend_nickname+ ">" + friend_nickname + "(" + friend_nickname + ")" + "<span class=\"badge\">" + "未读消息</span></li>");
 	if (is_online) {
 		$("#latest_chat [id='" + friend_uid + "']").addClass('list-group-item-success');
 	}
