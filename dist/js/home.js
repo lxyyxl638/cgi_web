@@ -11,13 +11,13 @@ $(function(){
 	});
 
 	$("#table").delegate("li","click",function(){
-		add_chat(this);
+		add_chat(this,true);
 	});
 	
 
 	$("#myteam").delegate("[friend_uid]","click",function() {
 
-		add_latest_chat($(this).attr('friend_uid'),$(this).text(),$(this).hasClass('list-group-item-success'));
+		add_latest_chat($(this).attr('friend_uid'),$(this).text(),$(this).hasClass('list-group-item-success'),true);
 	})
 	// $("#active").click(function(){
 		
@@ -345,7 +345,7 @@ function get_unread_message(obj) {
 	})
 }
 
-function add_chat(obj) {
+function add_chat(obj,is_show) {
 	var friend_username = $(obj).attr("friend_username");
 	var friend_name = $(obj).attr("friend_nickname");
 	var friend_uid = $(obj).attr("id");
@@ -390,14 +390,16 @@ function add_chat(obj) {
               </textarea>\
           </div></div>";
 		  	$("#chat_window").append(newDialog);
-		  	if ($(current_dialog).length > 0) current_dialog.hide();
-		  	$(tmp).show();
-		  	current_dialog = $(tmp);
-		  	get_unread_message(this);
+		  	if (is_show) {
+		  		if ($(current_dialog).length > 0) current_dialog.hide();
+		  		$(tmp).show();
+		  		current_dialog = $(tmp);
+		  		get_unread_message(this);
+		  	}
 		  }
 }
 
-function add_latest_chat(friend_uid,friend_nickname,is_online) {
+function add_latest_chat(friend_uid,friend_nickname,is_online,is_show) {
 	
 	//先删除自己，然后再置顶
 	if ($("#latest_chat [id=" + friend_uid +"]").length > 0) {
@@ -409,6 +411,6 @@ function add_latest_chat(friend_uid,friend_nickname,is_online) {
 	}
 
 	obj =  "#latest_chat [id='" + friend_uid + "']"
-	add_chat(obj);
+	add_chat(obj,is_show);
 }
 

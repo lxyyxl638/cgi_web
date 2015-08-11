@@ -381,7 +381,7 @@ $(function () {
 				pubUrl : pub_url,
 				callback : function (content) {
 					var msg = JSON.parse(content);
-					add_latest_chat(msg.uid,msg.nickname,true);
+					add_latest_chat(msg.uid,msg.nickname,true,false);
 					addmsg(msg.uid, msg.nickname, msg.content, false);
 				}
 			});
