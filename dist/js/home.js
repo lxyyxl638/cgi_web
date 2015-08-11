@@ -17,8 +17,7 @@ $(function(){
 
 	$("#myteam").delegate("[friend_uid]","click",function() {
 
-		obj = add_latest_chat($(this).attr('friend_uid'),$(this).text(),$(this).hasClass('list-group-item-success'));
-		add_chat(obj);
+		add_latest_chat($(this).attr('friend_uid'),$(this).text(),$(this).hasClass('list-group-item-success'));
 	})
 	// $("#active").click(function(){
 		
@@ -408,6 +407,8 @@ function add_latest_chat(friend_uid,friend_nickname,is_online) {
 	if (is_online) {
 		$("#latest_chat [id='" + friend_uid + "']").addClass('list-group-item-success');
 	}
-	return "#latest_chat [id='" + friend_uid + "']";
+
+	obj =  "#latest_chat [id='" + friend_uid + "']"
+	add_chat(obj);
 }
 
