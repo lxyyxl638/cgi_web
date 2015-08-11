@@ -106,6 +106,7 @@ bool Session::checkSession() {
 		addLog();
 		if (reply->integer > 0) {
 			freeReplyObject(reply);
+			instance->setOnline(atoi(instance->getValue("user_id")).c_str());
 			return true;
 		} else {
 			freeReplyObject(reply);
@@ -173,6 +174,11 @@ bool Session::setOnline(int user_id) {
 	reply = (redisReply *) redisCommand(connection,"SET online:%d 1",user_id);
 	addLog();
 	freeReplyObject(reply);
+
+	reply = (redisReply *) redisCommand(connection,"EXPIRE online:%d 600",user_id);
+	addLog();
+	freeReplyObject(reply);
+	
 	return true;
 }
 
@@ -191,6 +197,11 @@ void Session::destroySession() {
 	
 	string cookie = getCookie();
 	reply = (redisReply *) redisCommand(connection,"DEL session:%s",cookie.c_str());
+	addLog();
+	freeReplyObject(reply);
+
+	int user_id = atoi(instance->getValue("user_id").c_str());
+	reply = (redisReply *) redisCommand(connection,"DEL online:%d",user_id);
 	addLog();
 	freeReplyObject(reply);
 	return;

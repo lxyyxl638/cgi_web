@@ -421,4 +421,9 @@ function add_unread_badge(friend_uid) {
 	$("#latest_chat [id=" + friend_uid +"] span").text("未读消息");
 }
 
+function logout() {
+	$.get(Base_url + "logout",function() {
+		location.href = Base_url + "sign_in";
+	})
+}
 

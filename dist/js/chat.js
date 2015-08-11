@@ -343,6 +343,18 @@ function send() {
 	};
 
 	comet.pub(current_chat_uid,JSON.stringify(msg));
+
+	$.post(Base_url+"send_message",{
+		rece_id : current_chat_uid,
+		message : content 
+	},function(data){
+		if (date['result'] == "success") {
+
+		} else {
+			alert("发送失败");
+		}
+	});
+
 }
 
 var w = window,

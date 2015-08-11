@@ -32,5 +32,8 @@ $spawn -a 127.0.0.1 -p 8101 -f /usr/local/nginx/cgibin/get_my_info
 $spawn -a 127.0.0.1 -p 8102 -f /usr/local/nginx/cgibin/get_unread_message
 
 $spawn -a 127.0.0.1 -p 8103 -f /usr/local/nginx/cgibin/send_message
+
+$spawn -a 127.0.0.1 -p 8104 -f /usr/local/nginx/cgibin/logout
+
 exit 0;
 
