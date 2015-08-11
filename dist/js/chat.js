@@ -281,8 +281,8 @@ function addmsg(euid, name, content, is) {
 		$("#" + msgs[content]).removeClass("sent");
 	}
 
-	$("div[name="+ current_chat_uid +"] [name=chat]").append(html);
-	$("div[name="+ current_chat_uid +"] [name=recv_chat_window]").scrollTop($("div[name="+ current_chat_uid +"] [name=recv_chat_window]")[0].scrollHeight);
+	$("div[name="+ euid +"] [name=chat]").append(html);
+	$("div[name="+ euid +"] [name=recv_chat_window]").scrollTop($("div[name="+ euid +"] [name=recv_chat_window]")[0].scrollHeight);
 }
 
 function join() {
@@ -318,19 +318,21 @@ function join() {
 }
 
 function send() {
-	var t = $('#chat_window textarea[name=content]');
+	//var post_uid = $(this).attr('post_uid');
+	var tmp = "[name=" + current_chat_uid + "]";
+	var t = $(tmp + " textarea[name=content]");
 	var content = $.trim(t.val());
 	content = htmlEntities(content);
 	t.val('');
 	if (content.length == 0) {
-		$("[name=errors]").html('content empty!');
+		$(tmp + " [name=errors]").html('content empty!');
 		return false;
 	}
 	if (content.length > 1000) {
-		$("[name=errors]").html('content too long!');
+		$(tmp + " [name=errors]").html('content too long!');
 		return false;
 	}
-	$("[name=errors]").html('');
+	$(tmp + " [name=errors]").html('');
 
 	addmsg(uid, nickname, content, true);
 	

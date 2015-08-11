@@ -381,7 +381,7 @@ function add_chat(obj) {
                       </ul>\
                   </div>\
                   <span name=\"nickname\"></span>\
-                  <button name=\"post\" class=\"send\" onclick=\"send()\">Post</button>\
+                  <button name=\"post\" class=\"send\" onclick=\"send()\" post_uid=" + friend_uid + " >发送</button>\
               </div>\
           </div>\
           <div class=\"row\">\
