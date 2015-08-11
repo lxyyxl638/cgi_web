@@ -350,6 +350,8 @@ function add_chat(obj) {
 	var friend_username = $(obj).attr("friend_username");
 	var friend_name = $(obj).attr("friend_nickname");
 	var friend_uid = $(obj).attr("id");
+		$("[id=" + friend_uid + "] span").text('');
+
 		  current_chat_uid = friend_uid;
 
 		  var tmp = "*[name=" + friend_uid + "]";
