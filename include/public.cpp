@@ -10,7 +10,7 @@ bool ParseParam(string & query_string,unordered_map<string,string> & Param)
 		size_t end =  query_string.find('&',x);
 		size_t start  = query_string.find('=',x);
 		string argu =  query_string.substr(x,start - x);
-		string key = query_string.substr(start+1,end-start-1);
+		string key = UrlDecode(query_string.substr(start+1,end-start-1));
 		pair<string,string>p = make_pair(argu,key);
 		
 		Param.insert(p);

@@ -6,6 +6,7 @@
 #include <string>
 #include <cstring>
 #include <fcgi_stdio.h>
+#include "include/public.h"
 using namespace std;
 int main() {
 	int count = 0;
@@ -41,7 +42,9 @@ int main() {
 			//	putchar(ch);
 				post_val = post_val + (char) ch ;
 			}
-			FCGI_printf("%s\n",post_val.c_str());
+			//string a = "%E6%9E%97%E5%B0%8F%E9%98%B3";
+			string answer = UrlDecode(post_val);
+			FCGI_printf("%s\n",answer.c_str());
 			FCGI_printf("</pre>");
 
 		} else {

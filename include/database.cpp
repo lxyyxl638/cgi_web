@@ -21,7 +21,9 @@ Database::Database() {
 		finish_with_error();
 		mysql_close(connection);			
 	}
-	mysql_query(connection,"SET NAMES UTF8");
+	mysql_query(connection,"SET character_set_results=utf8");
+	mysql_query(connection,"SET character_set_client=utf8");
+	mysql_query(connection,"SET character_set_connection=utf8");
 	t = time(NULL);
 	
 }

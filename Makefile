@@ -1,4 +1,4 @@
-all : get_friends_state sign_in sign_up home db_test get_all_friend_team get_friends_by_team query_users get_notification send_friend_request get_notification_num add_new_team confirm_friend_request get_latest_chat get_unread_message get_my_info
+all : post get_friends_state sign_in sign_up home db_test get_all_friend_team get_friends_by_team query_users get_notification send_friend_request get_notification_num add_new_team confirm_friend_request get_latest_chat get_unread_message get_my_info
 
 get_friends_state : get_friends_state.cpp include/database.h include/database.cpp include/session.h include/session.cpp include/public.h include/public.cpp json/json.h json/jsoncpp.cpp
 	g++ -o get_friends_state get_friends_state.cpp include/database.cpp include/session.cpp include/public.cpp json/jsoncpp.cpp -std=c++11 -lhiredis -lfcgi `mysql_config --cflags --libs`
@@ -52,7 +52,7 @@ sign_up : sign_up.cpp include/database.h include/database.cpp include/public.h i
 	g++ -o sign_up sign_up.cpp include/database.cpp include/public.cpp json/jsoncpp.cpp -std=c++11 -lhiredis -lfcgi `mysql_config --cflags --libs` -lctemplate_nothreads
 
 post : post.cpp
-	g++ -o post post.cpp -g -lfcgi -std=c++11
+	g++ -o post post.cpp include/public.cpp -lfcgi -std=c++11
 
 db_init : db_init.cpp include/database.cpp include/database.h
 	g++ -o db_init db_init.cpp include/database.cpp -std=c++11 -g `mysql_config --cflags --libs`
