@@ -6521,3 +6521,5 @@ select friend_id,username,nickname,sex from friendship inner join users on frien
 
 (SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Sun Aug  9 22:49:00 2015
 
+Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2) Thu Jan  1 08:00:00 1970
+

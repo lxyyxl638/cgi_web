@@ -9,72 +9,7 @@
 #include "include/database.h"
 #include "json/json.h"
 #include "include/session.h"
-
-unordered_map<string,string>  ParseParam(string query_string)
-{
-	unordered_map<string,string> Param;
-	size_t x;
-	for( x = 0; query_string.find('&',x) != query_string.npos;)
-	{
-		size_t end =  query_string.find('&',x);
-		size_t start  = query_string.find('=',x);
-		string argu =  query_string.substr(x,start - x);
-		string key = query_string.substr(start+1,end-start-1);
-		pair<string,string>p = make_pair(argu,key);
-		
-		Param.insert(p);
-		x = end+1;
-	}
-	size_t len = query_string.length();
-	size_t s = query_string.find('=',x);
-	string arg = query_string.substr(x,s-x);
-	string key = query_string.substr(s+1,len-s-1);
-	Param.insert(make_pair(arg,key));
-	
-	return Param;
-}
-vector<unordered_map<string,string> > ParseArrayParam(string query_string)
-{
-	vector<unordered_map<string,string> > Param;
-	size_t x=0;
-	string first_param;
-	unordered_map<string,string> level;
-
-	size_t end =  query_string.find('&',x);
-	size_t start  = query_string.find('=',x);
-	string argu =  query_string.substr(x,start - x);
-	string key = query_string.substr(start+1,end-start-1);
-	pair<string,string> p = make_pair(argu,key);
-	level.insert(p);
-	first_param = argu;
-	x = end+1;
-	for( ; query_string.find('&',x) != query_string.npos;)
-	{
-		size_t end =  query_string.find('&',x);
-		size_t start  = query_string.find('=',x);
-		string argu =  query_string.substr(x,start - x);
-		string key = query_string.substr(start+1,end-start-1);
-		pair<string,string> p = make_pair(argu,key);
-		if(argu == first_param){
-			Param.push_back(level);
-			level.clear();
-		}
-		level.insert(p);
-		x = end+1;
-	}
-	size_t len = query_string.length();
-	size_t s = query_string.find('=',x);
-	argu = query_string.substr(x,s-x);
-	key = query_string.substr(s+1,len-s-1);
-	if(argu == first_param){
-		Param.push_back(level);
-		level.clear();
-	}
-	level.insert(make_pair(argu,key));
-	Param.push_back (level);
-
-	return Param;
-}
+#include "include/public.h"
 string GetCurrentTime()
 {
 	time_t now_time;
