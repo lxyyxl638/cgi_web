@@ -357,9 +357,11 @@ function add_chat(obj,is_show) {
 		  var tmp = "*[name=" + friend_uid + "]";
 		  if ($(tmp).length > 0) {
 		  	//已经存在的对话框
-		  	current_dialog.hide();
-		  	$(tmp).show();
-		  	current_dialog = $(tmp);
+			if (is_show) {
+		  		if (current_dialog != undefined)current_dialog.hide();
+		  		$(tmp).show();
+		  		current_dialog = $(tmp);
+			}
 		  } else {
 		  	//另外开启一个
 		  	var newDialog = "<div name=" + friend_uid + ">" + "<div>\

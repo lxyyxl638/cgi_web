@@ -10678,3 +10678,821 @@ select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 20
 
 (SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
 
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 00:45:00 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=1 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=7 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 7 and team_id = 5 Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 7 and team_id = 5 Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 3 Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=1 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=7 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 7 and team_id = 5 Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=1 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=1 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=1 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=7 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 7 and team_id = 5 Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 7 and team_id = 5 Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=1 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=7 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 7 and team_id = 5 Mon Aug 10 21:44:42 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=1 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=7 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 7 and team_id = 5 Mon Aug 10 21:44:42 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=1 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=7 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 7 and team_id = 5 Mon Aug 10 21:44:42 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=1 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=1 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  1  Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 3 Mon Aug 10 21:44:42 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 1 and team_id = 1 Mon Aug 10 21:44:42 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=7 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+select team_id,team_name from teams  where user_id  =  7  Mon Aug 10 21:44:42 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+select friend_id,username,nickname,sex from friendship inner join users on friend_id = users.user_id where friendship.user_id = 7 and team_id = 5 Mon Aug 10 21:44:42 2015
+
+select count(*) as num,send_id,nickname,username from p2p_messages inner join users on send_id= user_id where rece_id=7 and p2p_messages.state=0 group by send_id Mon Aug 10 21:44:43 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=1 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=1 and notification.state=1) Tue Aug 11 02:05:44 2015
+
+(SELECT no_id,type,send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=send_id where rece_id=7 and notification.state=0) union (SELECT no_id,type,rece_id as send_id,notification.state,username,nickname,created_time,additional_message FROM notification inner join users on users.user_id=rece_id where send_id=7 and notification.state=1) Tue Aug 11 02:05:44 2015
+
