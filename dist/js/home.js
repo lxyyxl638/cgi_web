@@ -261,7 +261,12 @@ $(function(){
 function ask_notification_num() {
 	$.get(Base_url+"get_notification_num",function(data) {
 			 if (data["result"] == "success") {
-			 	$("#nav_personal_center .badge").text(data["num"]);
+			 	if (data["num"] > 0) {
+			 		$("#nav_personal_center .badge").text(data["num"]);
+			 	} else {
+			 		$("#nav_personal_center .badge").text('');
+
+			 	}
 			 }
 	});
 }

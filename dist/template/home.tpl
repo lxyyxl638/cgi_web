@@ -82,18 +82,18 @@
           </ul>
       </div>
 
-      <div id="myteam" class="panel-group col-md-12" >      
+      <div id="myteam" class="panel-group" >      
       </div>
     
 
-      <div id="search_friend" class="row">
-        <div class="list-group col-md-12">
+      <div id="search_friend">
+        <div class="list-group">
           
         </div>
       </div>
 
-      <div id="notification_list" class="row">
-        <ul class="list-group col-md-12">
+      <div id="notification_list">
+        <ul class="list-group">
           
         </ul>
       </div>
@@ -193,7 +193,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-            <button type="button" class="btn btn-primary" button-operation="confirm_friend">发送</button>
+            <button type="button" class="btn btn-primary" button-operation="confirm_friend">处理</button>
           </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
