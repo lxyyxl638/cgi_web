@@ -4,6 +4,7 @@ var current_chat_uid;
 $(function(){
 
 	$("#nav_latest_chat").on("click",function(){
+		$("#nav_latest_chat a span").text('');
 		$("#myteam").hide();
 		$("#search_friend").hide();
 		$("#notification_list").hide();
@@ -405,7 +406,7 @@ function add_latest_chat(friend_uid,friend_nickname,is_online,is_show) {
 	if ($("#latest_chat [id=" + friend_uid +"]").length > 0) {
 		$("#latest_chat [id=" + friend_uid +"]").remove();
 	}
-	$("#table").prepend("<li style=\"cursor:pointer\" class=\"list-group-item\" id="+ friend_uid + " friend_username=" + friend_nickname + " friend_nickname=" + friend_nickname+ ">" + friend_nickname + "(" + friend_nickname + ")" + "<span class=\"badge\">" + "未读消息</span></li>");
+	$("#table").prepend("<li style=\"cursor:pointer\" class=\"list-group-item\" id="+ friend_uid + " friend_username=" + friend_nickname + " friend_nickname=" + friend_nickname+ ">" + friend_nickname + "(" + friend_nickname + ")" + "<span class=\"badge\">" + "</span></li>");
 	if (is_online) {
 		$("#latest_chat [id='" + friend_uid + "']").addClass('list-group-item-success');
 	}
@@ -413,4 +414,9 @@ function add_latest_chat(friend_uid,friend_nickname,is_online,is_show) {
 	obj =  "#latest_chat [id='" + friend_uid + "']"
 	add_chat(obj,is_show);
 }
+
+function add_unread_badge(friend_uid) {
+	$("#latest_chat [id=" + friend_uid +"] span").text("未读消息");
+}
+
 

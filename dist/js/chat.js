@@ -382,6 +382,8 @@ $(function () {
 				callback : function (content) {
 					var msg = JSON.parse(content);
 					add_latest_chat(msg.uid,msg.nickname,true,false);
+					add_unread_badge(msg.uid);
+					$("#nav_latest_chat a span").text("new");
 					addmsg(msg.uid, msg.nickname, msg.content, false);
 				}
 			});
