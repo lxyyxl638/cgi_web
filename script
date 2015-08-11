@@ -27,7 +27,7 @@ $spawn -a 127.0.0.1 -p 8098 -f /usr/local/nginx/cgibin/confirm_friend_request
 
 $spawn -a 127.0.0.1 -p 8099 -f /usr/local/nginx/cgibin/get_latest_chat
 
-$spawn -a 127.0.0.1 -p 8100 -f /usr/local/nginx/cgibin/get_unread_message
+$spawn -a 127.0.0.1 -p 8102 -f /usr/local/nginx/cgibin/get_unread_message
 
 $spawn -a 127.0.0.1 -p 8101 -f /usr/local/nginx/cgibin/get_my_info
 

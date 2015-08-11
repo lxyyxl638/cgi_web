@@ -212,9 +212,9 @@ var uid = 'u' + (Math.random() + '').replace('.', '').substr(1, 6);
 var nickname = '';
 
 var comet;
-var app_host = '127.0.0.1:8080';
-var admin_host = '127.0.0.1:8000';
-var icomet_host = '127.0.0.1:8100';
+var app_host = 'localhost:8080';
+var admin_host = 'localhost:8000';
+var icomet_host = 'localhost:8100';
 
 // for testing only
 var n = location.href.match(/http[s]?:\/\/([^\/]*)\//);

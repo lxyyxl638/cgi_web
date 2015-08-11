@@ -3,7 +3,7 @@
 
 $cb = urlencode($_GET['cb']);
 $cname = urlencode($_GET['cname']);
-$url = "http://127.0.0.1:8000/sign?cname=$cname&cb=$cb";
+$url = "http://localhost:8000/sign?cname=$cname&cb=$cb";
 $resp = http_get($url);
 echo $resp;
 

@@ -99,15 +99,10 @@ int main() {
 
 				if (result == "success") {
 					memset(buffer,0,sizeof(buffer));
-					snprintf(buffer,sizeof(buffer),"update notification set state = state + 1,additional_message='拒绝' where no_id=%d",no_id);
+					snprintf(buffer,sizeof(buffer),"update notification set state = state + 1,additional_message='%s' where no_id=%d",message.c_str(),no_id);
 					string query(buffer);
-					if (db->dbQuery(query)) {
+					db->dbQuery(query);
 						result = "success";
-					} else {
-						result = "fail";
-						detail = message.c_str();
-					}
-
 
 					//添加好友
 					if (message == "accept") {
