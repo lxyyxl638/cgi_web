@@ -65,10 +65,8 @@
 
           <ul class="dropdown-menu">
             <li><a href="#">修改资料</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">退出</a></li>
+            <li><a href="#" onclick="logout()">退出</a></li>
           </ul>
         </li>
       </ul>

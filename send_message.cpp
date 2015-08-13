@@ -65,7 +65,7 @@ int main() {
 			send_id = session->getValue("user_id");
 			rece_id = ans["rece_id"];
 			message = ans["message"];
-			state = ans["state"];
+			state = session->getOnline(atoi(rece_id.c_str())) ? "1" : "0";
 			//send_time =  ans["send_time"];
 			int flag; 
 			char query_buf[1024]={0};

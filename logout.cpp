@@ -20,16 +20,17 @@ int main() {
 		string result("fail");
 		string detail("");
 		session->sessionInit();
-		vector<unordered_map<string,string> >   query_result;
-		int num=0;
-		if(session->checkSession() == false){
-			detail = detail + "unlogin";
 
-		}else{
+		if (session->checkSession()) {
 			session->destroySession();
+			result = "success";
+		} else {
+			detail = "unlogin";
 		}
-		root["result"] = Json::Value("success");
-		
+
+		root["result"] = Json::Value(result.c_str());
+		root["detail"] = Json::Value(detail.c_str());
+
 		string str = fw.write(root);
 		FCGI_printf("Content-type: application/json\r\n"
 			"\r\n"

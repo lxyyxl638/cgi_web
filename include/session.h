@@ -9,6 +9,10 @@
 #include <ctime>
 #include <vector>
 #include <hiredis/hiredis.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -17,7 +21,7 @@ class Session {
 	static Session* instance;
 	Session(); 
 	void addLog();
-	FILE * log_file;
+	int fd;
 	time_t t;
 	redisContext *connection;
 	redisReply *reply;
