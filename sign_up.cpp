@@ -13,6 +13,7 @@
 #include "json/json.h"
 
 using namespace std;
+
 Database *db = Database::getInstance();
 
 bool CheckUser(string & username) {

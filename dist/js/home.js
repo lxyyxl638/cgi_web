@@ -341,7 +341,7 @@ function get_unread_message(obj) {
 	},function(data){
 		if (data["result"] == "success") {
 			for (x in data["message_list"]) {
-				addmsg($(obj).attr("friend_id"),$(obj).attr("friend_nickname"),data['message_list'][x]['message'],true);
+				addmsg($(obj).attr("id"),$(obj).attr("friend_nickname"),data['message_list'][x]['message'],true);
 			}
 		}
 	})
@@ -398,7 +398,7 @@ function add_chat(obj,is_show) {
 		  		if ($(current_dialog).length > 0) current_dialog.hide();
 		  		$(tmp).show();
 		  		current_dialog = $(tmp);
-		  		get_unread_message(this);
+		  		get_unread_message(obj);
 		  	}
 		  }
 }
