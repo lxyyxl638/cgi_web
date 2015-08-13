@@ -344,7 +344,7 @@ function send() {
 
 	comet.pub(current_chat_uid,JSON.stringify(msg));
 
-	$.post(Base_url+"send_message",{
+	$.post("/send_message",{
 		rece_id : current_chat_uid,
 		message : content 
 	},function(data){
@@ -380,7 +380,7 @@ $(function () {
 		设置channel和用户uid
 	*/
 
-	$.get(Base_url+"get_my_info",function(data) {
+	$.get("/get_my_info",function(data) {
 		if (data['result'] == "success") {
 				channel = data['user_id'];
 				nickname = data['nickname'];
@@ -400,7 +400,7 @@ $(function () {
 				}
 			});
 		} else {
-			location.href=Base_url + "sign_in";
+			location.href="/sign_in";
 		} 
 	})
 	

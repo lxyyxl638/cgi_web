@@ -38,7 +38,7 @@ $(function(){
 	$("#nav_team").click(function(){
 		$("#latest_chat").hide();
 		$("#search_friend").hide();
-		$.get(Base_url + "get_all_friend_team",function(data,status){
+		$.get("/get_all_friend_team",function(data,status){
 			if (data["result"] == "success" && data["team_list"]) {
 				$("#myteam").empty();
 				for (x in data["team_list"]) {
@@ -57,7 +57,7 @@ $(function(){
 					$("#myteam").append(str);
 				}
 			} else if (data["detail"]== "unlogin") {
-			     location.href=Base_url + "sign_in";
+			     location.href="/sign_in";
 			}
 		});
 		
@@ -68,7 +68,7 @@ $(function(){
 	$("#myteam").delegate("a","click",function() {
 		obj = $(this);
 
-		$.post(Base_url+"get_friends_by_team",{
+		$.post("get_friends_by_team",{
 			team_id : obj.attr("data_id")
 		},function(data){
 			if (data["result"] == "success") {
@@ -92,13 +92,13 @@ $(function(){
                  }
 
 			} else if (data["detail"] == "unlogin"){
-				location.href=Base_url + "sign_in";
+				location.href="/sign_in";
 			}
 		})
 	});
 	
 	$("[type=search_button]").on("click",function(){
-		$.post(Base_url + "query_users",{
+		$.post("/query_users",{
 			username : $("#search_box").val()
 		},function(data){
 			if (data["result"] == "success") {
@@ -134,7 +134,7 @@ $(function(){
 
 	$("[button-operation=add_friend]").on("click",function() {
 
-		$.post(Base_url + "send_friend_request", {
+		$.post("/send_friend_request", {
 			request_uid : $("[request-uid]").attr("request-uid"),
 			message : $("[request-uid]").val()
 		},function(data) {
@@ -189,7 +189,7 @@ $(function(){
 
 	$("[button-operation=confirm_friend]").on("click",function() {
 
-		$.post(Base_url + "confirm_friend_request", {
+		$.post("/confirm_friend_request", {
 			no_id : $("#gridSystemModalConfirm").attr("notification_id"),
 			request_uid : $("#gridSystemModalConfirm").attr("request_uid"),
 			message : $("#handle_request").val(),
@@ -210,7 +210,7 @@ $(function(){
 			$("#add_new_team").show();
 		} else {
 			if ($("#input_team_name").val().length > 0) {
-			$.post(Base_url + "add_new_team",{
+			$.post("/add_new_team",{
 				team_name : $("#input_team_name").val()
 			},function(data){
 				if (data["result"] == "success") {
@@ -239,7 +239,7 @@ $(function(){
 	// });
 
 	$('[response="reject"]').on("click",function(){
-		$.post(Base_url + "confirm_friend_request", {
+		$.post("/confirm_friend_request", {
 			no_id : $(this).attr("notification_id"),
 			request_uid : $(this).attr("friend_id"),
 			message : "",
@@ -255,11 +255,12 @@ $(function(){
 	get_latest_chat();
 	/*轮询通知数目*/
 	setInterval(ask_notification_num,10000);
+	setInterval(get_friends_state,10000);
 
 });
 
 function ask_notification_num() {
-	$.get(Base_url+"get_notification_num",function(data) {
+	$.get("/get_notification_num",function(data) {
 			 if (data["result"] == "success") {
 			 	if (data["num"] > 0) {
 			 		$("#nav_personal_center .badge").text(data["num"]);
@@ -273,7 +274,7 @@ function ask_notification_num() {
 
 function ask_team() {
 	$("#ask_teams").empty();
-		$.get(Base_url+"get_all_friend_team",function(data) {
+		$.get("/get_all_friend_team",function(data) {
 			if (data["result"] == "success" && data["team_list"]) {
 				for (x in data["team_list"]) {
 					tmp="<option value="+ data["team_list"][x]["team_id"]+" >" + data["team_list"][x]["team_name"] + "</option>";
@@ -285,7 +286,7 @@ function ask_team() {
 
 
 function get_notification() {
-$.get(Base_url+"get_notification",function(data) {
+$.get("/get_notification",function(data) {
 			 if (data["result"] == "success") {
 
 			 	 	$("#latest_chat").hide();
@@ -315,7 +316,7 @@ $.get(Base_url+"get_notification",function(data) {
 
 //获取最近未读消息
 function get_latest_chat() {
-	$.get(Base_url+"get_latest_chat",function(data){
+	$.get("/get_latest_chat",function(data){
 		if (data['result'] == "success") {
 			obj = data["friend_list"];
 			for (x in data["friend_list"]) {
@@ -335,7 +336,7 @@ function get_latest_chat() {
 }
 
 function get_unread_message(obj) {
-	$.post(Base_url+"get_unread_message",{
+	$.post("/get_unread_message",{
 		"request_uid" : $(obj).attr("id")
 	},function(data){
 		if (data["result"] == "success") {
@@ -422,8 +423,30 @@ function add_unread_badge(friend_uid) {
 }
 
 function logout() {
-	$.get(Base_url + "logout",function() {
-		location.href = Base_url + "sign_in";
+	$.get("/logout",function() {
+		location.href = "/sign_in";
 	})
 }
 
+function get_friends_state() {
+   var friend_list = new Array();
+   var i=0;
+   $("#table li").each(function(){
+   	i = i + 1;
+   	friend_list[i] = $(this).attr("id");
+   });
+   $.post("/get_friends_state",{ 
+   	friend_id : friend_list 
+	},function(data){
+   	if (data['result'] == "success") {
+		tmp = data['friend_list'];
+		for (x in tmp) {
+			if (tmp[x]['state'] == "1") {
+			     $("#"+tmp[x]['friend_id']).addClass('list-group-item-success');
+			} else {
+			     $("#"+tmp[x]['friend_id']).removeClass('list-group-item-success');
+			}
+		}
+	}
+   });
+}

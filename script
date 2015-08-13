@@ -31,9 +31,12 @@ $spawn -a 127.0.0.1 -p 9012 -f /usr/local/nginx/cgibin/get_latest_chat
 $spawn -a 127.0.0.1 -p 9013 -f /usr/local/nginx/cgibin/get_unread_message
 
 $spawn -a 127.0.0.1 -p 9014 -f /usr/local/nginx/cgibin/get_my_info
+
 $spawn -a 127.0.0.1 -p 9015 -f /usr/local/nginx/cgibin/send_message
 
-$spawn -a 127.0.0.1 -p 8088 -f /usr/local/nginx/cgibin/logout
+$spawn -a 127.0.0.1 -p 9016 -f /usr/local/nginx/cgibin/logout
+
+$spawn -a 127.0.0.1 -p 9017 -f /usr/local/nginx/cgibin/get_friends_state
 
 exit 0;
 
