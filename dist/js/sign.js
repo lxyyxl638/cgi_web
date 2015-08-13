@@ -14,7 +14,7 @@ $(function(){
 
 			message = "请输入6——16位密码";
 		} else {
-				$.post(Base_url + "sign_in",{
+				$.post("/sign_in",{
                 		'username':$("#username").val(),
                 		'password':$("#password").val()
               			},function(data){
@@ -25,7 +25,7 @@ $(function(){
               			}
                 		else
                 		{
-                			location.href = Base_url + "home";
+                			location.href = "/home";
                 		}
           		})
 		}
@@ -54,7 +54,7 @@ $(function(){
 
 			message = "请选择您的性别";
 		} else {
-					$.post(Base_url + "/sign_up",{
+					$.post("/sign_up",{
 						'type' : 2,
 						'username':username,
 						'password':password,
@@ -66,7 +66,7 @@ $(function(){
 							message = $.trim(data['detail']);
 							$("#result").html(message);
 						} else {
-							location.href = Base_url + "sign_in";
+							location.href = "/sign_in";
 						}
 			   		})
 				}
@@ -80,7 +80,7 @@ $(function(){
 		if  (username == "" || (!isValidUsername(username))) {
 			message = "请输入6——16位仅包含字母，数字和下划线的用户名";
 		} else {
-				$.post(Base_url + "/sign_up",{
+				$.post("/sign_up",{
 				'type' : 1,
 				'username':username
 				},function(data) {

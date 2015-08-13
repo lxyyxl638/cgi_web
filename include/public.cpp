@@ -27,6 +27,7 @@ bool ParseParam(string & query_string,unordered_map<string,string> & Param)
 vector<unordered_map<string,string> > ParseArrayParam(string query_string)
 {
 	vector<unordered_map<string,string> > Param;
+	query_string = UrlDecode(query_string);
 	size_t x=0;
 	string first_param;
 	unordered_map<string,string> level;
@@ -43,8 +44,8 @@ vector<unordered_map<string,string> > ParseArrayParam(string query_string)
 	{
 		size_t end =  query_string.find('&',x);
 		size_t start  = query_string.find('=',x);
-		string argu =  query_string.substr(x,start - x);
-		string key = query_string.substr(start+1,end-start-1);
+		string argu =  UrlDecode(query_string.substr(x,start - x));
+		string key = UrlDecode(query_string.substr(start+1,end-start-1));
 		pair<string,string> p = make_pair(argu,key);
 		if(argu == first_param){
 			Param.push_back(level);
@@ -55,8 +56,8 @@ vector<unordered_map<string,string> > ParseArrayParam(string query_string)
 	}
 	size_t len = query_string.length();
 	size_t s = query_string.find('=',x);
-	argu = query_string.substr(x,s-x);
-	key = query_string.substr(s+1,len-s-1);
+	argu = UrlDecode(query_string.substr(x,s-x));
+	key = UrlDecode(query_string.substr(s+1,len-s-1));
 	if(argu == first_param){
 		Param.push_back(level);
 		level.clear();

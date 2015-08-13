@@ -46,7 +46,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <button type="button" class="btn btn-success" style="width: 100%" onclick="location.href='http://localhost/sign_up'">注册</button>
+                <button type="button" class="btn btn-success" style="width: 100%" onclick="location.href='/sign_up'">注册</button>
             </div>
         </div>
 

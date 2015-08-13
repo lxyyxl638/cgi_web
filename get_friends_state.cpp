@@ -63,7 +63,7 @@ int main() {
 			
 			for(int i = 0; i != ans.size(); i++)
 			{
-				friend_id = ans[i]["friend_id"];
+				friend_id = ans[i]["friend_id[]"];
 				
 				flag = session->getOnline(atoi(friend_id.c_str()));
 				state = flag ? "1":"0";
@@ -78,9 +78,8 @@ int main() {
 		if(strcmp(result.c_str(),"success") == 0){
 			for(int i  = 0 ; i != ans.size();i++){
 				Json::Value friend_state;
-				friend_state["friend_id"] = ans[i]["friend_id"];
+				friend_state["friend_id"] = ans[i]["friend_id[]"];
 				friend_state["state"] =  ans[i]["state"];
-
 				root["friend_list"].append(friend_state);
 			}
 			
